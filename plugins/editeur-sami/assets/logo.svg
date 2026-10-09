@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Éditeur Sami">
+  <rect width="256" height="256" rx="52" fill="#120B25"/>
+  <path d="M48 55h160v146H48z" fill="#7C3AED"/>
+  <path d="M68 76h120v104H68z" fill="#120B25"/>
+  <path d="M106 98l58 30-58 30z" fill="#fff"/>
+  <g fill="#fff"><rect x="48" y="72" width="18" height="16"/><rect x="48" y="112" width="18" height="16"/><rect x="48" y="152" width="18" height="16"/><rect x="190" y="72" width="18" height="16"/><rect x="190" y="112" width="18" height="16"/><rect x="190" y="152" width="18" height="16"/></g>
+</svg>

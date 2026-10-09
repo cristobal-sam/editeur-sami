@@ -1,0 +1,14 @@
+[
+ {"id": "energique", "name": "Énergique (hip-hop)", "bpm": 95, "caption": "energetic modern hip hop instrumental beat, punchy drums, deep 808 bass, crisp trap hi-hats, confident, advertising background, no vocals"},
+ {"id": "corporate", "name": "Corporate inspirant", "bpm": 118, "caption": "uplifting corporate pop instrumental, bright piano, claps, warm synth pads, positive and motivating, commercial background music, no vocals"},
+ {"id": "electro", "name": "Électro-pop", "bpm": 124, "caption": "modern electronic pop instrumental, synth plucks, four on the floor kick, energetic and catchy, social media ad music, no vocals"},
+ {"id": "cinematique", "name": "Cinématique épique", "bpm": 100, "caption": "epic cinematic instrumental, orchestral strings, big taiko drums, inspiring build up, trailer music, no vocals"},
+ {"id": "lofi", "name": "Lo-fi détente", "bpm": 80, "caption": "chill lofi hip hop instrumental, soft rhodes keys, dusty drums, vinyl crackle, relaxed and warm, no vocals"},
+ {"id": "emotion", "name": "Émotion piano", "bpm": 72, "caption": "emotional piano instrumental, soft strings, hopeful and heartfelt, storytelling underscore, no vocals"},
+ {"id": "tech", "name": "Tech minimal", "bpm": 122, "caption": "minimal tech house instrumental, clean percussion, futuristic synth arpeggio, subtle tension, product launch, no vocals"},
+ {"id": "funk", "name": "Funk positif", "bpm": 108, "caption": "feel-good funk instrumental, groovy slap bass, brass stabs, rhythm guitar, upbeat and positive, no vocals"},
+ {"id": "suspense", "name": "Suspense", "bpm": 90, "caption": "dark suspense instrumental, pulsing sub bass, ticking percussion, rising tension, thriller underscore, no vocals"},
+ {"id": "acoustique", "name": "Acoustique authentique", "bpm": 100, "caption": "warm acoustic guitar instrumental, light shaker and claps, authentic lifestyle vlog, sunny and natural, no vocals"},
+ {"id": "luxe", "name": "Luxe", "bpm": 118, "caption": "luxury deep house instrumental, elegant chords, smooth sub bass, premium fashion brand, sophisticated, no vocals"},
+ {"id": "immobilier", "name": "Immobilier lumineux", "bpm": 96, "caption": "bright uplifting instrumental with piano and airy strings, elegant and warm, real estate property tour, no vocals"}
+]

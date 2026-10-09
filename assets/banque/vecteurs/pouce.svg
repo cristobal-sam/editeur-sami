@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" data-vecteur="pouce">
+  <title>Pouce levé</title>
+  <rect x="24" y="98" width="52" height="120" rx="10" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:9;stroke-linejoin:round"/>
+  <path d="M84 104 L120 34 C126 22 150 24 150 44 L146 90 L200 90 C216 90 226 104 222 118 L204 190 C200 204 190 212 176 212 L84 212 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:9;stroke-linejoin:round"/>
+  <path d="M218 128 H180 M211 158 H176 M204 188 H172" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:7;stroke-linecap:round"/>
+</svg>

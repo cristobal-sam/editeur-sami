@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="300" height="160" data-vecteur="crochets">
+  <title>Crochets</title>
+  <path class="v-trait" pathLength="1" d="M62 16 H22 V144 H62" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M238 16 H278 V144 H238" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M62 16 H22 V144 H62" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M238 16 H278 V144 H238" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

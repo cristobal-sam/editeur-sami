@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" width="300" height="240" data-vecteur="graphique-baisse">
+  <title>Graphique en baisse</title>
+  <path d="M24 20 V216 H284" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:8;stroke-linecap:round;stroke-linejoin:round"/>
+  <g style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:5">
+    <rect x="50" y="64" width="36" height="148" rx="6"/>
+    <rect x="106" y="104" width="36" height="108" rx="6"/>
+    <rect x="162" y="134" width="36" height="78" rx="6"/>
+    <rect x="218" y="170" width="36" height="42" rx="6"/>
+  </g>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M46 50 L110 100 L150 84 L250 170" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M247 140 L256 175 L220 171" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M46 50 L110 100 L150 84 L250 170" style="fill:none;stroke:var(--v-principale,#FF3B30);stroke-width:13;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M247 140 L256 175 L220 171" style="fill:none;stroke:var(--v-principale,#FF3B30);stroke-width:13;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

@@ -1,0 +1,43 @@
+module : C:\Users/crist/AppData/Local/Temp/claude/D--Tools-editeur-sami/71087434-819e-4907-b372-abbc3df42b29/scratchpad/avant\editeur\reel.py
+
+===== projects/video1/reels/v1.json  (maxWords=5, langue=fr)
+  (IA : 7.5 s)
+-- v1c1 (67 mots)
+  ia     3/15 groupes, 3 mots, colles=0, petits mots=[]
+-- c2 (64 mots)
+  ia     4/13 groupes, 4 mots, colles=0, petits mots=[]
+-- c3 (49 mots)
+  ia     2/11 groupes, 2 mots, colles=0, petits mots=[]
+-- c4 (55 mots)
+  ia     4/11 groupes, 4 mots, colles=0, petits mots=[]
+-- c5 (60 mots)
+  ia     4/13 groupes, 4 mots, colles=0, petits mots=[]
+  TOTAL regles : 24/63 groupes avec un mot en couleur, 27 mots
+  TOTAL ia : 17/63 groupes avec un mot en couleur, 17 mots
+  bandeaux : ['COMBIEN VOUS COUTE UN LEAD']
+
+===== projects/scriptbingonightvideo1/reels/v1.json  (maxWords=5, langue=en)
+  (IA : 4.6 s)
+-- v1c1 (21 mots)
+  ia     0/6 groupes, 0 mots, colles=0, petits mots=[]
+-- c1 (14 mots)
+  ia     1/5 groupes, 1 mots, colles=0, petits mots=[]
+-- c2 (7 mots)
+  ia     1/2 groupes, 1 mots, colles=0, petits mots=[]
+-- c3 (23 mots)
+  ia     0/6 groupes, 0 mots, colles=0, petits mots=[]
+-- c4 (3 mots)
+  ia     0/1 groupes, 0 mots, colles=0, petits mots=[]
+-- c5 (3 mots)
+  ia     1/3 groupes, 1 mots, colles=0, petits mots=[]
+-- c6 (1 mots)
+  ia     0/1 groupes, 0 mots, colles=0, petits mots=[]
+-- c7 (1 mots)
+  ia     1/1 groupes, 1 mots, colles=0, petits mots=[]
+-- c8 (2 mots)
+  ia     0/1 groupes, 0 mots, colles=0, petits mots=[]
+-- c9 (7 mots)
+  ia     1/3 groupes, 1 mots, colles=0, petits mots=[]
+  TOTAL regles : 4/29 groupes avec un mot en couleur, 4 mots
+  TOTAL ia : 5/29 groupes avec un mot en couleur, 5 mots
+  bandeaux : ['LAST CHANCE TO WIN']

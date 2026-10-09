@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" data-vecteur="eclair">
+  <title>Éclair</title>
+  <polygon points="120,10 30,170 95,170 70,290 175,115 108,115 140,10" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:10;stroke-linejoin:round"/>
+  <polyline points="116,30 60,146" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:7;stroke-linecap:round;opacity:.65"/>
+</svg>

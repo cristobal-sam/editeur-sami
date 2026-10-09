@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220" data-vecteur="fleche-courbe">
+  <title>Flèche courbe</title>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M30 190 C60 90 150 40 250 60" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M227 31 L256 61 L218 78" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M30 190 C60 90 150 40 250 60" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:13;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M227 31 L256 61 L218 78" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:13;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

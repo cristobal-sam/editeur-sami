@@ -1,0 +1,25 @@
+{
+  "name": "editeur-sami",
+  "version": "2.1.0",
+  "description": "Piloter l’Éditeur Sami et ses moteurs locaux : Blender, Resolve, ACE-Step, détourage RVM, contrôle qualité et montage vidéo.",
+  "author": {
+    "name": "RyuCalls"
+  },
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Éditeur Sami",
+    "shortDescription": "Piloter le monteur local",
+    "longDescription": "Contrôle complet et sécurisé de l’Éditeur Sami, Blender, Resolve, ACE-Step et RVM sur cet ordinateur.",
+    "developerName": "RyuCalls",
+    "category": "Productivity",
+    "capabilities": ["Tools"],
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg",
+    "brandColor": "#7C3AED",
+    "defaultPrompt": [
+      "Montre-moi l’état de mes vidéos dans la Révision.",
+      "Inspecte ce montage et dis-moi ce qui mérite mon attention.",
+      "Aide-moi à choisir puis appliquer le bon style."
+    ]
+  }
+}

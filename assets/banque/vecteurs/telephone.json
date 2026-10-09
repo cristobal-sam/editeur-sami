@@ -1,0 +1,35 @@
+{
+ "nom": "Cadre de téléphone",
+ "categorie": "icônes",
+ "motsCles": [
+  "téléphone",
+  "cellulaire",
+  "application",
+  "écran",
+  "mobile"
+ ],
+ "intensite": 1,
+ "description": "Contour de téléphone : l’écran reste transparent.",
+ "licence": "Création originale de l'Éditeur Sami — usage libre, y compris commercial",
+ "provenance": "Dessin vectoriel écrit à la main pour ce projet (assets/banque/vecteurs), 30 septembre 2026 ; aucune ressource externe, aucun téléchargement.",
+ "couleurs": {
+  "principale": "#FFD400",
+  "secondaire": "#FFFFFF",
+  "contour": "#111111"
+ },
+ "anim": {
+  "entree": "zoom",
+  "sortie": "fondu"
+ },
+ "duree": 3,
+ "largeur": 0.5,
+ "formats": [
+  "9:16",
+  "16:9",
+  "4:5",
+  "1:1"
+ ],
+ "trace": false,
+ "boucle": null,
+ "garderCouleurs": false
+}

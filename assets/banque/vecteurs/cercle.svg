@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" data-vecteur="cercle">
+  <title>Cercle</title>
+  <path class="v-trait" pathLength="1" d="M120 22 A98 98 0 1 1 22 120 A98 98 0 0 1 122 22" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:26;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" d="M120 22 A98 98 0 1 1 22 120 A98 98 0 0 1 122 22" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:14;stroke-linecap:round"/>
+</svg>

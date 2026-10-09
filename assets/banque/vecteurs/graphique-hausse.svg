@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" width="300" height="240" data-vecteur="graphique-hausse">
+  <title>Graphique en hausse</title>
+  <path d="M24 20 V216 H284" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:8;stroke-linecap:round;stroke-linejoin:round"/>
+  <g style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:5">
+    <rect x="50" y="160" width="36" height="52" rx="6"/>
+    <rect x="106" y="130" width="36" height="82" rx="6"/>
+    <rect x="162" y="100" width="36" height="112" rx="6"/>
+    <rect x="218" y="64" width="36" height="148" rx="6"/>
+  </g>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M46 140 L110 100 L150 118 L250 40" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M220 37 L256 35 L246 69" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M46 140 L110 100 L150 118 L250 40" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:13;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M220 37 L256 35 L246 69" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:13;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

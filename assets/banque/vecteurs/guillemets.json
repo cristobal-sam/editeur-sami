@@ -1,0 +1,34 @@
+{
+ "nom": "Guillemets de citation",
+ "categorie": "icônes",
+ "motsCles": [
+  "citation",
+  "guillemets",
+  "témoignage",
+  "avis client"
+ ],
+ "intensite": 1,
+ "description": "Grands guillemets pour un témoignage.",
+ "licence": "Création originale de l'Éditeur Sami — usage libre, y compris commercial",
+ "provenance": "Dessin vectoriel écrit à la main pour ce projet (assets/banque/vecteurs), 30 septembre 2026 ; aucune ressource externe, aucun téléchargement.",
+ "couleurs": {
+  "principale": "#FFD400",
+  "secondaire": null,
+  "contour": "#111111"
+ },
+ "anim": {
+  "entree": "fondu",
+  "sortie": "fondu"
+ },
+ "duree": 2.5,
+ "largeur": 0.25,
+ "formats": [
+  "9:16",
+  "16:9",
+  "4:5",
+  "1:1"
+ ],
+ "trace": false,
+ "boucle": null,
+ "garderCouleurs": false
+}

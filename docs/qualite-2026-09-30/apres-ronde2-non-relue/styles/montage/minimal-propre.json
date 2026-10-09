@@ -1,0 +1,39 @@
+{
+ "id": "minimal-propre",
+ "name": "Minimal propre",
+ "description": "Sous-titres discrets, zooms doux, aucune fioriture. Idéal corporate / formation.",
+ "captions": "minimal",
+ "zoom": {
+  "auto": true,
+  "strength": 1.08,
+  "push": 0.02
+ },
+ "banner": {
+  "enabled": false
+ },
+ "flash": {
+  "enabled": false,
+  "kind": "blanc"
+ },
+ "effects": {
+  "grain": 0,
+  "vignette": 0.1,
+  "grade": "aucun"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "corporate",
+  "volume": 0.14
+ },
+ "sfx": {
+  "transition": null,
+  "highlight": null,
+  "highlightGap": 6,
+  "cta": null,
+  "start": null,
+  "volume": 0.4
+ },
+ "ia": "suggestion",
+ "graphismes": "suggestion"
+}

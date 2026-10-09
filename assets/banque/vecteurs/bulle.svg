@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" width="300" height="240" data-vecteur="bulle">
+  <title>Bulle de parole</title>
+  <path d="M50 20 H250 Q285 20 285 55 V140 Q285 175 250 175 H120 L70 222 L82 175 H50 Q15 175 15 140 V55 Q15 20 50 20 Z" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:9;stroke-linejoin:round"/>
+  <circle cx="100" cy="98" r="15" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:4"/>
+  <circle cx="150" cy="98" r="15" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:4"/>
+  <circle cx="200" cy="98" r="15" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:4"/>
+</svg>

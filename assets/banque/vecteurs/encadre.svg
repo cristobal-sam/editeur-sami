@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="360" height="160" data-vecteur="encadre">
+  <title>Encadré</title>
+  <path class="v-trait" pathLength="1" d="M34 20 H326 Q340 20 339 34 V126 Q339 140 326 140 H34 Q21 140 21 126 V34 Q21 20 36 20" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M34 20 H326 Q340 20 339 34 V126 Q339 140 326 140 H34 Q21 140 21 126 V34 Q21 20 36 20" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

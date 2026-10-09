@@ -1,0 +1,140 @@
+{
+ "id": "ref-monmontageryucalls",
+ "name": "Mon montage RyuCalls",
+ "description": "D'après « Vidéo 1 - 0 COMPLET - Hook alternatif 1 (Est-ce que vous savez précisément) - FINAL.mp4 » : 2 coupes/min, zooms légers, sous-titres 6 mots, musique ~123 BPM.",
+ "captions": "elegant",
+ "style": {
+  "uppercase": false,
+  "maxWords": 6,
+  "position": 0.72,
+  "color": "#FFFFFF",
+  "highlight": "#D4B483",
+  "strokeWidth": 0
+ },
+ "zoom": {
+  "auto": true,
+  "strength": 1.07,
+  "push": 0.015
+ },
+ "banner": {
+  "enabled": false
+ },
+ "flash": {
+  "enabled": false,
+  "kind": "blanc"
+ },
+ "effects": {
+  "grain": 0.1,
+  "vignette": 0.0,
+  "grade": "contraste"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "electro",
+  "volume": 0.3
+ },
+ "sfx": {
+  "transition": null,
+  "highlight": null,
+  "highlightGap": 3.5,
+  "cta": null,
+  "start": null,
+  "volume": 0.6
+ },
+ "broll": {
+  "part": 0.02
+ },
+ "ia": "auto",
+ "reference": {
+  "fichier": "Vidéo 1 - 0 COMPLET - Hook alternatif 1 (Est-ce que vous savez précisément) - FINAL.mp4",
+  "duree": 72.6,
+  "largeur": 1080,
+  "hauteur": 1920,
+  "coupes_min": 1.7,
+  "plan_median": 29.03,
+  "zooms_min": 0.0,
+  "personne": 0.98,
+  "image": {
+   "saturation": 0.264,
+   "contraste": 0.309,
+   "chaleur": 0.115,
+   "vignettage": 1.279,
+   "flashs": 0
+  },
+  "son": {
+   "musique": true,
+   "musique_db": -7.9,
+   "tempo": 123,
+   "bruitages_min": 0.0,
+   "mots_min": 257
+  },
+  "vision": [
+   {
+    "sous_titres": true,
+    "position": "bas",
+    "majuscules": false,
+    "couleur_texte": "#FFFFFF",
+    "couleur_mot_en_valeur": null,
+    "contour": false,
+    "fond_derriere_le_texte": false,
+    "mots_visibles": 6,
+    "police": "fine",
+    "titre_en_haut": false,
+    "emoji": false
+   },
+   {
+    "sous_titres": true,
+    "position": "bas",
+    "majuscules": false,
+    "couleur_texte": "#808080",
+    "couleur_mot_en_valeur": null,
+    "contour": false,
+    "fond_derriere_le_texte": true,
+    "mots_visibles": 3,
+    "police": "fine",
+    "titre_en_haut": false,
+    "emoji": false
+   },
+   {
+    "sous_titres": true,
+    "position": "bas",
+    "majuscules": false,
+    "couleur_texte": "#FFFFFF",
+    "couleur_mot_en_valeur": null,
+    "contour": true,
+    "fond_derriere_le_texte": false,
+    "mots_visibles": 6,
+    "police": "serif",
+    "titre_en_haut": false,
+    "emoji": false
+   },
+   {
+    "sous_titres": true,
+    "position": "bas",
+    "majuscules": false,
+    "couleur_texte": "#FFFFFF",
+    "couleur_mot_en_valeur": null,
+    "contour": true,
+    "fond_derriere_le_texte": false,
+    "mots_visibles": 6,
+    "police": "serif",
+    "titre_en_haut": false,
+    "emoji": false
+   },
+   {
+    "sous_titres": true,
+    "position": "bas",
+    "majuscules": false,
+    "couleur_texte": "#FFFFFF",
+    "couleur_mot_en_valeur": "#D4B483",
+    "contour": false,
+    "fond_derriere_le_texte": false,
+    "mots_visibles": 5,
+    "police": "fine",
+    "titre_en_haut": false,
+    "emoji": false
+   }
+  ]
+ }
+}

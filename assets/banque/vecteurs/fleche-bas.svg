@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" width="160" height="220" data-vecteur="fleche-bas" data-boucle="flotte">
+  <title>Flèche vers le bas</title>
+  <polygon points="55,15 105,15 105,120 145,120 80,205 15,120 55,120" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:10;stroke-linejoin:round"/>
+  <rect x="64" y="26" width="10" height="86" rx="5" style="fill:var(--v-secondaire,#FFFFFF);opacity:.6"/>
+</svg>

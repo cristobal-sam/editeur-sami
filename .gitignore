@@ -1,0 +1,77 @@
+# Secrets and private machine configuration
+cles-api.env
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.token
+.claude/
+.agents/
+
+# User videos, projects and exports (local only)
+media/
+projects/
+livraisons/
+corbeille/
+
+# Generated or user-specific visual assets
+assets/detourage/
+assets/produits/
+assets/generated/
+
+# Local runtimes, models and third-party applications
+models/
+tools/
+runtime/bin/
+runtime/cache/
+runtime/python/
+runtime/venv/
+runtime/venvs/
+
+# Dependencies and generated builds
+node_modules/
+remotion/node_modules/
+app/dist/
+.remotion/
+.cache/
+engine/.cache/
+**/__pycache__/
+*.py[cod]
+
+# Runtime state and logs
+*.log
+*.pid
+*.lock
+*.tmp
+
+# Generated plugin packages (source remains versioned)
+plugins/*.zip
+
+# Heavy test evidence and pre-change snapshots kept locally
+docs/**/avant/
+docs/**/avant-*/
+docs/**/captures/
+docs/**/captures-*/
+docs/**/resultats/
+docs/**/resultats-*/
+docs/**/*.mp4
+docs/**/*.mov
+docs/**/*.avi
+docs/**/*.mkv
+docs/**/*.webm
+docs/**/*.wav
+docs/**/*.mp3
+docs/**/*.ogg
+docs/**/*.png
+docs/**/*.jpg
+docs/**/*.jpeg
+docs/**/*.gif
+docs/**/*.zip
+
+# Operating-system files
+Thumbs.db
+Desktop.ini
+.DS_Store
+

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 380" width="200" height="380" data-vecteur="telephone">
+  <title>Cadre de téléphone</title>
+  <rect x="11" y="11" width="178" height="358" rx="34" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:14"/>
+  <rect x="3.5" y="3.5" width="193" height="373" rx="41" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:5"/>
+  <rect x="70" y="24" width="60" height="16" rx="8" style="fill:var(--v-contour,#111111)"/>
+  <rect x="72" y="346" width="56" height="6" rx="3" style="fill:var(--v-secondaire,#FFFFFF);opacity:.85"/>
+</svg>

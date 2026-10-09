@@ -1,0 +1,38 @@
+{
+ "id": "immobilier",
+ "name": "Immobilier",
+ "description": "Visite stabilisée dans l'ordre des pièces, coupes sur les temps de la musique, poussée lente, titre élégant (adresse).",
+ "captions": "elegant",
+ "ia": "auto",
+ "zoom": {
+  "auto": false,
+  "strength": 1,
+  "push": 0.05
+ },
+ "banner": {
+  "enabled": true
+ },
+ "flash": {
+  "enabled": false,
+  "kind": "lumiere"
+ },
+ "effects": {
+  "grain": 0,
+  "vignette": 0.18,
+  "grade": "chaud"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "immobilier",
+  "volume": 0.75
+ },
+ "sfx": {
+  "transition": null,
+  "highlight": null,
+  "highlightGap": 5,
+  "cta": null,
+  "start": null,
+  "volume": 0.5
+ }
+}

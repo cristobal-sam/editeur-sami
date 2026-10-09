@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 190" width="300" height="190" data-vecteur="argent">
+  <title>Argent</title>
+  <rect x="14" y="24" width="240" height="130" rx="14" style="fill:var(--v-principale,#22C55E);stroke:var(--v-contour,#111111);stroke-width:8"/>
+  <rect x="30" y="40" width="208" height="98" rx="8" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:5;opacity:.8"/>
+  <circle cx="134" cy="89" r="36" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:5"/>
+  <path d="M148 74 C142 64 122 64 120 77 C118 89 150 88 148 102 C146 115 124 117 117 106" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:8;stroke-linecap:round"/>
+  <path d="M134 58 V120" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:6;stroke-linecap:round"/>
+  <circle cx="252" cy="146" r="36" style="fill:var(--v-principale,#22C55E);stroke:var(--v-contour,#111111);stroke-width:7"/>
+  <circle cx="252" cy="146" r="23" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:5"/>
+</svg>

@@ -1,0 +1,5 @@
+// Surface utilisée par l'application ; react-dom est fourni avec Remotion.
+declare module 'react-dom/client' {
+ import type {ReactNode} from 'react';
+ export function createRoot(container: Element | DocumentFragment): {render(children: ReactNode): void; unmount(): void};
+}

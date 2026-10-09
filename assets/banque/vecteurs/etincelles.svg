@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" width="260" height="220" data-vecteur="etincelles" data-boucle="scintille">
+  <title>Étincelles</title>
+  <path d="M100 25 Q115.3 94.7 185 110 Q115.3 125.3 100 195 Q84.7 125.3 15 110 Q84.7 94.7 100 25 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:6;stroke-linejoin:round"/>
+  <path d="M205 15 Q212.2 47.8 245 55 Q212.2 62.2 205 95 Q197.8 62.2 165 55 Q197.8 47.8 205 15 Z" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:5;stroke-linejoin:round"/>
+  <path d="M200 142 Q205 165 228 170 Q205 175 200 198 Q195 175 172 170 Q195 165 200 142 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:4;stroke-linejoin:round"/>
+</svg>

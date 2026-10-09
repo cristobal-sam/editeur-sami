@@ -1,0 +1,233 @@
+{
+ "projects/video1/reels/v1.json": {
+  "regles": {
+   "v1c1": [
+    "combien",
+    "de",
+    "temps",
+    "entreprise",
+    "répondre",
+    "formulaire?",
+    "agence",
+    "pub",
+    "réponse",
+    "question,",
+    "fortes",
+    "coûte",
+    "clients"
+   ],
+   "c2": [
+    "problème,",
+    "temps",
+    "plein",
+    "salaire",
+    "vacances",
+    "payer,",
+    "leads",
+    "NON,",
+    "deux",
+    "tâches,",
+    "trois",
+    "heures",
+    "concurrent."
+   ],
+   "c3": [
+    "RyuCalls,",
+    "qualifié",
+    "directement",
+    "rapidement.",
+    "garantis",
+    "cinq",
+    "fois",
+    "moins",
+    "cher"
+   ],
+   "c4": [
+    "téléphone.",
+    "setter",
+    "commencer.",
+    "pourcentage",
+    "intérêt",
+    "transférer."
+   ],
+   "c5": [
+    "déléguer",
+    "appels",
+    "appuyez",
+    "En",
+    "savoir",
+    "plus",
+    "sans",
+    "risque,",
+    "gratuitement",
+    "une",
+    "semaine",
+    "Appuyez",
+    "En",
+    "savoir",
+    "plus"
+   ]
+  },
+  "ia": {}
+ },
+ "projects/video1/reels/script.json": {
+  "regles": {
+   "c1": [
+    "temps",
+    "appeler",
+    "concurrent",
+    "entreprise",
+    "leads",
+    "publicité,",
+    "directement.",
+    "rapide",
+    "temps",
+    "plein."
+   ],
+   "c2": [
+    "problème,",
+    "plein",
+    "salaire",
+    "vacances",
+    "payer,",
+    "closés",
+    "NON,",
+    "deux",
+    "tâches,",
+    "trois",
+    "heures",
+    "concurrent."
+   ],
+   "c3": [
+    "RyuCalls,",
+    "qualifié",
+    "rapidement.",
+    "garantis",
+    "cinq",
+    "fois",
+    "moins",
+    "cher"
+   ],
+   "c4": [
+    "téléphone.",
+    "setter",
+    "commencer.",
+    "pourcentage",
+    "intérêt",
+    "transférer."
+   ],
+   "c5": [
+    "déléguer",
+    "appels",
+    "réponse",
+    "appuyez",
+    "En",
+    "savoir",
+    "plus",
+    "sans",
+    "risque,",
+    "gratuitement",
+    "une",
+    "semaine",
+    "Appuyez",
+    "En",
+    "savoir",
+    "plus"
+   ]
+  },
+  "ia": {}
+ },
+ "projects/video2/reels/script.json": {
+  "regles": {
+   "c1": [
+    "agence",
+    "entreprise",
+    "leads",
+    "publicité,",
+    "déléguer",
+    "cinq",
+    "fois",
+    "moins",
+    "cher",
+    "temps",
+    "plein,",
+    "offre",
+    "incroyable"
+   ],
+   "c2": [
+    "setter",
+    "gratuitement",
+    "complète,",
+    "setting",
+    "rentable."
+   ],
+   "c3": [
+    "répondre",
+    "rapidement",
+    "rentrent",
+    "salaire",
+    "avantages",
+    "vacances",
+    "maladie.",
+    "semaine",
+    "garantis",
+    "cinq",
+    "fois",
+    "moins",
+    "cher"
+   ],
+   "c4": [
+    "pourcentage",
+    "intérêt",
+    "transférez."
+   ],
+   "c5": [
+    "Appuyez",
+    "réserver",
+    "gratuite,"
+   ]
+  },
+  "ia": {}
+ },
+ "projects/scriptbingonightvideo1/reels/v1.json": {
+  "regles": {
+   "v1c1": [
+    "matter",
+    "clap"
+   ],
+   "c1": [
+    "money",
+    "Last",
+    "chance.",
+    "won",
+    "square."
+   ],
+   "c2": [
+    "win?"
+   ],
+   "c3": [
+    "mother",
+    "home."
+   ],
+   "c4": [
+    "hell!"
+   ],
+   "c5": [
+    "75...",
+    "85...",
+    "100."
+   ],
+   "c6": [],
+   "c7": [
+    "Congratulations."
+   ],
+   "c8": [],
+   "c9": [
+    "Congratulations.",
+    "right",
+    "now!"
+   ]
+  },
+  "ia": {}
+ }
+}

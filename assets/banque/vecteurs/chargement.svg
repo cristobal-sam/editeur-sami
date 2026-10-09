@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" data-vecteur="chargement" data-boucle="rotation">
+  <title>Chargement</title>
+  <g style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:3">
+    <rect x="93" y="12" width="14" height="46" rx="7" style="opacity:1"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-45 100 100)" style="opacity:.85"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-90 100 100)" style="opacity:.72"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-135 100 100)" style="opacity:.6"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-180 100 100)" style="opacity:.48"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-225 100 100)" style="opacity:.36"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-270 100 100)" style="opacity:.26"/>
+    <rect x="93" y="12" width="14" height="46" rx="7" transform="rotate(-315 100 100)" style="opacity:.18"/>
+  </g>
+</svg>

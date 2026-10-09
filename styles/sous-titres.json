@@ -1,0 +1,18 @@
+[
+ {"id": "impact", "name": "Impact", "description": "Gros, majuscules, contour noir, mots clés jaunes, le mot dit ressort.",
+  "style": {"font": "Montserrat", "weight": 900, "uppercase": true, "size": 72, "color": "#FFFFFF", "highlight": "#FFD400", "stroke": "#000000", "strokeWidth": 12, "position": 0.68, "maxWords": 3, "pop": true}},
+ {"id": "karaoke", "name": "Karaoké", "description": "Phrase entière, les mots se colorent au fur et à mesure qu'ils sont dits.",
+  "style": {"font": "Poppins", "weight": 800, "uppercase": true, "size": 60, "color": "#FFFFFF", "highlight": "#22E06B", "stroke": "#000000", "strokeWidth": 10, "position": 0.7, "maxWords": 5, "pop": false}},
+ {"id": "boite", "name": "Boîte", "description": "Le mot dit apparaît dans une boîte de couleur (style podcast).",
+  "style": {"font": "Montserrat", "weight": 900, "uppercase": true, "size": 68, "color": "#FFFFFF", "highlight": "#7C3AED", "stroke": "#000000", "strokeWidth": 8, "position": 0.7, "maxWords": 3, "pop": true}},
+ {"id": "minimal", "name": "Minimal", "description": "Discret et propre : minuscules, ombre douce, sans contour.",
+  "style": {"font": "Inter", "weight": 700, "uppercase": false, "size": 52, "color": "#FFFFFF", "highlight": "#FFE27A", "stroke": "#000000", "strokeWidth": 0, "position": 0.8, "maxWords": 6, "pop": false}},
+ {"id": "neon", "name": "Néon", "description": "Lettres lumineuses, mots clés qui brillent.",
+  "style": {"font": "League Spartan", "weight": 900, "uppercase": true, "size": 74, "color": "#FFFFFF", "highlight": "#00E5FF", "stroke": "#000000", "strokeWidth": 0, "position": 0.68, "maxWords": 3, "pop": true}},
+ {"id": "geant", "name": "Mot géant", "description": "Un seul mot à la fois, énorme, au centre.",
+  "style": {"font": "Anton", "weight": 400, "uppercase": true, "size": 150, "color": "#FFFFFF", "highlight": "#FF3B30", "stroke": "#000000", "strokeWidth": 14, "position": 0.62, "maxWords": 1, "pop": true}},
+ {"id": "elegant", "name": "Élégant", "description": "Serif raffiné, mots clés en italique doré (pubs premium, immobilier).",
+  "style": {"font": "Playfair Display", "weight": 700, "uppercase": false, "size": 60, "color": "#FFFFFF", "highlight": "#F5D08A", "stroke": "#000000", "strokeWidth": 0, "position": 0.76, "maxWords": 5, "pop": false}},
+ {"id": "bulle", "name": "Bulle", "description": "Texte foncé sur bandes blanches arrondies (style natif TikTok).",
+  "style": {"font": "Rubik", "weight": 800, "uppercase": false, "size": 54, "color": "#111111", "highlight": "#FF3B5C", "stroke": "#000000", "strokeWidth": 0, "position": 0.72, "maxWords": 5, "pop": false}}
+]

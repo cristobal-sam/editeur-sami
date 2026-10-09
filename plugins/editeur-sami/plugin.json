@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "editeur-sami",
+  "version": "2.1.0",
+  "description": "Piloter l’Éditeur Sami et ses moteurs locaux : montage, Blender, Resolve, ACE-Step, RVM, contrôle qualité, exports et corbeille.",
+  "author": {
+    "name": "RyuCalls"
+  },
+  "keywords": ["video", "montage", "reels", "local", "remotion"],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "Éditeur Sami",
+        "shortDescription": "Piloter le monteur local",
+        "longDescription": "Contrôle complet et sécurisé de l’Éditeur Sami et de ses moteurs locaux : vidéos brutes, Révision, styles, Blender 3D, musique ACE-Step, détourage RVM, contrôle qualité, Resolve, exports, tâches et corbeille récupérable.",
+        "developerName": "RyuCalls",
+        "category": "Productivity",
+        "capabilities": ["Tools"],
+        "logo": "./assets/logo.svg",
+        "composerIcon": "./assets/logo.svg",
+        "brandColor": "#7C3AED",
+        "defaultPrompt": [
+          "Montre-moi l’état de mes vidéos dans la Révision.",
+          "Inspecte ce montage et dis-moi ce qui mérite mon attention.",
+          "Aide-moi à choisir puis appliquer le bon style."
+        ]
+      }
+    }
+  }
+}

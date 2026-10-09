@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" width="260" height="180" data-vecteur="guillemets">
+  <title>Guillemets de citation</title>
+  <path d="M60 150 C20 150 14 100 30 70 C44 44 70 26 100 18 L106 34 C86 44 72 58 70 80 C98 80 112 100 110 118 C108 138 88 152 60 150 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:7;stroke-linejoin:round"/>
+  <path d="M180 150 C140 150 134 100 150 70 C164 44 190 26 220 18 L226 34 C206 44 192 58 190 80 C218 80 232 100 230 118 C228 138 208 152 180 150 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:7;stroke-linejoin:round"/>
+</svg>

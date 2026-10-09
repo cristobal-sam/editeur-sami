@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" data-vecteur="horloge">
+  <title>Horloge</title>
+  <circle cx="120" cy="120" r="108" style="fill:var(--v-contour,#111111)"/>
+  <circle cx="120" cy="120" r="98" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-principale,#FFD400);stroke-width:12"/>
+  <path d="M120 36 V52 M204 120 H188 M120 204 V188 M36 120 H52" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:8;stroke-linecap:round"/>
+  <path d="M120 120 V60" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:10;stroke-linecap:round"/>
+  <path d="M120 120 L162 142" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:13;stroke-linecap:round"/>
+  <circle cx="120" cy="120" r="10" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:4"/>
+</svg>

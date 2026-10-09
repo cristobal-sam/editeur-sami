@@ -1,0 +1,62 @@
+{
+  "id": "documentaire",
+  "name": "Documentaire / cinéma",
+  "description": "Cadre cinéma chaud, titre discret et rythme posé.",
+  "category": "Cinéma",
+  "preview": "galerie-styles/05-documentaire.png",
+  "captions": "minimal",
+  "style": {
+    "font": "Inter",
+    "size": 48,
+    "maxWords": 6,
+    "highlight": "#E0D4BE",
+    "position": 0.82,
+    "pop": false,
+    "uppercase": false,
+    "strokeWidth": 0
+  },
+  "design": {
+    "mode": "documentaire",
+    "enabled": true,
+    "accent": "#E0D4BE",
+    "secondary": "#FFFFFF",
+    "density": 4
+  },
+  "zoom": {
+    "auto": false,
+    "strength": 1.14,
+    "push": 0
+  },
+  "banner": {
+    "enabled": false
+  },
+  "flash": {
+    "enabled": false,
+    "kind": "blanc"
+  },
+  "effects": {
+    "grain": 0.15,
+    "vignette": 0.15,
+    "grade": "cinema"
+  },
+  "emoji": false,
+  "progress": false,
+  "music": {
+    "mood": null,
+    "volume": 0.13
+  },
+  "sfx": {
+    "enabled": false,
+    "transition": null,
+    "highlight": null,
+    "highlightGap": 5,
+    "cta": null,
+    "start": null,
+    "volume": 0.2
+  },
+  "ia": "auto",
+  "graphismes": "suggestion",
+  "broll": {
+    "auto": false
+  }
+}

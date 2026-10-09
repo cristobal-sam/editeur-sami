@@ -1,0 +1,62 @@
+{
+  "id": "editorial-cinetique",
+  "name": "Éditorial cinétique",
+  "description": "Texte accumulé, rouge/blanc/noir et mot derrière la vraie personne.",
+  "category": "Pub",
+  "preview": "galerie-styles/01-editorial-cinetique.png",
+  "captions": "impact",
+  "style": {
+    "font": "Anton",
+    "size": 82,
+    "maxWords": 8,
+    "highlight": "#E53732",
+    "position": 0.59,
+    "pop": false,
+    "uppercase": false,
+    "strokeWidth": 3
+  },
+  "design": {
+    "mode": "editorial",
+    "enabled": true,
+    "accent": "#E53732",
+    "secondary": "#FFFFFF",
+    "density": 4
+  },
+  "zoom": {
+    "auto": false,
+    "strength": 1.14,
+    "push": 0
+  },
+  "banner": {
+    "enabled": false
+  },
+  "flash": {
+    "enabled": false,
+    "kind": "blanc"
+  },
+  "effects": {
+    "grain": 0,
+    "vignette": 0,
+    "grade": "aucun"
+  },
+  "emoji": false,
+  "progress": false,
+  "music": {
+    "mood": "energique",
+    "volume": 0.13
+  },
+  "sfx": {
+    "enabled": false,
+    "transition": null,
+    "highlight": null,
+    "highlightGap": 5,
+    "cta": null,
+    "start": null,
+    "volume": 0.2
+  },
+  "ia": "auto",
+  "graphismes": "suggestion",
+  "broll": {
+    "auto": false
+  }
+}

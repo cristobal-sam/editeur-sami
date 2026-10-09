@@ -1,0 +1,36 @@
+{
+ "nom": "Croix",
+ "categorie": "validation",
+ "motsCles": [
+  "croix",
+  "non",
+  "faux",
+  "erreur",
+  "à éviter",
+  "rouge"
+ ],
+ "intensite": 2,
+ "description": "Rond rouge dont la croix se dessine (❌).",
+ "licence": "Création originale de l'Éditeur Sami — usage libre, y compris commercial",
+ "provenance": "Dessin vectoriel écrit à la main pour ce projet (assets/banque/vecteurs), 30 septembre 2026 ; aucune ressource externe, aucun téléchargement.",
+ "couleurs": {
+  "principale": "#EF4444",
+  "secondaire": "#FFFFFF",
+  "contour": "#111111"
+ },
+ "anim": {
+  "entree": "trace",
+  "sortie": "fondu"
+ },
+ "duree": 1.6,
+ "largeur": 0.22,
+ "formats": [
+  "9:16",
+  "16:9",
+  "4:5",
+  "1:1"
+ ],
+ "trace": true,
+ "boucle": null,
+ "garderCouleurs": true
+}

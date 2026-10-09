@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" data-vecteur="note-autocollante">
+  <title>Note autocollante</title>
+  <path d="M20 28 H220 V172 L172 220 H20 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:7;stroke-linejoin:round"/>
+  <path d="M220 172 H172 V220 Z" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:7;stroke-linejoin:round"/>
+  <rect x="78" y="10" width="84" height="30" rx="3" transform="rotate(-4 120 25)" style="fill:var(--v-secondaire,#FFFFFF);opacity:.75"/>
+</svg>

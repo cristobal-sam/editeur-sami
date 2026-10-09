@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90" width="300" height="90" data-vecteur="ruban-adhesif">
+  <title>Ruban adhésif</title>
+  <path d="M20 16 L280 10 L272 22 L284 34 L274 46 L286 58 L276 70 L282 80 L22 84 L30 72 L18 60 L28 48 L16 36 L26 24 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:3;stroke-linejoin:round;opacity:.88"/>
+  <path d="M70 20 L68 80 M130 18 L128 80 M190 16 L188 80 M240 14 L238 80" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:4;opacity:.35"/>
+</svg>

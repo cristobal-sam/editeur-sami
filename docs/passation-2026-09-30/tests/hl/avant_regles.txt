@@ -1,0 +1,88 @@
+module : C:\Users/crist/AppData/Local/Temp/claude/D--Tools-editeur-sami/71087434-819e-4907-b372-abbc3df42b29/scratchpad/avant\editeur\reel.py
+
+===== projects/video1/reels/v1.json  (maxWords=5, langue=fr)
+-- v1c1 (67 mots)
+  regles 5/15 groupes, 5 mots, colles=0, petits mots=[]
+         Est-ce que vous savez [précisément] | combien de temps ça prend | à quelqu'un dans votre [entreprise] | pour répondre à un lead | qui vient de remplir votre | [formulaire?] | Parce que si vous êtes | une agence ou une [entreprise] | qui fait déjà de la | pub et que vous n'avez | pas de réponse claire à | cette question, | il y a de fortes | chances que ça vous coûte | des [clients] chaque mois.
+-- c2 (64 mots)
+  regles 6/13 groupes, 7 mots, colles=0, petits mots=[]
+         Le [problème,] c’est qu’embaucher quelqu'un | à temps plein pour régler | ça, ça veut dire un | [salaire] au complet, des [avantages] | sociaux, des vacances et des | journées de maladie à payer, | peu importe si vos leads | sont closés ou non. | Et [NON,] le faire toi-même | entre [deux] tâches, c’est pas | mieux, parce qu’un lead qui | attend [trois] heures a déjà | été appelé par ton [concurrent.]
+-- c3 (49 mots)
+  regles 4/11 groupes, 6 mots, colles=1, petits mots=[]
+         C’est pour ça que chez | [RyuCalls,] on place un setter | qualifié et formé par nos | soins [directement] dans votre [entreprise] | pour répondre et qualifier vos | leads [rapidement.] | Et je vous garantis que | vous allez payer [cinq] [fois] | moins cher qu'un employé habituel | sans avoir géré quoi que | ce soit.
+-- c4 (55 mots)
+  regles 5/11 groupes, 5 mots, colles=0, petits mots=[]
+         Pis là, c'est pas juste | des gens qu'on engage au | hasard pour répondre au [téléphone.] | Chaque setter est formé par | nos soins avant de [commencer.] | Et comme on touche aussi | un petit [pourcentage] de ce | qui est closé, on a | un vrai intérêt à bien | [qualifier] et éduquer chaque lead | avant de vous le [transférer.]
+-- c5 (60 mots)
+  regles 4/13 groupes, 4 mots, colles=0, petits mots=[]
+         Alors, si vous voulez déléguer | les appels de vos leads | pour offrir une réponse plus | [rapidement,] | appuyez sur le bouton « | En savoir plus ». | Et pour que vous puissiez | l'expérimenter sans [risque,] on place | notre setter [gratuitement] dans notre | entreprise pendant une [semaine] complète. | Appuyez sur le bouton « | En savoir plus » et | on se reparle très bientôt.
+  TOTAL regles : 24/63 groupes avec un mot en couleur, 27 mots
+
+===== projects/video1/reels/script.json  (maxWords=5, langue=fr)
+-- c1 (55 mots)
+  regles 4/12 groupes, 4 mots, colles=0, petits mots=[]
+         Plus vous prenez de temps | à appeler un lead, plus | vous avez de chances que | votre [concurrent] le close. | Et si vous êtes une | agence ou une [entreprise] qui | génère ces leads avec de | la [publicité,] ça vous concerne | directement. | Parce que chaque lead reçoit | une réponse [rapide] sans avoir | embauché quelqu'un à temps plein.
+-- c2 (64 mots)
+  regles 6/13 groupes, 7 mots, colles=0, petits mots=[]
+         Le [problème,] c’est qu’embaucher quelqu'un | à temps plein pour régler | ça, ça veut dire un | [salaire] au complet, des [avantages] | sociaux, des vacances et des | journées de maladie à payer, | peu importe si vos leads | sont closés ou non. | Et [NON,] le faire toi-même | entre [deux] tâches, c’est pas | mieux, parce qu’un lead qui | attend [trois] heures a déjà | été appelé par ton [concurrent.]
+-- c3 (49 mots)
+  regles 4/11 groupes, 6 mots, colles=1, petits mots=[]
+         C’est pour ça que chez | [RyuCalls,] on place un setter | qualifié et formé par nos | soins [directement] dans votre [entreprise] | pour répondre et qualifier vos | leads [rapidement.] | Et je vous garantis que | vous allez payer [cinq] [fois] | moins cher qu'un employé habituel | sans avoir géré quoi que | ce soit.
+-- c4 (55 mots)
+  regles 5/11 groupes, 5 mots, colles=0, petits mots=[]
+         Pis là, c'est pas juste | des gens qu'on engage au | hasard pour répondre au [téléphone.] | Chaque setter est formé par | nos soins avant de [commencer.] | Et comme on touche aussi | un petit [pourcentage] de ce | qui est closé, on a | un vrai intérêt à bien | [qualifier] et éduquer chaque lead | avant de vous le [transférer.]
+-- c5 (60 mots)
+  regles 4/13 groupes, 4 mots, colles=0, petits mots=[]
+         Alors, si vous voulez déléguer | les appels de vos leads | pour offrir une réponse plus | [rapidement,] | appuyez sur le bouton « | En savoir plus ». | Et pour que vous puissiez | l'expérimenter sans [risque,] on place | notre setter [gratuitement] dans notre | entreprise pendant une [semaine] complète. | Appuyez sur le bouton « | En savoir plus » et | on se reparle très bientôt.
+  TOTAL regles : 23/60 groupes avec un mot en couleur, 26 mots
+
+===== projects/video2/reels/script.json  (maxWords=5, langue=fr)
+-- c1 (53 mots)
+  regles 5/11 groupes, 5 mots, colles=0, petits mots=[]
+         Si vous êtes une agence | ou une [entreprise] qui génère | déjà des leads avec de | la [publicité,] et que vous | voulez déléguer les appels de | vos leads pour que ce | soit plus rapide et [cinq] | fois [moins] cher qu'un employé | à temps plein, | restez là parce que j'ai | une [offre] incroyable pour vous.
+-- c2 (34 mots)
+  regles 3/7 groupes, 4 mots, colles=0, petits mots=[]
+         On vous place un setter | qualifié et formé par nos | soins [gratuitement] pendant une [semaine] | complète, directement dans votre [entreprise] | pour vous prouver que déléguer | le setting à notre équipe, | c'est [facile] et rentable.
+-- c3 (62 mots)
+  regles 5/14 groupes, 6 mots, colles=0, petits mots=[]
+         Notre setter va répondre et | [qualifier] vos leads [rapidement] dès | qu'ils rentrent sans que vous | ayez à gérer un [salaire] | au complet, des avantages sociaux, | des vacances ou des journées | maladie. | Et si vous décidez de | continuer après votre [semaine] gratuite, | je vous [garantis] que vous | allez payer [cinq] fois moins | cher qu'un employé habituel sans | avoir géré quoi que ce | soit.
+-- c4 (29 mots)
+  regles 3/6 groupes, 3 mots, colles=0, petits mots=[]
+         Et comme on prend un | petit [pourcentage] de ce qui | est closé, on a un | vrai intérêt à bien [qualifier] | et éduquer chaque lead avant | que vous le [transférez.]
+-- c5 (18 mots)
+  regles 2/4 groupes, 2 mots, colles=0, petits mots=[]
+         Appuyez sur le bouton [Ensemble] | en plus pour réserver votre | [semaine] gratuite, et on se | reparle très bientôt.
+  TOTAL regles : 18/42 groupes avec un mot en couleur, 20 mots
+
+===== projects/scriptbingonightvideo1/reels/v1.json  (maxWords=5, langue=en)
+-- v1c1 (21 mots)
+  regles 1/6 groupes, 1 mots, colles=0, petits mots=[]
+         It almost doesn't matter because | she's telling me to go. | Yeah? | Just go for it. | Yeah. | Can someone clap or [something?]
+-- c1 (14 mots)
+  regles 0/5 groupes, 0 mots, colles=0, petits mots=[]
+         Put your money in here. | No. | Last chance. | I won it fair and | square.
+-- c2 (7 mots)
+  regles 0/2 groupes, 0 mots, colles=0, petits mots=[]
+         OK fine. | How much did you win?
+-- c3 (23 mots)
+  regles 0/6 groupes, 0 mots, colles=0, petits mots=[]
+         My mother left her purse | at home. | I have it here with | me. | Could I give it with | you to give to her?
+-- c4 (3 mots)
+  regles 0/1 groupes, 0 mots, colles=0, petits mots=[]
+         What the hell!
+-- c5 (3 mots)
+  regles 1/3 groupes, 1 mots, colles=0, petits mots=[]
+         [75...] | 85... | 100.
+-- c6 (1 mots)
+  regles 0/1 groupes, 0 mots, colles=0, petits mots=[]
+         here.
+-- c7 (1 mots)
+  regles 1/1 groupes, 1 mots, colles=0, petits mots=[]
+         [Congratulations.]
+-- c8 (2 mots)
+  regles 0/1 groupes, 0 mots, colles=0, petits mots=[]
+         But you
+-- c9 (7 mots)
+  regles 1/3 groupes, 1 mots, colles=0, petits mots=[]
+         [Congratulations.] | We have to go right | now!
+  TOTAL regles : 4/29 groupes avec un mot en couleur, 4 mots

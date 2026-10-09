@@ -1,0 +1,59 @@
+{
+ "date": "2026-10-01 22:56",
+ "but": "Donnees FIGEES des tests (jamais un projet vivant de l'utilisateur). Ne pas les regenerer depuis projects/ : ces fichiers sont la reference des tests.",
+ "fichiers": {
+  "projects/script1/project.json": {
+   "origine": "projects/script1/project.json",
+   "sha1_origine": "c58fd0711ead3f793a5ef6d11d4b3f0858a70b62",
+   "sha1": "c58fd0711ead3f793a5ef6d11d4b3f0858a70b62"
+  },
+  "projects/script1/reels/script.json": {
+   "origine": "projects/script1/reels/script.json",
+   "sha1_origine": "08b767e3e8c791ddb53673eb8b442dd15ae0b3e0",
+   "modifie": "sources[*].path -> media optimise (projects/_cache/optimises : meme duree, son AAC 48 kHz) pour 7 prise(s) : la voix des exports de test ne depend plus des videos brutes de l'utilisateur",
+   "sha1": "fe05fbaacdd1798f1e80f356247e465c0dd4c1ff"
+  },
+  "projects/script2/project.json": {
+   "origine": "corbeille/2026-10-01 02h24 Offre setter qualifié gratuit/projects/script2/project.json",
+   "sha1_origine": "e28d0f64e8f4a23eab401666a378da9ac06c917d",
+   "sha1": "e28d0f64e8f4a23eab401666a378da9ac06c917d"
+  },
+  "projects/script2/reels/script.json": {
+   "origine": "corbeille/2026-10-01 02h24 Offre setter qualifié gratuit/projects/script2/reels/script.json",
+   "sha1_origine": "ca312577ad655ed2dcb9add2c3ede8c9535a30f6",
+   "modifie": "sources[*].path -> media optimise (projects/_cache/optimises : meme duree, son AAC 48 kHz) pour 6 prise(s) : la voix des exports de test ne depend plus des videos brutes de l'utilisateur",
+   "sha1": "fb45b3fa64ad957f5597b3af0751e22607435d9b"
+  },
+  "projects/video1/reels/script.json": {
+   "origine": "projects/video1/reels/script.json",
+   "sha1_origine": "25906ad8dd56bf0ab6ebd83aa2fed6800f311647",
+   "sha1": "25906ad8dd56bf0ab6ebd83aa2fed6800f311647"
+  },
+  "projects/video1/reels/v1.json": {
+   "origine": "projects/video1/reels/v1.json",
+   "sha1_origine": "e75b36f77eeb1346617fc53c52dd126427b45d01",
+   "sha1": "e75b36f77eeb1346617fc53c52dd126427b45d01"
+  },
+  "projects/video1/reels/v2.json": {
+   "origine": "projects/video1/reels/v2.json",
+   "sha1_origine": "274694ba6d1182eb022725c5b85a62b9e17fbe10",
+   "sha1": "274694ba6d1182eb022725c5b85a62b9e17fbe10"
+  },
+  "projects/video2/reels/script.json": {
+   "origine": "projects/video2/reels/script.json",
+   "sha1_origine": "7f7470317f945911d0152cd899433d86332fc6c0",
+   "sha1": "7f7470317f945911d0152cd899433d86332fc6c0"
+  },
+  "projects/scriptbingonightvideo1/reels/v1.json": {
+   "origine": "projects/scriptbingonightvideo1/reels/v1.json",
+   "sha1_origine": "a4224b9c44c3ff87da726bf754e31dc42749b294",
+   "sha1": "a4224b9c44c3ff87da726bf754e31dc42749b294"
+  }
+ },
+ "notes": [
+  "script1 = Video 1 (style tech-application au 2026-10-01). script2 = Video 2 « Offre setter qualifie gratuit » (reel-impact) : COPIE prise dans corbeille/ (video supprimee volontairement par l'utilisateur le 2026-10-01, jamais restauree).",
+  "video1/*, video2/script, scriptbingonightvideo1/v1 (16:9, anglais) : anciens reels pour les tests « anciens reels ».",
+  "Medias : les reels pointent vers projects/_cache/optimises (medias optimises partages, gardes quand une video part a la corbeille).",
+  "project.json : copies telles quelles (leurs videos brutes peuvent manquer : les tests qui reconstruisent les prises utilisent les sources figees du reel, voir integration/test-integration.py test_6)."
+ ]
+}

@@ -1,0 +1,32 @@
+VECTEURS DE LA BANQUE — Éditeur Sami
+====================================
+
+Licence : création originale de l'Éditeur Sami — usage libre, y compris commercial.
+Provenance : dessins vectoriels écrits à la main pour ce projet le 30 septembre 2026.
+Aucune ressource externe, aucun téléchargement, aucune police, aucune image intégrée.
+
+Un vecteur = deux fichiers de même nom :
+  <nom>.svg   le dessin
+  <nom>.json  sa fiche (lue par engine/editeur/banque.py et par l'onglet Graphismes)
+
+Règles des SVG (docs/direction-creative-v2/SPEC.md §9.3)
+  - viewBox obligatoire ; aucun script, style global, texte, image, lien ni ressource externe ; aucun id.
+  - Couleurs UNIQUEMENT par variables CSS, avec la couleur d'origine en secours :
+      style="fill:var(--v-principale,#FFD400)"   style="stroke:var(--v-contour,#111111)"   var(--v-secondaire,#FFFFFF)
+    Le montage pose ces variables sur le conteneur : la charte du client ou le style recolore le dessin
+    sans jamais toucher à ses formes. Ouvert seul (miniature, navigateur), le dessin garde ses couleurs d'origine.
+  - Traits à « tracer » (animation Tracé) : class="v-trait" pathLength="1", sans remplissage.
+    data-etape="1", "2"… : ordre du tracé (même étape = en même temps ; ex. le contour noir et le trait jaune).
+  - Facultatif sur la racine : data-boucle="rotation | rotation-lente | pulse | scintille | balance | flotte"
+    (mouvement pendant que le vecteur est à l'image) et data-origine="50% 8%" (point d'appui).
+
+Fiche <nom>.json
+  nom, categorie, motsCles, intensite (1 discret · 2 moyen · 3 fort), description, licence, provenance,
+  couleurs {principale, secondaire, contour} (couleurs d'origine du dessin, null = emplacement non utilisé),
+  anim {entree, sortie} : pop | fondu | zoom | trace | glisse-gauche | glisse-droite | glisse-haut | glisse-bas | aucune,
+  duree (s) et largeur (part de la largeur de l'image) proposées à l'ajout, formats,
+  trace (le dessin a des traits à tracer), boucle, garderCouleurs (true : coche verte, croix rouge — ajoutées avec
+  leurs couleurs d'origine au lieu de celles de la charte).
+
+Les fiches sont réécrites depuis la table de docs/direction-creative-v2/tests/vecteurs/ecrire-fiches.mjs
+(couleurs d'origine, trace et boucle lues dans le SVG). Vérification : docs/direction-creative-v2/tests/vecteurs/test-vecteurs.mjs.

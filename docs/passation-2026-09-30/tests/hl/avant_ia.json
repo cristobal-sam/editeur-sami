@@ -1,0 +1,116 @@
+{
+ "projects/video1/reels/v1.json": {
+  "regles": {
+   "v1c1": [
+    "précisément",
+    "entreprise",
+    "formulaire?",
+    "entreprise",
+    "clients"
+   ],
+   "c2": [
+    "problème,",
+    "salaire",
+    "avantages",
+    "NON,",
+    "deux",
+    "trois",
+    "concurrent."
+   ],
+   "c3": [
+    "RyuCalls,",
+    "directement",
+    "entreprise",
+    "rapidement.",
+    "cinq",
+    "fois"
+   ],
+   "c4": [
+    "téléphone.",
+    "commencer.",
+    "pourcentage",
+    "qualifier",
+    "transférer."
+   ],
+   "c5": [
+    "rapidement,",
+    "risque,",
+    "gratuitement",
+    "semaine"
+   ]
+  },
+  "ia": {
+   "v1c1": [
+    "combien",
+    "lead",
+    "coûte"
+   ],
+   "c2": [
+    "salaire",
+    "vacances",
+    "maladie",
+    "concurrent."
+   ],
+   "c3": [
+    "RyuCalls,",
+    "cinq"
+   ],
+   "c4": [
+    "formé",
+    "closé,",
+    "qualifier",
+    "transférer."
+   ],
+   "c5": [
+    "bouton",
+    "risque,",
+    "gratuitement",
+    "semaine"
+   ]
+  }
+ },
+ "projects/scriptbingonightvideo1/reels/v1.json": {
+  "regles": {
+   "v1c1": [
+    "something?"
+   ],
+   "c1": [],
+   "c2": [],
+   "c3": [],
+   "c4": [],
+   "c5": [
+    "75..."
+   ],
+   "c6": [],
+   "c7": [
+    "Congratulations."
+   ],
+   "c8": [],
+   "c9": [
+    "Congratulations."
+   ]
+  },
+  "ia": {
+   "v1c1": [],
+   "c1": [
+    "Last"
+   ],
+   "c2": [
+    "much"
+   ],
+   "c3": [],
+   "c4": [],
+   "c5": [
+    "75..."
+   ],
+   "c6": [],
+   "c7": [
+    "Congratulations."
+   ],
+   "c8": [],
+   "c9": [
+    "right"
+   ]
+  }
+ }
+}

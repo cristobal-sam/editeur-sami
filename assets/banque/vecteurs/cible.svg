@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" data-vecteur="cible">
+  <title>Cible</title>
+  <circle cx="112" cy="128" r="104" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:7"/>
+  <circle cx="112" cy="128" r="76" style="fill:var(--v-secondaire,#FFFFFF)"/>
+  <circle cx="112" cy="128" r="50" style="fill:var(--v-principale,#FFD400)"/>
+  <circle cx="112" cy="128" r="24" style="fill:var(--v-secondaire,#FFFFFF)"/>
+  <path d="M112 128 L210 30" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:9;stroke-linecap:round"/>
+  <path d="M210 30 L196 8 L222 18 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:4;stroke-linejoin:round"/>
+  <path d="M210 30 L232 44 L222 18 Z" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:4;stroke-linejoin:round"/>
+  <circle cx="112" cy="128" r="7" style="fill:var(--v-contour,#111111)"/>
+</svg>

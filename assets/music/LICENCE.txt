@@ -1,0 +1,2 @@
+Musiques originales generees localement avec ACE-Step 1.5 (licence MIT, modele entraine sur des musiques sous licence).
+Usage commercial autorise, sans attribution. Voir styles/musiques.json pour les descriptions.

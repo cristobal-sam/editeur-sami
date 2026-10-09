@@ -1,0 +1,76 @@
+{
+ "ancien": {
+  "marches": 0.4195,
+  "largeur": 19.0985,
+  "morceaux": 1198.85,
+  "voiles": 16370.2,
+  "table": 0.1344,
+  "scint": 0.01162,
+  "scint_bord": 2210.7
+ },
+ "brut": {
+  "marches": 0.3282,
+  "largeur": 10.5283,
+  "morceaux": 57.3167,
+  "voiles": 2204.6,
+  "table": 0.0175,
+  "scint": 0.00212,
+  "scint_bord": 352.2
+ },
+ "nouveau": {
+  "marches": 0.328,
+  "largeur": 6.9429,
+  "morceaux": 9.25,
+  "voiles": 238.9333,
+  "table": 0.0168,
+  "scint": 0.00171,
+  "scint_bord": 254.1
+ },
+ "vitesse_ms_image": {
+  "depuis_cache": false,
+  "ancien_mediapipe_720p": 151.2,
+  "nouveau_rvm_1080p_total": 103.4,
+  "detail_nouveau": {
+   "total": 76.3,
+   "modele": 42.6,
+   "affinage": 20.3,
+   "attente_decodage": 1.0,
+   "attente_ecriture": 0.0
+  },
+  "moteur": "rvm-resnet50",
+  "ratio": 0.25
+ },
+ "qualite": {
+  "score_moyen": 1.0,
+  "score_min": 1.0,
+  "repli": []
+ },
+ "alignement_ecarts": [
+  7.19,
+  5.52,
+  1.98,
+  4.27,
+  5.72
+ ],
+ "planches": [
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\main-table-image024.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\bras-droit-image024.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\cheveux-image024.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\epaule-cou-image024.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\chaise-gauche-image024.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\entier-image024.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\main-table-image039.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\bras-droit-image039.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\cheveux-image039.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\epaule-cou-image039.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\chaise-gauche-image039.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\entier-image039.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\main-table-image100.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\bras-droit-image100.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\cheveux-image100.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\epaule-cou-image100.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\chaise-gauche-image100.png",
+  "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\detourage-preuves\\entier-image100.png"
+ ],
+ "erreurs": []
+}

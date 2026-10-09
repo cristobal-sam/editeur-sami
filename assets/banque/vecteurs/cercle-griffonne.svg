@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" data-vecteur="cercle-griffonne">
+  <title>Cercle griffonné</title>
+  <path class="v-trait" pathLength="1" d="M60 60 C120 10 260 20 290 80 C315 135 230 185 150 182 C70 179 18 140 30 95 C42 50 120 28 200 34 C240 37 270 48 285 60" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:20;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M60 60 C120 10 260 20 290 80 C315 135 230 185 150 182 C70 179 18 140 30 95 C42 50 120 28 200 34 C240 37 270 48 285 60" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:10;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

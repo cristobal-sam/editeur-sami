@@ -1,0 +1,15 @@
+{
+  "name": "editeur-sami-local",
+  "description": "Plugin local de contrôle de l'Éditeur Sami pour Codex et Claude (dans ce dossier, rien en ligne).",
+  "owner": {
+    "name": "RyuCalls"
+  },
+  "plugins": [
+    {
+      "name": "editeur-sami",
+      "source": "./plugins/editeur-sami",
+      "description": "Piloter l'Éditeur Sami et ses moteurs locaux depuis Codex ou Claude : Blender, Resolve, ACE-Step, MediaPipe, montage, exports, tâches et corbeille récupérable.",
+      "category": "video"
+    }
+  ]
+}

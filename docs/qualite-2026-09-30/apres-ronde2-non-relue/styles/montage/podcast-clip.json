@@ -1,0 +1,39 @@
+{
+ "id": "podcast-clip",
+ "name": "Clip podcast",
+ "description": "Mot dans une boîte de couleur, zooms légers, barre de progression, sans musique.",
+ "captions": "boite",
+ "zoom": {
+  "auto": true,
+  "strength": 1.1,
+  "push": 0.02
+ },
+ "banner": {
+  "enabled": true
+ },
+ "flash": {
+  "enabled": false,
+  "kind": "blanc"
+ },
+ "effects": {
+  "grain": 0,
+  "vignette": 0.15,
+  "grade": "aucun"
+ },
+ "emoji": false,
+ "progress": true,
+ "music": {
+  "mood": null,
+  "volume": 0
+ },
+ "sfx": {
+  "transition": null,
+  "highlight": null,
+  "highlightGap": 5,
+  "cta": null,
+  "start": null,
+  "volume": 0.5
+ },
+ "ia": "suggestion",
+ "graphismes": "suggestion"
+}

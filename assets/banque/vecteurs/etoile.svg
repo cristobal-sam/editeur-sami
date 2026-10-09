@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 230" width="240" height="230" data-vecteur="etoile">
+  <title>Étoile</title>
+  <polygon points="120,17 146.5,85.6 219.9,89.6 162.8,135.9 181.7,206.9 120,167 58.3,206.9 77.2,135.9 20.1,89.6 93.5,85.6" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:9;stroke-linejoin:round"/>
+  <path d="M96 104 Q104 86 118 80" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:9;stroke-linecap:round;opacity:.75"/>
+</svg>

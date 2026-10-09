@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" width="240" height="220" data-vecteur="coeur" data-boucle="pulse">
+  <title>Cœur</title>
+  <path d="M120 200 C40 140 10 100 20 62 C30 24 80 12 120 52 C160 12 210 24 220 62 C230 100 200 140 120 200 Z" style="fill:var(--v-principale,#FF3B5C);stroke:var(--v-contour,#111111);stroke-width:9;stroke-linejoin:round"/>
+  <path d="M50 72 C54 52 70 44 86 46" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:10;stroke-linecap:round;opacity:.8"/>
+</svg>

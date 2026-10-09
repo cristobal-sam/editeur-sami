@@ -1,0 +1,17 @@
+Sons synthetises par l'editeur (engine/editeur/sfxgen.py). Creations originales, libres de tout droit tiers.
+
+Exception : les fichiers « kenney-*.wav » sont des copies remises au niveau des autres (48 kHz, fondus,
+silences retires) de sons Kenney.nl, licence CC0 1.0 (domaine public) :
+  kenney-selection.wav <- assets/sfx/kenney/interface-sounds/select_003.ogg (licence : assets/sfx/kenney/interface-sounds/License.txt)
+  kenney-interrupteur.wav <- assets/sfx/kenney/interface-sounds/switch_003.ogg (licence : assets/sfx/kenney/interface-sounds/License.txt)
+  kenney-bascule.wav <- assets/sfx/kenney/interface-sounds/toggle_002.ogg (licence : assets/sfx/kenney/interface-sounds/License.txt)
+  kenney-survol.wav <- assets/sfx/kenney/ui-audio/rollover4.ogg (licence : assets/sfx/kenney/ui-audio/License.txt)
+  kenney-verre.wav <- assets/sfx/kenney/interface-sounds/glass_002.ogg (licence : assets/sfx/kenney/interface-sounds/License.txt)
+  kenney-depot.wav <- assets/sfx/kenney/interface-sounds/drop_002.ogg (licence : assets/sfx/kenney/interface-sounds/License.txt)
+  kenney-pep.wav <- assets/sfx/kenney/digital-audio/pepSound1.ogg (licence : assets/sfx/kenney/digital-audio/License.txt)
+  kenney-phaser.wav <- assets/sfx/kenney/digital-audio/phaserUp3.ogg (licence : assets/sfx/kenney/digital-audio/License.txt)
+  kenney-saut.wav <- assets/sfx/kenney/digital-audio/phaseJump2.ogg (licence : assets/sfx/kenney/digital-audio/License.txt)
+  kenney-descente.wav <- assets/sfx/kenney/digital-audio/highDown.ogg (licence : assets/sfx/kenney/digital-audio/License.txt)
+  kenney-bonus.wav <- assets/sfx/kenney/digital-audio/powerUp3.ogg (licence : assets/sfx/kenney/digital-audio/License.txt)
+  kenney-impact-doux.wav <- assets/sfx/kenney/impact-sounds/impactSoft_medium_001.ogg (licence : assets/sfx/kenney/impact-sounds/License.txt)
+  kenney-impact-bois.wav <- assets/sfx/kenney/impact-sounds/impactPlank_medium_000.ogg (licence : assets/sfx/kenney/impact-sounds/License.txt)

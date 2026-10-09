@@ -1,0 +1,323 @@
+{
+ "version": 1,
+ "note": "Familles de sons de coupe (engine/editeur/sfxgen.py). pic = secondes entre le début du fichier et son maximum (il tombe sur la coupe) ; gain = réglage du son dans ce rôle (1 = niveau d'origine) ; les sons sont dans assets/sfx/editeur/<name>.wav. styles : famille de chaque style de montage (« auto ») ; sons : famille d'un style perso d'après son son de coupe. Un style sans son de coupe (transition null) reste sans son aux coupes.",
+ "sonie": -11.0,
+ "roles": {
+  "transition": "Coupes entre les parties",
+  "interface": "Entrée d'un écran ou d'une carte",
+  "apparition": "Petit élément qui apparaît (liste, bouton)",
+  "mot-fort": "Mot fort",
+  "impact": "Preuve, chiffre",
+  "cta": "Avant l'appel à l'action"
+ },
+ "defaut": "punchy",
+ "familles": [
+  {
+   "id": "doux",
+   "nom": "Doux",
+   "description": "Souffles légers, glissés musicaux et pops ronds : discret, haut de gamme.",
+   "sons": {
+    "transition": [
+     {"name": "souffle-doux", "titre": "Souffle doux", "pic": 0.198, "gain": 1.0, "duree": 0.42, "licence": "créé ici"},
+     {"name": "souffle-leger", "titre": "Souffle léger", "pic": 0.122, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "souffle-ample", "titre": "Souffle ample", "pic": 0.323, "gain": 1.0, "duree": 0.6, "licence": "créé ici"},
+     {"name": "glisse-tonale-douce", "titre": "Glissé musical doux", "pic": 0.253, "gain": 1.0, "duree": 0.45, "licence": "créé ici"},
+     {"name": "aspiration-tonale", "titre": "Accord aspiré", "pic": 0.955, "gain": 1.0, "duree": 1.0, "licence": "créé ici"},
+     {"name": "tissu-glisse", "titre": "Tissu qui glisse", "pic": 0.15, "gain": 1.0, "duree": 0.4, "licence": "créé ici"}
+    ],
+    "interface": [
+     {"name": "ui-glisse", "titre": "Glissé d’interface", "pic": 0.16, "gain": 1.0, "duree": 0.28, "licence": "créé ici"},
+     {"name": "glisse-tonale-douce", "titre": "Glissé musical doux", "pic": 0.253, "gain": 1.0, "duree": 0.45, "licence": "créé ici"},
+     {"name": "souffle-leger", "titre": "Souffle léger", "pic": 0.122, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "ui-glisse-tonale", "titre": "Glissé d’interface musical", "pic": 0.12, "gain": 1.0, "duree": 0.22, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "ui-clic-doux", "titre": "Clic doux", "pic": 0.0, "gain": 0.6, "duree": 0.07, "licence": "créé ici"},
+     {"name": "ui-bulle", "titre": "Bulle d’interface", "pic": 0.005, "gain": 0.6, "duree": 0.12, "licence": "créé ici"},
+     {"name": "kenney-selection", "titre": "Sélection (Kenney)", "pic": 0.01, "gain": 0.6, "duree": 0.238, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "mot-fort": [
+     {"name": "pop-doux", "titre": "Pop doux", "pic": 0.005, "gain": 0.6, "duree": 0.12, "licence": "créé ici"},
+     {"name": "pop-goutte", "titre": "Goutte", "pic": 0.005, "gain": 0.6, "duree": 0.16, "licence": "créé ici"},
+     {"name": "pop-bulle", "titre": "Pop bulle", "pic": 0.005, "gain": 0.6, "duree": 0.1, "licence": "créé ici"}
+    ],
+    "impact": [
+     {"name": "impact-mat", "titre": "Impact mat", "pic": 0.01, "gain": 0.8, "duree": 0.55, "licence": "créé ici"},
+     {"name": "ding-cristal", "titre": "Ding cristal", "pic": 0.01, "gain": 0.8, "duree": 0.9, "licence": "créé ici"},
+     {"name": "kenney-impact-doux", "titre": "Impact doux (Kenney)", "pic": 0.007, "gain": 0.8, "duree": 0.183, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "cta": [
+     {"name": "riser-doux", "titre": "Montée douce", "pic": 0.725, "gain": 1.8, "duree": 0.8, "licence": "créé ici"},
+     {"name": "riser-souffle", "titre": "Montée de souffle", "pic": 1.087, "gain": 1.8, "duree": 1.2, "licence": "créé ici"}
+    ]
+   }
+  },
+  {
+   "id": "punchy",
+   "nom": "Énergique",
+   "description": "Whooshes courts et nets, basses qui tombent, pops secs : pour les reels rythmés.",
+   "sons": {
+    "transition": [
+     {"name": "whoosh-court", "titre": "Whoosh court", "pic": 0.182, "gain": 1.0, "duree": 0.35, "licence": "créé ici"},
+     {"name": "whoosh-aerien-court", "titre": "Whoosh aérien court", "pic": 0.18, "gain": 1.0, "duree": 0.32, "licence": "créé ici"},
+     {"name": "passage-eclair", "titre": "Passage éclair", "pic": 0.168, "gain": 1.0, "duree": 0.36, "licence": "créé ici"},
+     {"name": "whoosh-chute-court", "titre": "Whoosh + basse courte", "pic": 0.182, "gain": 1.0, "duree": 0.6, "licence": "créé ici"},
+     {"name": "coupe-seche", "titre": "Coupe sèche", "pic": 0.09, "gain": 1.0, "duree": 0.26, "licence": "créé ici"},
+     {"name": "whoosh-chute", "titre": "Whoosh + basse qui tombe", "pic": 0.297, "gain": 1.0, "duree": 0.95, "licence": "créé ici"}
+    ],
+    "interface": [
+     {"name": "whoosh-aerien-court", "titre": "Whoosh aérien court", "pic": 0.18, "gain": 1.0, "duree": 0.32, "licence": "créé ici"},
+     {"name": "passage-eclair", "titre": "Passage éclair", "pic": 0.168, "gain": 1.0, "duree": 0.36, "licence": "créé ici"},
+     {"name": "ui-glisse", "titre": "Glissé d’interface", "pic": 0.16, "gain": 1.0, "duree": 0.28, "licence": "créé ici"},
+     {"name": "whoosh-court", "titre": "Whoosh court", "pic": 0.182, "gain": 1.0, "duree": 0.35, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "click", "titre": "Clic", "pic": 0.0, "gain": 1.0, "duree": 0.03, "licence": "créé ici"},
+     {"name": "ui-tic", "titre": "Tic d’interface", "pic": 0.0, "gain": 0.6, "duree": 0.05, "licence": "créé ici"},
+     {"name": "pop-bouchon", "titre": "Pop bouchon", "pic": 0.005, "gain": 0.6, "duree": 0.14, "licence": "créé ici"}
+    ],
+    "mot-fort": [
+     {"name": "pop", "titre": "Pop", "pic": 0.005, "gain": 1.0, "duree": 0.09, "licence": "créé ici"},
+     {"name": "pop-bouchon", "titre": "Pop bouchon", "pic": 0.005, "gain": 0.6, "duree": 0.14, "licence": "créé ici"},
+     {"name": "pop-bulle", "titre": "Pop bulle", "pic": 0.005, "gain": 0.6, "duree": 0.1, "licence": "créé ici"},
+     {"name": "tap-bois", "titre": "Tap de bois", "pic": 0.005, "gain": 0.6, "duree": 0.18, "licence": "créé ici"}
+    ],
+    "impact": [
+     {"name": "impact-coup-sec", "titre": "Impact sec", "pic": 0.01, "gain": 0.8, "duree": 0.6, "licence": "créé ici"},
+     {"name": "impact-leger", "titre": "Impact léger", "pic": 0.007, "gain": 0.8, "duree": 0.45, "licence": "créé ici"},
+     {"name": "impact", "titre": "Impact", "pic": 0.007, "gain": 1.0, "duree": 1.2, "licence": "créé ici"}
+    ],
+    "cta": [
+     {"name": "riser", "titre": "Riser (montée)", "pic": 1.54, "gain": 1.0, "duree": 1.6, "licence": "créé ici"},
+     {"name": "riser-numerique", "titre": "Montée numérique", "pic": 0.92, "gain": 1.8, "duree": 1.0, "licence": "créé ici"},
+     {"name": "riser-souffle", "titre": "Montée de souffle", "pic": 1.087, "gain": 1.8, "duree": 1.2, "licence": "créé ici"}
+    ]
+   }
+  },
+  {
+   "id": "tech",
+   "nom": "Tech / écran",
+   "description": "Balayages numériques, glissés d'écran, petits tics : applications, produit en 3D.",
+   "sons": {
+    "transition": [
+     {"name": "balayage-numerique", "titre": "Balayage numérique", "pic": 0.15, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "balayage-numerique-descendant", "titre": "Balayage numérique descendant", "pic": 0.175, "gain": 1.0, "duree": 0.35, "licence": "créé ici"},
+     {"name": "ui-glisse-tonale", "titre": "Glissé d’interface musical", "pic": 0.12, "gain": 1.0, "duree": 0.22, "licence": "créé ici"},
+     {"name": "whoosh-tonal", "titre": "Whoosh musical", "pic": 0.29, "gain": 1.0, "duree": 0.55, "licence": "créé ici"},
+     {"name": "chirp-donnees", "titre": "Bips de données", "pic": 0.245, "gain": 1.0, "duree": 0.4, "licence": "créé ici"},
+     {"name": "whoosh-aerien-court", "titre": "Whoosh aérien court", "pic": 0.18, "gain": 1.0, "duree": 0.32, "licence": "créé ici"}
+    ],
+    "interface": [
+     {"name": "ui-glisse", "titre": "Glissé d’interface", "pic": 0.16, "gain": 1.0, "duree": 0.28, "licence": "créé ici"},
+     {"name": "ui-glisse-tonale", "titre": "Glissé d’interface musical", "pic": 0.12, "gain": 1.0, "duree": 0.22, "licence": "créé ici"},
+     {"name": "balayage-numerique", "titre": "Balayage numérique", "pic": 0.15, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "kenney-selection", "titre": "Sélection (Kenney)", "pic": 0.01, "gain": 1.0, "duree": 0.238, "licence": "CC0 (Kenney.nl)"},
+     {"name": "souffle-leger", "titre": "Souffle léger", "pic": 0.122, "gain": 1.0, "duree": 0.3, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "ui-tic", "titre": "Tic d’interface", "pic": 0.0, "gain": 0.6, "duree": 0.05, "licence": "créé ici"},
+     {"name": "ui-tic-double", "titre": "Double tic", "pic": 0.037, "gain": 0.6, "duree": 0.11, "licence": "créé ici"},
+     {"name": "kenney-bascule", "titre": "Bascule (Kenney)", "pic": 0.007, "gain": 0.6, "duree": 0.12, "licence": "CC0 (Kenney.nl)"},
+     {"name": "kenney-survol", "titre": "Survol (Kenney)", "pic": 0.06, "gain": 0.6, "duree": 0.113, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "mot-fort": [
+     {"name": "ui-bulle", "titre": "Bulle d’interface", "pic": 0.005, "gain": 0.6, "duree": 0.12, "licence": "créé ici"},
+     {"name": "pop-doux", "titre": "Pop doux", "pic": 0.005, "gain": 0.6, "duree": 0.12, "licence": "créé ici"},
+     {"name": "kenney-verre", "titre": "Verre (Kenney)", "pic": 0.0, "gain": 0.6, "duree": 0.125, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "impact": [
+     {"name": "impact-leger", "titre": "Impact léger", "pic": 0.007, "gain": 0.8, "duree": 0.45, "licence": "créé ici"},
+     {"name": "ding-cristal", "titre": "Ding cristal", "pic": 0.01, "gain": 0.8, "duree": 0.9, "licence": "créé ici"},
+     {"name": "pop-grave", "titre": "Pop grave", "pic": 0.005, "gain": 1.0, "duree": 0.12, "licence": "créé ici"}
+    ],
+    "cta": [
+     {"name": "riser-numerique", "titre": "Montée numérique", "pic": 0.92, "gain": 1.8, "duree": 1.0, "licence": "créé ici"},
+     {"name": "riser-doux", "titre": "Montée douce", "pic": 0.725, "gain": 1.8, "duree": 0.8, "licence": "créé ici"}
+    ]
+   }
+  },
+  {
+   "id": "cinema",
+   "nom": "Cinéma",
+   "description": "Grands passages stéréo, sons aspirés, impacts graves : bande-annonce, documentaire, pub premium.",
+   "sons": {
+    "transition": [
+     {"name": "whoosh-aerien-long", "titre": "Whoosh aérien long", "pic": 0.557, "gain": 1.0, "duree": 0.95, "licence": "créé ici"},
+     {"name": "passage-gauche-droite", "titre": "Passage de gauche à droite", "pic": 0.318, "gain": 1.0, "duree": 0.7, "licence": "créé ici"},
+     {"name": "passage-droite-gauche", "titre": "Passage de droite à gauche", "pic": 0.278, "gain": 1.0, "duree": 0.6, "licence": "créé ici"},
+     {"name": "aspiration-longue", "titre": "Son aspiré long", "pic": 1.135, "gain": 1.0, "duree": 1.2, "licence": "créé ici"},
+     {"name": "whoosh-chute", "titre": "Whoosh + basse qui tombe", "pic": 0.297, "gain": 1.0, "duree": 0.95, "licence": "créé ici"},
+     {"name": "whoosh-long", "titre": "Whoosh long", "pic": 0.372, "gain": 1.0, "duree": 0.7, "licence": "créé ici"},
+     {"name": "aspiration", "titre": "Son aspiré (inversé)", "pic": 0.75, "gain": 1.0, "duree": 0.8, "licence": "créé ici"}
+    ],
+    "interface": [
+     {"name": "whoosh-aerien", "titre": "Whoosh aérien", "pic": 0.338, "gain": 1.0, "duree": 0.62, "licence": "créé ici"},
+     {"name": "passage-eclair", "titre": "Passage éclair", "pic": 0.168, "gain": 1.0, "duree": 0.36, "licence": "créé ici"},
+     {"name": "aspiration", "titre": "Son aspiré (inversé)", "pic": 0.75, "gain": 1.0, "duree": 0.8, "licence": "créé ici"},
+     {"name": "souffle-ample", "titre": "Souffle ample", "pic": 0.323, "gain": 1.0, "duree": 0.6, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "ui-clic-doux", "titre": "Clic doux", "pic": 0.0, "gain": 0.6, "duree": 0.07, "licence": "créé ici"},
+     {"name": "tap-bois", "titre": "Tap de bois", "pic": 0.005, "gain": 0.6, "duree": 0.18, "licence": "créé ici"}
+    ],
+    "mot-fort": [
+     {"name": "impact-leger", "titre": "Impact léger", "pic": 0.007, "gain": 0.6, "duree": 0.45, "licence": "créé ici"},
+     {"name": "impact-mat", "titre": "Impact mat", "pic": 0.01, "gain": 0.6, "duree": 0.55, "licence": "créé ici"},
+     {"name": "pop-doux", "titre": "Pop doux", "pic": 0.005, "gain": 0.6, "duree": 0.12, "licence": "créé ici"}
+    ],
+    "impact": [
+     {"name": "impact-sub", "titre": "Impact grave", "pic": 0.01, "gain": 0.8, "duree": 1.0, "licence": "créé ici"},
+     {"name": "impact-coup-sec", "titre": "Impact sec", "pic": 0.01, "gain": 0.8, "duree": 0.6, "licence": "créé ici"},
+     {"name": "impact-mat", "titre": "Impact mat", "pic": 0.01, "gain": 0.8, "duree": 0.55, "licence": "créé ici"}
+    ],
+    "cta": [
+     {"name": "riser-cinema", "titre": "Montée cinéma", "pic": 1.47, "gain": 1.8, "duree": 1.6, "licence": "créé ici"},
+     {"name": "riser-souffle", "titre": "Montée de souffle", "pic": 1.087, "gain": 1.8, "duree": 1.2, "licence": "créé ici"}
+    ]
+   }
+  },
+  {
+   "id": "retro",
+   "nom": "Rétro",
+   "description": "Arrêts de bande, rembobinages, bips 8-bit : style VHS et clins d'œil.",
+   "sons": {
+    "transition": [
+     {"name": "arret-bande", "titre": "Arrêt de bande", "pic": 0.485, "gain": 1.0, "duree": 0.6, "licence": "créé ici"},
+     {"name": "arret-bande-court", "titre": "Arrêt de bande court", "pic": 0.292, "gain": 1.0, "duree": 0.36, "licence": "créé ici"},
+     {"name": "rembobinage", "titre": "Rembobinage", "pic": 0.16, "gain": 1.0, "duree": 0.5, "licence": "créé ici"},
+     {"name": "kenney-phaser", "titre": "Phaser rétro (Kenney)", "pic": 0.092, "gain": 1.0, "duree": 0.431, "licence": "CC0 (Kenney.nl)"},
+     {"name": "kenney-descente", "titre": "Descente rétro (Kenney)", "pic": 0.095, "gain": 1.0, "duree": 0.43, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "interface": [
+     {"name": "rembobinage", "titre": "Rembobinage", "pic": 0.16, "gain": 1.0, "duree": 0.5, "licence": "créé ici"},
+     {"name": "kenney-saut", "titre": "Saut rétro (Kenney)", "pic": 0.037, "gain": 1.0, "duree": 0.343, "licence": "CC0 (Kenney.nl)"},
+     {"name": "balayage-numerique-descendant", "titre": "Balayage numérique descendant", "pic": 0.175, "gain": 1.0, "duree": 0.35, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "kenney-pep", "titre": "Pep rétro (Kenney)", "pic": 0.062, "gain": 0.6, "duree": 0.349, "licence": "CC0 (Kenney.nl)"},
+     {"name": "ui-tic", "titre": "Tic d’interface", "pic": 0.0, "gain": 0.6, "duree": 0.05, "licence": "créé ici"},
+     {"name": "kenney-bascule", "titre": "Bascule (Kenney)", "pic": 0.007, "gain": 0.6, "duree": 0.12, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "mot-fort": [
+     {"name": "kenney-pep", "titre": "Pep rétro (Kenney)", "pic": 0.062, "gain": 0.6, "duree": 0.349, "licence": "CC0 (Kenney.nl)"},
+     {"name": "pop-bouchon", "titre": "Pop bouchon", "pic": 0.005, "gain": 0.6, "duree": 0.14, "licence": "créé ici"},
+     {"name": "kenney-survol", "titre": "Survol (Kenney)", "pic": 0.06, "gain": 0.6, "duree": 0.113, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "impact": [
+     {"name": "impact-leger", "titre": "Impact léger", "pic": 0.007, "gain": 0.8, "duree": 0.45, "licence": "créé ici"},
+     {"name": "kenney-impact-bois", "titre": "Impact bois (Kenney)", "pic": 0.003, "gain": 0.8, "duree": 0.438, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "cta": [
+     {"name": "riser-bande", "titre": "Démarrage de bande", "pic": 0.848, "gain": 1.8, "duree": 0.9, "licence": "créé ici"},
+     {"name": "kenney-bonus", "titre": "Bonus rétro (Kenney)", "pic": 0.795, "gain": 1.8, "duree": 0.885, "licence": "CC0 (Kenney.nl)"}
+    ]
+   }
+  },
+  {
+   "id": "glitch",
+   "nom": "Glitch / numérique",
+   "description": "Saccades, bits écrasés, balayages : énergie numérique (karaoké, reels nerveux).",
+   "sons": {
+    "transition": [
+     {"name": "glitch", "titre": "Glitch", "pic": 0.013, "gain": 1.0, "duree": 0.35, "licence": "créé ici"},
+     {"name": "glitch-saccade", "titre": "Glitch saccadé", "pic": 0.195, "gain": 0.8, "duree": 0.4, "licence": "créé ici"},
+     {"name": "glitch-roulement", "titre": "Glitch en roulement", "pic": 0.32, "gain": 0.8, "duree": 0.45, "licence": "créé ici"},
+     {"name": "glitch-bits", "titre": "Bits écrasés", "pic": 0.01, "gain": 0.8, "duree": 0.3, "licence": "créé ici"},
+     {"name": "balayage-numerique", "titre": "Balayage numérique", "pic": 0.15, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "chirp-donnees", "titre": "Bips de données", "pic": 0.245, "gain": 1.0, "duree": 0.4, "licence": "créé ici"}
+    ],
+    "interface": [
+     {"name": "glitch-bits", "titre": "Bits écrasés", "pic": 0.01, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "chirp-donnees", "titre": "Bips de données", "pic": 0.245, "gain": 1.0, "duree": 0.4, "licence": "créé ici"},
+     {"name": "balayage-numerique", "titre": "Balayage numérique", "pic": 0.15, "gain": 1.0, "duree": 0.3, "licence": "créé ici"},
+     {"name": "ui-glisse-tonale", "titre": "Glissé d’interface musical", "pic": 0.12, "gain": 1.0, "duree": 0.22, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "click", "titre": "Clic", "pic": 0.0, "gain": 1.0, "duree": 0.03, "licence": "créé ici"},
+     {"name": "ui-tic", "titre": "Tic d’interface", "pic": 0.0, "gain": 0.6, "duree": 0.05, "licence": "créé ici"},
+     {"name": "ui-tic-double", "titre": "Double tic", "pic": 0.037, "gain": 0.6, "duree": 0.11, "licence": "créé ici"}
+    ],
+    "mot-fort": [
+     {"name": "click", "titre": "Clic", "pic": 0.0, "gain": 1.0, "duree": 0.03, "licence": "créé ici"},
+     {"name": "ui-tic-double", "titre": "Double tic", "pic": 0.037, "gain": 0.6, "duree": 0.11, "licence": "créé ici"},
+     {"name": "kenney-bascule", "titre": "Bascule (Kenney)", "pic": 0.007, "gain": 0.6, "duree": 0.12, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "impact": [
+     {"name": "impact-coup-sec", "titre": "Impact sec", "pic": 0.01, "gain": 0.8, "duree": 0.6, "licence": "créé ici"},
+     {"name": "impact-leger", "titre": "Impact léger", "pic": 0.007, "gain": 0.8, "duree": 0.45, "licence": "créé ici"}
+    ],
+    "cta": [
+     {"name": "riser-numerique", "titre": "Montée numérique", "pic": 0.92, "gain": 1.8, "duree": 1.0, "licence": "créé ici"},
+     {"name": "riser", "titre": "Riser (montée)", "pic": 1.54, "gain": 1.0, "duree": 1.6, "licence": "créé ici"}
+    ]
+   }
+  },
+  {
+   "id": "organique",
+   "nom": "Organique",
+   "description": "Papier, tissu, bois, gouttes : naturel et chaleureux (UGC, collage, immobilier).",
+   "sons": {
+    "transition": [
+     {"name": "papier-glisse", "titre": "Papier qui glisse", "pic": 0.237, "gain": 1.0, "duree": 0.45, "licence": "créé ici"},
+     {"name": "papier-page", "titre": "Page qu’on tourne", "pic": 0.323, "gain": 1.0, "duree": 0.5, "licence": "créé ici"},
+     {"name": "tissu-glisse", "titre": "Tissu qui glisse", "pic": 0.15, "gain": 1.0, "duree": 0.4, "licence": "créé ici"},
+     {"name": "souffle-doux", "titre": "Souffle doux", "pic": 0.198, "gain": 1.0, "duree": 0.42, "licence": "créé ici"},
+     {"name": "souffle-ample", "titre": "Souffle ample", "pic": 0.323, "gain": 1.0, "duree": 0.6, "licence": "créé ici"},
+     {"name": "obturateur", "titre": "Obturateur photo", "pic": 0.077, "gain": 1.0, "duree": 0.26, "licence": "créé ici"}
+    ],
+    "interface": [
+     {"name": "papier-glisse", "titre": "Papier qui glisse", "pic": 0.237, "gain": 1.0, "duree": 0.45, "licence": "créé ici"},
+     {"name": "tissu-glisse", "titre": "Tissu qui glisse", "pic": 0.15, "gain": 1.0, "duree": 0.4, "licence": "créé ici"},
+     {"name": "souffle-leger", "titre": "Souffle léger", "pic": 0.122, "gain": 1.0, "duree": 0.3, "licence": "créé ici"}
+    ],
+    "apparition": [
+     {"name": "tap-bois", "titre": "Tap de bois", "pic": 0.005, "gain": 0.6, "duree": 0.18, "licence": "créé ici"},
+     {"name": "pop-bouchon", "titre": "Pop bouchon", "pic": 0.005, "gain": 0.6, "duree": 0.14, "licence": "créé ici"},
+     {"name": "kenney-depot", "titre": "Dépôt (Kenney)", "pic": 0.003, "gain": 0.6, "duree": 0.191, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "mot-fort": [
+     {"name": "pop-goutte", "titre": "Goutte", "pic": 0.005, "gain": 0.6, "duree": 0.16, "licence": "créé ici"},
+     {"name": "tap-bois", "titre": "Tap de bois", "pic": 0.005, "gain": 0.6, "duree": 0.18, "licence": "créé ici"},
+     {"name": "pop-doux", "titre": "Pop doux", "pic": 0.005, "gain": 0.6, "duree": 0.12, "licence": "créé ici"}
+    ],
+    "impact": [
+     {"name": "impact-mat", "titre": "Impact mat", "pic": 0.01, "gain": 0.8, "duree": 0.55, "licence": "créé ici"},
+     {"name": "kenney-impact-bois", "titre": "Impact bois (Kenney)", "pic": 0.003, "gain": 0.8, "duree": 0.438, "licence": "CC0 (Kenney.nl)"},
+     {"name": "kenney-impact-doux", "titre": "Impact doux (Kenney)", "pic": 0.007, "gain": 0.8, "duree": 0.183, "licence": "CC0 (Kenney.nl)"}
+    ],
+    "cta": [
+     {"name": "riser-doux", "titre": "Montée douce", "pic": 0.725, "gain": 1.8, "duree": 0.8, "licence": "créé ici"},
+     {"name": "riser-souffle", "titre": "Montée de souffle", "pic": 1.087, "gain": 1.8, "duree": 1.2, "licence": "créé ici"}
+    ]
+   }
+  }
+ ],
+ "styles": {
+  "collage": "organique",
+  "comparatif": "tech",
+  "documentaire": "cinema",
+  "editorial-cinetique": "cinema",
+  "evenement": "punchy",
+  "hormozi": "punchy",
+  "immobilier": "doux",
+  "infographie": "tech",
+  "luxe-minimal": "doux",
+  "minimal-propre": "doux",
+  "motivation-geant": "cinema",
+  "podcast-clip": "doux",
+  "produit-3d": "tech",
+  "pub-premium": "cinema",
+  "reel-impact": "punchy",
+  "reel-karaoke": "glitch",
+  "ref-monmontageryucalls": "punchy",
+  "retro-vhs": "retro",
+  "tech-application": "tech",
+  "ugc-naturel": "organique"
+ },
+ "sons": {
+  "whoosh-court": "punchy",
+  "whoosh-long": "cinema",
+  "whoosh-descendant": "cinema",
+  "glitch": "glitch"
+ }
+}

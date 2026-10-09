@@ -1,0 +1,62 @@
+{
+  "id": "infographie",
+  "name": "Infographie",
+  "description": "Chiffres prononcés et graphiques illustratifs, sans statistiques inventées.",
+  "category": "Motion",
+  "preview": "galerie-styles/04-infographie.png",
+  "captions": "impact",
+  "style": {
+    "font": "Inter",
+    "size": 64,
+    "maxWords": 4,
+    "highlight": "#55D6CB",
+    "position": 0.72,
+    "pop": false,
+    "uppercase": false,
+    "strokeWidth": 3
+  },
+  "design": {
+    "mode": "infographie",
+    "enabled": true,
+    "accent": "#55D6CB",
+    "secondary": "#FFFFFF",
+    "density": 4
+  },
+  "zoom": {
+    "auto": false,
+    "strength": 1.14,
+    "push": 0
+  },
+  "banner": {
+    "enabled": false
+  },
+  "flash": {
+    "enabled": false,
+    "kind": "blanc"
+  },
+  "effects": {
+    "grain": 0,
+    "vignette": 0,
+    "grade": "aucun"
+  },
+  "emoji": false,
+  "progress": false,
+  "music": {
+    "mood": "corporate",
+    "volume": 0.13
+  },
+  "sfx": {
+    "enabled": false,
+    "transition": null,
+    "highlight": null,
+    "highlightGap": 5,
+    "cta": null,
+    "start": null,
+    "volume": 0.2
+  },
+  "ia": "auto",
+  "graphismes": "suggestion",
+  "broll": {
+    "auto": false
+  }
+}

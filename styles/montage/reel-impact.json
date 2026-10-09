@@ -1,0 +1,39 @@
+{
+ "id": "reel-impact",
+ "name": "Reel Impact",
+ "description": "Style VideosByRaf : sous-titres Impact, zooms à chaque coupe, bandeau d'accroche, flash et whoosh entre les parties, pop sur les mots clés, musique hip-hop discrète.",
+ "captions": "impact",
+ "zoom": {
+  "auto": true,
+  "strength": 1.14,
+  "push": 0.03
+ },
+ "banner": {
+  "enabled": true
+ },
+ "flash": {
+  "enabled": true,
+  "kind": "blanc"
+ },
+ "effects": {
+  "grain": 0.25,
+  "vignette": 0.25,
+  "grade": "contraste"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "energique",
+  "volume": 0.2
+ },
+ "sfx": {
+  "transition": "whoosh-court",
+  "highlight": "pop",
+  "highlightGap": 3.5,
+  "cta": "riser",
+  "start": null,
+  "volume": 0.6
+ },
+ "ia": "auto",
+ "graphismes": "auto"
+}

@@ -1,0 +1,296 @@
+[
+ {
+  "title": "Vidéo 1",
+  "blocks": [
+   {
+    "label": "OFFICER",
+    "text": "Excuse me, Ma'am. Is this where bingo is?",
+    "id": "s1b1",
+    "sentences": [
+     {
+      "id": "s1b1p1",
+      "text": "Excuse me, Ma'am.",
+      "tokens": [
+       "excuse",
+       "me",
+       "ma",
+       "am"
+      ]
+     },
+     {
+      "id": "s1b1p2",
+      "text": "Is this where bingo is?",
+      "tokens": [
+       "is",
+       "this",
+       "where",
+       "bingo",
+       "is"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "VIVIAN",
+    "text": "Put your purse in the bag.",
+    "id": "s1b2",
+    "sentences": [
+     {
+      "id": "s1b2p1",
+      "text": "Put your purse in the bag.",
+      "tokens": [
+       "put",
+       "your",
+       "purse",
+       "in",
+       "the",
+       "bag"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "WOMAN",
+    "text": "No.",
+    "id": "s1b3",
+    "sentences": [
+     {
+      "id": "s1b3p1",
+      "text": "No.",
+      "tokens": [
+       "no"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "VIVIAN",
+    "text": "Last chance.",
+    "id": "s1b4",
+    "sentences": [
+     {
+      "id": "s1b4p1",
+      "text": "Last chance.",
+      "tokens": [
+       "last",
+       "chance"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "WOMAN",
+    "text": "I won. Fair and square.",
+    "id": "s1b5",
+    "sentences": [
+     {
+      "id": "s1b5p1",
+      "text": "I won.",
+      "tokens": [
+       "i",
+       "won"
+      ]
+     },
+     {
+      "id": "s1b5p2",
+      "text": "Fair and square.",
+      "tokens": [
+       "fair",
+       "and",
+       "square"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "VIVIAN",
+    "text": "OK. How much did you win?",
+    "id": "s1b6",
+    "sentences": [
+     {
+      "id": "s1b6p1",
+      "text": "OK.",
+      "tokens": [
+       "ok"
+      ]
+     },
+     {
+      "id": "s1b6p2",
+      "text": "How much did you win?",
+      "tokens": [
+       "how",
+       "much",
+       "did",
+       "you",
+       "win"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "OFFICER",
+    "text": "My mother left her purse at home. I have it with me. Could I give it to you to give to her?",
+    "id": "s1b7",
+    "sentences": [
+     {
+      "id": "s1b7p1",
+      "text": "My mother left her purse at home.",
+      "tokens": [
+       "my",
+       "mother",
+       "left",
+       "her",
+       "purse",
+       "at",
+       "home"
+      ]
+     },
+     {
+      "id": "s1b7p2",
+      "text": "I have it with me.",
+      "tokens": [
+       "i",
+       "have",
+       "it",
+       "with",
+       "me"
+      ]
+     },
+     {
+      "id": "s1b7p3",
+      "text": "Could I give it to you to give to her?",
+      "tokens": [
+       "could",
+       "i",
+       "give",
+       "it",
+       "to",
+       "you",
+       "to",
+       "give",
+       "to",
+       "her"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "OFFICER",
+    "text": "Crazy god damn old people.",
+    "id": "s1b8",
+    "sentences": [
+     {
+      "id": "s1b8p1",
+      "text": "Crazy god damn old people.",
+      "tokens": [
+       "crazy",
+       "god",
+       "damn",
+       "old",
+       "people"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "OFFICER",
+    "text": "What the hell!?!",
+    "id": "s1b9",
+    "sentences": [
+     {
+      "id": "s1b9p1",
+      "text": "What the hell!?!",
+      "tokens": [
+       "what",
+       "the",
+       "hell"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "VIVIAN",
+    "text": "65... 75... 80... 100. There. Congratulations.",
+    "id": "s1b10",
+    "sentences": [
+     {
+      "id": "s1b10p1",
+      "text": "65... 75... 80... 100.",
+      "tokens": [
+       "65",
+       "75",
+       "80",
+       "100"
+      ]
+     },
+     {
+      "id": "s1b10p2",
+      "text": "There.",
+      "tokens": [
+       "there"
+      ]
+     },
+     {
+      "id": "s1b10p3",
+      "text": "Congratulations.",
+      "tokens": [
+       "congratulations"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "WOMAN",
+    "text": "Thank you.",
+    "id": "s1b11",
+    "sentences": [
+     {
+      "id": "s1b11p1",
+      "text": "Thank you.",
+      "tokens": [
+       "thank",
+       "you"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "ETHEL",
+    "text": "We've got to go right now!",
+    "id": "s1b12",
+    "sentences": [
+     {
+      "id": "s1b12p1",
+      "text": "We've got to go right now!",
+      "tokens": [
+       "we",
+       "ve",
+       "got",
+       "to",
+       "go",
+       "right",
+       "now"
+      ]
+     }
+    ]
+   },
+   {
+    "label": "OFFICER",
+    "text": "Holy fucking shit.",
+    "id": "s1b13",
+    "sentences": [
+     {
+      "id": "s1b13p1",
+      "text": "Holy fucking shit.",
+      "tokens": [
+       "holy",
+       "fucking",
+       "shit"
+      ]
+     }
+    ]
+   }
+  ],
+  "id": "s1"
+ }
+]

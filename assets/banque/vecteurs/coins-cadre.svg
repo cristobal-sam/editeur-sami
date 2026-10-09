@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" data-vecteur="coins-cadre">
+  <title>Coins de cadre</title>
+  <path class="v-trait" pathLength="1" d="M20 72 V20 H72" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M248 20 H300 V72" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M300 168 V220 H248" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M72 220 H20 V168" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:22;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M20 72 V20 H72" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M248 20 H300 V72" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M300 168 V220 H248" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" d="M72 220 H20 V168" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:11;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" width="320" height="160" data-vecteur="fleche">
+  <title>Flèche droite</title>
+  <polygon points="20,58 200,58 200,20 300,80 200,140 200,102 20,102" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:10;stroke-linejoin:round"/>
+  <rect x="30" y="66" width="150" height="9" rx="4.5" style="fill:var(--v-secondaire,#FFFFFF);opacity:.6"/>
+</svg>

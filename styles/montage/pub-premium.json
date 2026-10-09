@@ -1,0 +1,39 @@
+{
+ "id": "pub-premium",
+ "name": "Pub premium",
+ "description": "Sous-titres élégants, lente poussée sans à-coups, fondu lumineux entre les parties, ambiance luxe.",
+ "captions": "elegant",
+ "zoom": {
+  "auto": false,
+  "strength": 1,
+  "push": 0.05
+ },
+ "banner": {
+  "enabled": false
+ },
+ "flash": {
+  "enabled": true,
+  "kind": "lumiere"
+ },
+ "effects": {
+  "grain": 0.35,
+  "vignette": 0.4,
+  "grade": "cinema"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "luxe",
+  "volume": 0.22
+ },
+ "sfx": {
+  "transition": "whoosh-long",
+  "highlight": null,
+  "highlightGap": 6,
+  "cta": null,
+  "start": null,
+  "volume": 0.6
+ },
+ "ia": "suggestion",
+ "graphismes": "suggestion"
+}

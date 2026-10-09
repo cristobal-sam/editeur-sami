@@ -1,0 +1,5 @@
+Polices libres (SIL Open Font License 1.1 ou Apache 2.0) issues de Google Fonts.
+Usage commercial autorise, y compris dans des videos clientes. Texte de la licence OFL : OFL-Montserrat.txt.
+
+Manrope.ttf (police variable, graisses 200-800) : SIL Open Font License 1.1, Copyright 2018 The Manrope Project Authors.
+Source : https://github.com/google/fonts/tree/main/ofl/manrope (Manrope[wght].ttf, 164 700 octets, SHA-256 3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6), telechargee le 2026-09-30. Licence : OFL-Manrope.txt.

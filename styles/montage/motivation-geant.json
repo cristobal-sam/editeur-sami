@@ -1,0 +1,39 @@
+{
+ "id": "motivation-geant",
+ "name": "Motivation mot géant",
+ "description": "Un mot énorme à la fois, impacts sur les mots clés, musique épique.",
+ "captions": "geant",
+ "zoom": {
+  "auto": true,
+  "strength": 1.18,
+  "push": 0.05
+ },
+ "banner": {
+  "enabled": false
+ },
+ "flash": {
+  "enabled": true,
+  "kind": "blanc"
+ },
+ "effects": {
+  "grain": 0.3,
+  "vignette": 0.45,
+  "grade": "contraste"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "cinematique",
+  "volume": 0.24
+ },
+ "sfx": {
+  "transition": "whoosh-court",
+  "highlight": "impact",
+  "highlightGap": 5,
+  "cta": "riser",
+  "start": "impact",
+  "volume": 0.6
+ },
+ "ia": "auto",
+ "graphismes": "auto"
+}

@@ -1,0 +1,39 @@
+{
+ "id": "ugc-naturel",
+ "name": "UGC naturel",
+ "description": "Aspect authentique : sous-titres bulle, pas de zoom ni d'effet, guitare acoustique très douce.",
+ "captions": "bulle",
+ "zoom": {
+  "auto": false,
+  "strength": 1,
+  "push": 0
+ },
+ "banner": {
+  "enabled": false
+ },
+ "flash": {
+  "enabled": false,
+  "kind": "blanc"
+ },
+ "effects": {
+  "grain": 0,
+  "vignette": 0,
+  "grade": "chaud"
+ },
+ "emoji": true,
+ "progress": false,
+ "music": {
+  "mood": "acoustique",
+  "volume": 0.14
+ },
+ "sfx": {
+  "transition": null,
+  "highlight": null,
+  "highlightGap": 6,
+  "cta": null,
+  "start": null,
+  "volume": 0.4
+ },
+ "ia": "suggestion",
+ "graphismes": "suggestion"
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" width="400" height="90" data-vecteur="surligneur">
+  <title>Trait de surligneur</title>
+  <path class="v-trait" pathLength="1" d="M22 50 C120 40 280 40 378 45" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:46;stroke-linecap:round;stroke-opacity:.55"/>
+  <path class="v-trait" pathLength="1" d="M30 60 C130 54 270 54 370 57" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:14;stroke-linecap:round;stroke-opacity:.35"/>
+</svg>

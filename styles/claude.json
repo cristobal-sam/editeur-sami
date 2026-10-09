@@ -1,0 +1,21 @@
+{
+ "actif": true,
+ "modele": "claude-sonnet-5-5",
+ "modeles_taches": {
+  "cerveau": null,
+  "critique": null,
+  "consigne": null
+ },
+ "effort_cerveau": "medium",
+ "effort_critique": "medium",
+ "effort_consigne": "low",
+ "plafond_video": 0.25,
+ "plafond_jour": 0.75,
+ "plafond_mois": 2.0,
+ "credit_depart": 2.0,
+ "credit_date": "2026-10-02",
+ "critique_auto": false,
+ "images_critique": 16,
+ "largeur_images": 540,
+ "espace_travail": null
+}

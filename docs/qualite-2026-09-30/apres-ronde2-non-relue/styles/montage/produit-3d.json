@@ -1,0 +1,64 @@
+{
+  "id": "produit-3d",
+  "name": "Tech 3D cinématique",
+  "description": "Studio sombre, personne détourée et interfaces animées qui suivent réellement les paroles. Un produit 3D n’apparaît que si tu fournis sa photo ou son modèle.",
+  "category": "Tech / Produit",
+  "preview": "galerie-styles/10-produit-3d.png",
+  "captions": "minimal",
+  "style": {
+    "font": "Manrope",
+    "weight": 800,
+    "size": 76,
+    "maxWords": 4,
+    "highlight": "#6FE7FF",
+    "position": 0.69,
+    "pop": false,
+    "uppercase": false,
+    "strokeWidth": 0
+  },
+  "design": {
+    "mode": "produit",
+    "enabled": true,
+    "accent": "#6FE7FF",
+    "secondary": "#8B5CF6",
+    "density": 5,
+    "cinematic": true
+  },
+  "zoom": {
+    "auto": true,
+    "strength": 1.06,
+    "push": 0.012
+  },
+  "banner": {
+    "enabled": false
+  },
+  "flash": {
+    "enabled": false,
+    "kind": "blanc"
+  },
+  "effects": {
+    "grain": 0.04,
+    "vignette": 0.22,
+    "grade": "froid"
+  },
+  "emoji": false,
+  "progress": false,
+  "music": {
+    "mood": "tech",
+    "volume": 0.11
+  },
+  "sfx": {
+    "enabled": true,
+    "transition": "whoosh-court",
+    "highlight": "pop-grave",
+    "highlightGap": 8,
+    "cta": "riser",
+    "start": "impact",
+    "volume": 0.18
+  },
+  "ia": "auto",
+  "graphismes": "suggestion",
+  "broll": {
+    "auto": false
+  }
+}

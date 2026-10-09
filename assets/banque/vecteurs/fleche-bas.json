@@ -1,0 +1,36 @@
+{
+ "nom": "Flèche vers le bas",
+ "categorie": "flèches",
+ "motsCles": [
+  "flèche",
+  "bas",
+  "lien",
+  "cliquer",
+  "description",
+  "en dessous"
+ ],
+ "intensite": 2,
+ "description": "Flèche qui rebondit vers le bas (« lien en description »).",
+ "licence": "Création originale de l'Éditeur Sami — usage libre, y compris commercial",
+ "provenance": "Dessin vectoriel écrit à la main pour ce projet (assets/banque/vecteurs), 30 septembre 2026 ; aucune ressource externe, aucun téléchargement.",
+ "couleurs": {
+  "principale": "#FFD400",
+  "secondaire": "#FFFFFF",
+  "contour": "#111111"
+ },
+ "anim": {
+  "entree": "glisse-haut",
+  "sortie": "fondu"
+ },
+ "duree": 2.5,
+ "largeur": 0.2,
+ "formats": [
+  "9:16",
+  "16:9",
+  "4:5",
+  "1:1"
+ ],
+ "trace": false,
+ "boucle": "flotte",
+ "garderCouleurs": false
+}

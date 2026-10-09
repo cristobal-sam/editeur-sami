@@ -1,0 +1,12 @@
+{
+ "pub": {"label": "Marketing / pub", "style": "reel-impact", "description": "vend un produit ou un service, appel a l'action"},
+ "temoignage": {"label": "Témoignage", "style": "ugc-naturel", "description": "un client raconte son experience"},
+ "conseil": {"label": "Conseil", "style": "reel-karaoke", "description": "explique, enseigne, donne des astuces"},
+ "motivation": {"label": "Motivation", "style": "motivation-geant", "description": "inspire, message fort, histoire personnelle"},
+ "podcast": {"label": "Podcast / entrevue", "style": "podcast-clip", "description": "discussion, entrevue, plusieurs personnes"},
+ "annonce": {"label": "Annonce", "style": "pub-premium", "description": "annonce un evenement, une nouveaute, une offre haut de gamme"},
+ "fiction": {"label": "Scène / fiction", "style": "minimal-propre", "description": "scene jouee, dialogue entre personnages"},
+ "immobilier": {"label": "Immobilier", "style": "immobilier", "description": "visite d'une propriete, sans parole"},
+ "evenement": {"label": "Événement", "style": "evenement", "description": "images d'un evenement, sans parole"},
+ "autre": {"label": "Autre", "style": "reel-impact", "description": "autre sujet"}
+}

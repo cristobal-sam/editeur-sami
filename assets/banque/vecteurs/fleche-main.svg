@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" data-vecteur="fleche-main">
+  <title>Flèche dessinée à la main</title>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M24 150 C70 170 110 150 120 118 C128 92 100 78 88 96 C74 118 120 140 170 126 C215 113 250 90 280 64" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:20;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M246 66 Q268 60 286 59 Q279 78 274 98" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:20;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M24 150 C70 170 110 150 120 118 C128 92 100 78 88 96 C74 118 120 140 170 126 C215 113 250 90 280 64" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:10;stroke-linecap:round;stroke-linejoin:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M246 66 Q268 60 286 59 Q279 78 274 98" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:10;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

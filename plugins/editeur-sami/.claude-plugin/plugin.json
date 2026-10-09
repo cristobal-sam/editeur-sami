@@ -1,0 +1,10 @@
+{
+  "name": "editeur-sami",
+  "displayName": "Éditeur Sami",
+  "version": "2.1.0",
+  "description": "Piloter l'Éditeur Sami et ses moteurs locaux depuis Claude : Blender, Resolve, ACE-Step, détourage RVM, contrôle qualité, montage et exports. Tout reste sur cet ordinateur.",
+  "author": {
+    "name": "RyuCalls"
+  },
+  "keywords": ["video", "montage", "reels", "local"]
+}

@@ -1,0 +1,221 @@
+{
+ "id": "demo",
+ "project": "demo",
+ "variant": null,
+ "title": "Réponse à vos leads",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "sources": {
+  "presenter": {
+   "proxy": "assets/galerie-styles/entrepreneur.mp4",
+   "path": "D:\\Tools\\editeur_sami\\assets\\galerie-styles\\entrepreneur.mp4",
+   "name": "Entrepreneur fictif",
+   "duration": 6,
+   "width": 720,
+   "height": 1280,
+   "samples": [
+    [
+     0,
+     0.5,
+     0.28,
+     120,
+     120,
+     120,
+     120
+    ]
+   ]
+  }
+ },
+ "clips": [
+  {
+   "id": "c1",
+   "source": "presenter",
+   "block": "b1",
+   "signature": "demo",
+   "in": 0,
+   "out": 6,
+   "tighten": false,
+   "words": [
+    {
+     "w": "Répondez",
+     "start": 0.0,
+     "end": 0.42,
+     "hl": false,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "à",
+     "start": 0.48,
+     "end": 0.9,
+     "hl": false,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "vos",
+     "start": 0.96,
+     "end": 1.38,
+     "hl": false,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "leads",
+     "start": 1.44,
+     "end": 1.86,
+     "hl": true,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "en",
+     "start": 1.92,
+     "end": 2.34,
+     "hl": false,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "5",
+     "start": 2.4,
+     "end": 2.82,
+     "hl": true,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "minutes,",
+     "start": 2.88,
+     "end": 3.3,
+     "hl": true,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "pas",
+     "start": 3.36,
+     "end": 3.78,
+     "hl": false,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "en",
+     "start": 3.84,
+     "end": 4.26,
+     "hl": false,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "3",
+     "start": 4.32,
+     "end": 4.74,
+     "hl": true,
+     "hide": false,
+     "cut": false
+    },
+    {
+     "w": "heures",
+     "start": 4.8,
+     "end": 5.22,
+     "hl": true,
+     "hide": false,
+     "cut": false
+    }
+   ]
+  }
+ ],
+ "zoom": {
+  "auto": false,
+  "strength": 1.14,
+  "push": 0,
+  "overrides": {}
+ },
+ "banner": {
+  "enabled": false,
+  "text": "",
+  "start": 0,
+  "end": 4
+ },
+ "flash": {
+  "enabled": false,
+  "kind": "blanc"
+ },
+ "progress": {
+  "enabled": false
+ },
+ "graphics": [],
+ "broll": [],
+ "audio": {
+  "voice": "aucun",
+  "denoise": false,
+  "roomTone": false
+ },
+ "template": "comparatif",
+ "style": {
+  "preset": "impact",
+  "font": "Montserrat",
+  "weight": 900,
+  "uppercase": false,
+  "size": 64,
+  "color": "#FFFFFF",
+  "highlight": "#8CE1B5",
+  "stroke": "#000000",
+  "strokeWidth": 3,
+  "position": 0.72,
+  "maxWords": 4,
+  "pop": false
+ },
+ "effects": {
+  "grain": 0,
+  "vignette": 0,
+  "grade": "aucun"
+ },
+ "emoji": {
+  "enabled": false
+ },
+ "music": {
+  "enabled": true,
+  "mood": "corporate",
+  "file": "music/corporate.ogg",
+  "volume": 0.13
+ },
+ "sfx": {
+  "enabled": false,
+  "transition": null,
+  "highlight": null,
+  "highlightGap": 5,
+  "cta": null,
+  "start": null,
+  "volume": 0.2,
+  "extra": []
+ },
+ "design": {
+  "mode": "comparatif",
+  "enabled": true,
+  "accent": "#8CE1B5",
+  "secondary": "#FFFFFF",
+  "density": 4,
+  "suppressExtras": true
+ },
+ "styleScenes": [
+  {
+   "id": "style-c1-7",
+   "kind": "comparison",
+   "clip": "c1",
+   "index": 7,
+   "length": 1,
+   "text": "3 heures",
+   "secondary": "5 minutes",
+   "duration": 2.4,
+   "x": 0.5,
+   "y": 0.69,
+   "scale": 1,
+   "rotation": 0,
+   "color": "#8CE1B5"
+  }
+ ]
+}

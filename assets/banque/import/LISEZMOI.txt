@@ -1,0 +1,19 @@
+Tes icônes à toi (packs achetés, logos de partenaires, pictogrammes…)
+=====================================================================
+
+1. Dépose ici des fichiers SVG ou PNG (tu peux faire des sous-dossiers : « Finance », « Immobilier »…
+   le nom du sous-dossier devient la catégorie).
+2. Dans l'éditeur : Plus → Banque → Icônes, puis le bouton ↻ (relire la banque). Elles apparaissent en premier.
+3. Chaque icône importée porte la licence « À vérifier (importé) » : c'est à toi de vérifier que la licence du
+   pack permet l'usage dans des publicités de tes clients. Si un fichier LICENSE / LICENCE / README est dans le
+   même dossier, la banque l'indique.
+
+Bon à savoir :
+- SVG noir, gris ou blanc d'une seule couleur (la plupart des packs d'icônes au trait ou pleines, même exportés
+  d'Illustrator ou de Figma) : recolorés aux couleurs de ta charte. SVG en couleur (logo d'un partenaire, plusieurs
+  couleurs, dégradé) : ils gardent leurs couleurs. Styles trait, plein (pastille) et verre (tuile givrée).
+- PNG : gardent leurs couleurs (une image ne se recolore pas) ; ils peuvent être posés sur une pastille ou une tuile de verre.
+- Un nom de fichier avec des espaces ou des accents (ou un chemin très long) est accepté : l'éditeur en fait une copie
+  au nom simple dans assets/banque/apercus/import (ton fichier n'est jamais modifié ni déplacé).
+- Un gros pack (des milliers d'icônes) est accepté : la première relecture prend quelques secondes.
+- SVG refusés : scripts, liens vers internet, plus de 512 Ko. PNG : 8 Mo au plus.

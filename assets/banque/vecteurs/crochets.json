@@ -1,0 +1,34 @@
+{
+ "nom": "Crochets",
+ "categorie": "entourer",
+ "motsCles": [
+  "crochets",
+  "cadrer",
+  "mettre en valeur",
+  "citation"
+ ],
+ "intensite": 1,
+ "description": "Deux crochets qui encadrent un élément.",
+ "licence": "Création originale de l'Éditeur Sami — usage libre, y compris commercial",
+ "provenance": "Dessin vectoriel écrit à la main pour ce projet (assets/banque/vecteurs), 30 septembre 2026 ; aucune ressource externe, aucun téléchargement.",
+ "couleurs": {
+  "principale": "#FFD400",
+  "secondaire": null,
+  "contour": "#111111"
+ },
+ "anim": {
+  "entree": "trace",
+  "sortie": "fondu"
+ },
+ "duree": 2,
+ "largeur": 0.6,
+ "formats": [
+  "9:16",
+  "16:9",
+  "4:5",
+  "1:1"
+ ],
+ "trace": true,
+ "boucle": null,
+ "garderCouleurs": false
+}

@@ -1,0 +1,15 @@
+Bibliothèque d'icônes Lucide — provenance
+==========================================
+
+Nom      : Lucide (icônes au trait), paquet npm « lucide-static »
+Version : 1.49.0
+Source   : https://registry.npmjs.org/lucide-static/-/lucide-static-1.49.0.tgz
+           (projet : https://lucide.dev — https://github.com/lucide-icons/lucide)
+Licence  : ISC (voir LICENSE, conservé tel quel). Une partie des dessins dérive de Feather (MIT, Cole Bemis),
+           liste et texte de licence dans LICENSE. Usage commercial permis ; garder LICENSE avec les fichiers.
+Téléchargé le 2026-10-02 (ronde 4 « icônes ») : archive de 6,8 Mo (sha256 c8c9d5dcbc50f388afea623ce2bcbef5788eb0b2d084081aa52d6adaae4ebba3).
+Contenu gardé ici : les 1 857 icônes canoniques (icons/*.svg, 0,9 Mo ; les 264 anciens noms en double ne sont pas copiés),
+LICENSE et tags.json (mots-clés anglais de chaque icône). Polices, sprite et code JavaScript du paquet non copiés.
+
+Les fichiers SVG ne sont jamais modifiés : l'éditeur les recolore et les habille (trait, plein, verre) au moment
+de l'affichage (remotion/src/vectors.tsx). Noms et catégories en français : ../dictionnaire-lucide-fr.json.

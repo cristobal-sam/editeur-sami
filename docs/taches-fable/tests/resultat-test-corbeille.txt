@@ -1,0 +1,78 @@
+OK   G montee par le faux moteur puis en erreur : erreur
+OK   un seul appel « auto » du faux moteur au depart (G) : 1
+OK   D1 : partage {"unit":true,"project":false} (rushs partages avec D2)
+OK   A : partage {"unit":false,"project":false}
+OK   D1 retiree (cachee) : D2 partage {"unit":true,"project":false}
+OK   corbeilleN au depart : 0
+OK   GET corbeille vide : {"corbeille":"D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\interface-fable-85584\\rendu\\corbeille","entrees":[]}
+OK   restaurer, origine (aucune) refusee : 403
+OK   restaurer, origine http://localhost:18793 refusee : 403
+OK   restaurer, origine http://127.0.0.1:18793.evil.com refusee : 403
+OK   restaurer, origine http://127.0.0.1:8790 refusee : 403
+OK   A supprimee : 200
+OK   manifeste : lot {"created":1790792016548,"client":null,"uploading":false,"complete":true}, registre aaaaaaaaaaa1 (pris)
+OK   note pour_la_remettre : Clique « Restaurer » dans la Corbeille de l'écran Révision : le montage et les vidéos brut…
+OK   corbeilleN=1, lot T1 retire
+OK   GET corbeille : {"dossier":"2026-09-30 14h13 Vidéo A","titre":"Vidéo A","supprime":"2026-09-30T18:13:45.836Z","deplacements":[{"avant":"projects/faux-a","maintenant":"corbeille/2026-09-30 14h13 Vidéo A/projects/faux-a"},{"avant":"media/entree/Lot T1/Vidéo A","maintenant":"corbeille/2026-09-30 14h13 Vidéo A/media/entree/Lot T1/Vidéo A"}],"gardes":["vidéo exportée gardée : D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\interface-fable-85584\\rendu\\livraisons\\Lot T1\\Vidéo A - FINAL.mp4"],"restaurable":true,"raison":""}
+OK   dossier ".." refuse (400) : Dossier de corbeille invalide.
+OK   dossier "." refuse (400) : Dossier de corbeille invalide.
+OK   dossier "a/b" refuse (400) : Dossier de corbeille invalide.
+OK   dossier "a\\b" refuse (400) : Dossier de corbeille invalide.
+OK   dossier "" refuse (400) : Dossier de corbeille invalide.
+OK   dossier null refuse (400) : Dossier de corbeille invalide.
+OK   dossier "inexistant 2020" refuse (404) : Cette entrée de la corbeille n'existe plus (déjà restaurée, ou déplacée à la main ?).
+OK   dossier ".cachee" refuse (400) : Dossier de corbeille invalide.
+OK   place occupee vue par GET : projects/faux-a est déjà occupé par une autre vidéo : rien n'a été remis.
+OK   restauration refusee, rien deplace (409) : projects/faux-a est déjà occupé par une autre vidéo : rien n'a été remis.
+OK   jonction sur la destination refusee (409) : projects/faux-a est déjà occupé par une autre vidéo : rien n'a été remis.
+OK   jonction sur le parent refusee (400) : Chemin refusé (lien vers un autre dossier) : media/entree/Lot T1/Vidéo A. Rien n'a été remis.
+OK   piege « Piege app » : GET non restaurable (Chemin refusé (hors de projects et media\entree) : app/server.mjs. Rien n'a été remis.) ; POST 400
+OK   piege « Piege dotdot » : GET non restaurable (Nom de projet invalide : projects/../app/x. Rien n'a été remis.) ; POST 400
+OK   piege « Piege source » : GET non restaurable (Chemin refusé : restauration annulée.) ; POST 400
+OK   piege « Piege cache » : GET non restaurable (Nom de projet invalide : projects/_cache. Rien n'a été remis.) ; POST 400
+OK   piege « Piege media » : GET non restaurable (Chemin refusé (hors de projects et media\entree) : media/rushs/x.mp4. Rien n'a été remis.) ; POST 400
+OK   piege « Piege absolu » : GET non restaurable (Chemin refusé : restauration annulée.) ; POST 400
+OK   rien n'a bouge avec les pieges (app, projects, media, dehors-p intacts)
+OK   restauration de A : 200 
+     reponse : {"titre":"Vidéo A","remis":["projects/faux-a","media/entree/Lot T1/Vidéo A"],"item":{"id":"aaaaaaaaaaa1","unit":"media/entree/Lot T1/Vidéo A","lot":"Lot T1","name":"Vidéo A","status":"pris","stage":"Prête","progress":1,"created":1790792016548,"rid":"script","type":"pub","typeLabel":"Marketing / pub"
+OK   remis : ["projects/faux-a","media/entree/Lot T1/Vidéo A"]
+OK   A : projet et videos brutes de retour a leur place
+OK   fiche de retour : aaaaaaaaaaa1 pris (projet faux-a)
+OK   liste et lot T1 remis : {"created":1790792016548,"client":null,"uploading":false,"complete":true}
+OK   corbeilleN apres restauration : 0
+OK   registre sur disque : une seule fiche pour A, lot present
+OK   corbeille : manifeste renomme restaure.json, sous-dossiers vides retires (restaure.json)
+OK   GET corbeille apres restauration : 0 entree(s)
+OK   deuxieme restauration : 404 (Cette entrée de la corbeille n'existe plus (déjà restaurée, ou déplacée à la main ?).)
+OK   journal : « video restauree »
+     attente de 12 s (deux passages du scanneur)…
+OK   A apres 12 s : pris / Prête (pas de nouveau montage)
+OK   une seule fiche pour l'unite de A
+OK   faux moteur : aucun appel « auto » pour A (total 1)
+OK   montage au repos : busy=false
+OK   D2 supprimee, rushs gardes : les vidéos brutes (media/entree/Lot T3/Tournage) : une autre vidéo de la liste les utilise
+OK   D2 restauree : 200 fiche ddddddddddd2 (pret), 2 fiches sur l'unite partagee (D1 cachee)
+OK   G (erreur, sans projet) supprimee : 200
+OK   G restauree en « erreur », lot T6 remis
+OK   faux moteur : toujours un seul appel « auto » pour G (1)
+OK   H supprimee : 200
+OK   montage deplace a la main : corbeille/2026-09-30 14h14 Vidéo H (courte)/projects/court n'est plus dans la corbeille (déplacé à la main ?). Rien n'a été remis.
+OK   restauration refusee, rien deplace (400)
+OK   H sans montage : travail — Son montage n'est plus là : elle sera remontée.
+OK   faux moteur : un montage relance pour H (1)
+OK   /restore : item.style = reel-karaoke dans le registre
+OK   /template avec le faux moteur echoue avant la mise a jour (400) : attendu
+OK   export gel1 (1 min) lance : 202
+OK   fichiers temporaires crees par le faux rendu
+OK   gel1 arrete apres 17.1 s : failed — L'export s'est bloqué à 0 % (montage de la voix) : plus rien n'avançait depuis 12 s, il a été arrêté. Relance « Je la prends ». Si ça recommence, ferme les logiciels lourds (IA, Blender, jeux) puis réessaie.
+OK   fichiers temporaires de gel1 nettoyes (aucun reste)
+OK   FINAL.mp4 preexistant intact
+     blocage detecte a 29.7 s, « Annuler » envoye : 200
+OK   annulation envoyee pendant le delai de grace
+OK   gel10 (10 min) arrete apres 33.8 s : failed — L'export s'est bloqué à 0 % (montage de la voix) : plus rien n'avançait depuis 2
+OK   limite plus longue pour 10 min que pour 1 min : 33.8 s contre 17.1 s
+OK   journal : limites [[8,60],[26,600]] (attendu [8,60] puis [26,600])
+OK   fichiers temporaires de gel10 nettoyes, pas de FINAL
+OK   file d'exports vide, champs internes absents
+
+TOUS LES TESTS OK

@@ -1,0 +1,62 @@
+{
+  "id": "comparatif",
+  "name": "Comparatif / écran partagé",
+  "description": "Deux panneaux qui opposent les paroles du problème et de la solution.",
+  "category": "Pub",
+  "preview": "galerie-styles/09-comparatif.png",
+  "captions": "impact",
+  "style": {
+    "font": "Montserrat",
+    "size": 64,
+    "maxWords": 4,
+    "highlight": "#8CE1B5",
+    "position": 0.72,
+    "pop": false,
+    "uppercase": false,
+    "strokeWidth": 3
+  },
+  "design": {
+    "mode": "comparatif",
+    "enabled": true,
+    "accent": "#8CE1B5",
+    "secondary": "#FFFFFF",
+    "density": 4
+  },
+  "zoom": {
+    "auto": false,
+    "strength": 1.14,
+    "push": 0
+  },
+  "banner": {
+    "enabled": false
+  },
+  "flash": {
+    "enabled": false,
+    "kind": "blanc"
+  },
+  "effects": {
+    "grain": 0,
+    "vignette": 0,
+    "grade": "aucun"
+  },
+  "emoji": false,
+  "progress": false,
+  "music": {
+    "mood": "corporate",
+    "volume": 0.13
+  },
+  "sfx": {
+    "enabled": false,
+    "transition": null,
+    "highlight": null,
+    "highlightGap": 5,
+    "cta": null,
+    "start": null,
+    "volume": 0.2
+  },
+  "ia": "auto",
+  "graphismes": "suggestion",
+  "broll": {
+    "auto": false
+  }
+}

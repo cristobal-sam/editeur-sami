@@ -1,0 +1,38 @@
+{
+ "id": "evenement",
+ "name": "Événement",
+ "description": "Meilleurs moments calés sur la musique, citations de l'orateur, fuite de lumière entre les parties.",
+ "captions": "minimal",
+ "ia": "auto",
+ "zoom": {
+  "auto": true,
+  "strength": 1.08,
+  "push": 0.04
+ },
+ "banner": {
+  "enabled": true
+ },
+ "flash": {
+  "enabled": true,
+  "kind": "lumiere"
+ },
+ "effects": {
+  "grain": 0.15,
+  "vignette": 0.2,
+  "grade": "cinema"
+ },
+ "emoji": false,
+ "progress": false,
+ "music": {
+  "mood": "energique",
+  "volume": 0.6
+ },
+ "sfx": {
+  "transition": "whoosh-court",
+  "highlight": null,
+  "highlightGap": 5,
+  "cta": null,
+  "start": null,
+  "volume": 0.4
+ }
+}

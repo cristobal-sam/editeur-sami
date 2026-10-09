@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 170" width="280" height="170" data-vecteur="etiquette-prix">
+  <title>Étiquette de prix</title>
+  <path d="M70 85 C40 60 30 30 8 20" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:5;stroke-linecap:round"/>
+  <path d="M80 14 H250 Q266 14 266 30 V140 Q266 156 250 156 H80 L16 85 Z" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:8;stroke-linejoin:round"/>
+  <circle cx="70" cy="85" r="13" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:6"/>
+  <rect x="110" y="58" width="124" height="18" rx="9" style="fill:var(--v-secondaire,#FFFFFF)"/>
+  <rect x="110" y="92" width="84" height="14" rx="7" style="fill:var(--v-secondaire,#FFFFFF);opacity:.7"/>
+</svg>

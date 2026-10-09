@@ -1,0 +1,39 @@
+{
+ "id": "reel-karaoke",
+ "name": "Reel Karaoké énergique",
+ "description": "Phrase entière qui se colore, zooms marqués, emojis, glitch entre les parties, musique électro.",
+ "captions": "karaoke",
+ "zoom": {
+  "auto": true,
+  "strength": 1.2,
+  "push": 0.04
+ },
+ "banner": {
+  "enabled": true
+ },
+ "flash": {
+  "enabled": true,
+  "kind": "glitch"
+ },
+ "effects": {
+  "grain": 0.2,
+  "vignette": 0.2,
+  "grade": "froid"
+ },
+ "emoji": true,
+ "progress": true,
+ "music": {
+  "mood": "electro",
+  "volume": 0.2
+ },
+ "sfx": {
+  "transition": "glitch",
+  "highlight": "click",
+  "highlightGap": 4,
+  "cta": "riser",
+  "start": "impact",
+  "volume": 0.6
+ },
+ "ia": "auto",
+ "graphismes": "auto"
+}

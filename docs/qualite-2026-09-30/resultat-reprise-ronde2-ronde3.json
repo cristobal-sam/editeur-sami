@@ -1,0 +1,440 @@
+{
+  "summary": "Resume: finish adversarial reviews of round 2 (render + QC/launcher) and fixture-independent tests, then round 3 self-evaluation loop on Vidéo 1 with full exports and an independent judge",
+  "agentCount": 8,
+  "logs": [],
+  "result": {
+    "reviews": [
+      {
+        "group": "rendu",
+        "review": {
+          "bugs_found": [
+            {
+              "file": "remotion/src/design.tsx",
+              "problem": "Foreground filter of the Tech 3D studio: the thin rim light (contour1, cyan key light from top-left) was also drawn inside narrow hollows, for example the gap between the arm and the torso. On real frames this gave a bright cyan cut-out line, the 'pasted' look (frames 35.5 s and 61 s, right arm).",
+              "fixed": true,
+              "how": "Added an 'openness' gate to the rim: feGaussianBlur (stdDeviation 26k) on the alpha, then feComponentTransfer feFuncA slope -4.2 intercept 3.05, then feComposite 'in'. Open edges (surrounding blur ≈0.5) keep the full rim. Narrow hollows (≥0.7) get none. Checked on frames: the line in the gap is gone and the rim on the head and shoulders is kept. Still-render time unchanged (1.1–1.8 s)."
+            },
+            {
+              "file": "remotion/src/design.tsx + remotion/src/timeline.ts + remotion/src/graphics.tsx + remotion/src/choreo.tsx",
+              "problem": "The ×5 proof pill was too small for the climax of the ad: font 0.15u, pill about 33% of the width in 9:16, with a large empty space above the head (the reference uses a pill of about 57%). Its layout box was a fixed generic 0.72×0.33u whatever the text, so in 16:9 it was shrunk to about 60% and pushed to the frame edge. Its label was hard to read on a bright take (studio without cutout).",
+              "fixed": true,
+              "how": "New studioMetricBox(text, label) and studioChiffreText(g) in timeline.ts. A short number gets 0.21u, a longer text shrinks to fit about 0.8u. Box measured from Manrope 800 advance widths with fontTools. The size is computed on the FINAL value, so the pill does not grow while the number counts up. studioCardSize('metric'|'chiffre', text, label), the studioPlan camera room, studioGraphicSpot and choreo placeOf all use this box. Label 0.054u with a strong shadow. Result: 9:16 pill about 40% of the width, still above the head. 16:9 beside the face at 0.76 scale instead of about 0.6. 4:5 and 1:1 above the head, never on the face."
+            },
+            {
+              "file": "remotion/src/Reel.tsx",
+              "problem": "Cutout fallback in wide formats (studio camera pulled back, scale < 1): black bars on the sides, plus a sharp dark band at the top of the frame. Cause: the SVG filter and mask were sized to the frame before the camera, so everything outside it was cut off or not covered.",
+              "fixed": true,
+              "how": "In wide mode only, a blurred cover-scaled copy of the décor fills the frame underneath. The aligned blurred décor layer is a div sized to the take rectangle, so the filter region and mask clip follow the take, with 4% side fades and a 5% top fade. The 9:16 render is pixel-identical (YAVG=0 at 16.5 s and 35.5 s). Checked on 16:9 frames at 16.5, 35.5 and 37.65 s and in a 3.5 s export."
+            },
+            {
+              "file": "remotion/src/Reel.tsx + remotion/src/timeline.ts",
+              "problem": "Studio captions: (a) the up-to-80% shrink brought them down to 60.8 px, below the project's own phone-legibility threshold (62 px, the controller's 'Sous-titres petits' finding). (b) In 16:9 and 1:1 the new produit-3d position 0.69 sat on the speaker's mouth, because a vertical take is greatly enlarged there. The controller flagged it BLOQUANT: 47% of the eyes–mouth zone covered. This was a regression of round 2 (before, the position was 0.79).",
+              "fixed": true,
+              "how": "Caption size and height are now computed in one place: studioCaptionLayout(reel, page) in timeline.ts, used by Reel.tsx Captions. It is memoised by fingerprint plus style key. The shrink is at most 80% and never below 0.06u (64.8 px at 1080). Two-line pages stay balanced. The page height goes down to just under the mouth (face centre + 0.62 face width, studio camera included) when needed, capped at 0.8H in 9:16 and 0.9H in wide formats. In 9:16 no page moved: 0 of 76; 19 shrunk, min 64.8 px. In 16:9 all 76 pages moved, max 0.852. In 1:1, 46 moved. Checked on stills and on the 16:9 hook export: captions now sit under the mouth. The local signsEm in Reel.tsx was replaced by studioCaptionEm in timeline.ts."
+            },
+            {
+              "file": "remotion/src/choreo.tsx",
+              "problem": "The origin of a caption cue (zoom or pop) used the style position, not the real page height. Once the page is moved down in wide formats, the entrance would slide.",
+              "fixed": true,
+              "how": "In studio mode, placeOf('caption') looks up the page by captionCueId and uses studioCaptionLayout(...).top. 9:16 is unchanged. test-choreo 33/33."
+            },
+            {
+              "file": "remotion/src/timeline.ts",
+              "problem": "cutoutFallback and cutoutFallbackMix destructured cutouts[clip].fallback entries directly. A malformed entry (null, a single number, a string) in a detourage cache would throw during rendering.",
+              "fixed": true,
+              "how": "A fallbackRanges() filter keeps only [number, number] pairs. Checked: [null,[1],[2,3],'x',[4,'a']] gives a correct result with no crash."
+            },
+            {
+              "file": "remotion/src/design.tsx",
+              "problem": "The StudioCard flow container was W*.92 wide while its layout box (studioCardSize) is .92u. These differ in 16:9 (reported by the controle group).",
+              "fixed": true,
+              "how": "Width set to u*.92. Same picture, DOM box now matches the layout."
+            },
+            {
+              "file": "engine/editeur/controle.py (other group, NOT modified)",
+              "problem": "The controller keeps its own copy of the renderer layout. _sous_titres still assumes the 80% shrink and the style position, so it still reports '61 px' and, in 16:9, a false BLOQUANT 'visage couvert par les sous-titres' (score 4.9/10). _gabarit_studio('chiffre') still uses 0.72×0.33 and text 0.15u for the ×5. Seen on the sandbox reels: controle-final-p3d and controle-final-p3d-16x9.",
+              "fixed": false,
+              "how": "Request to the controle owner: through the Node bridge (has()), call T.studioCaptionLayout(reel, page) (fontSize, top, lines), T.studioMetricBox(text, label) and T.studioCardSize('chiffre', ...T.studioChiffreText(g)) instead of the copies."
+            },
+            {
+              "file": "engine (galerie/sobriete, other group, NOT modified)",
+              "problem": "After apply_template('produit-3d') on the copy of Vidéo 1, the 'Nouveau lead reçu' card stays visible during the hook (6.28–8.68 s, hook 0–8.36 s). The controller rates this IMPORTANT. Rendering itself is correct; the scene is not hidden by the engine.",
+              "fixed": false,
+              "how": "Reported only (not this group's files)."
+            },
+            {
+              "file": "app/ui/design-panel.tsx (other group, NOT modified)",
+              "problem": "The 'Hauteur' and 'Position' sliders show the stored y and x. In the studio, automatic cards are displayed at the spot computed by designScenes, so the first touch of a slider makes the card jump.",
+              "fixed": false,
+              "how": "Suggested fix: the panel should show designScenes(reel)'s x, y and scale for studio cards."
+            }
+          ],
+          "claims_checked": "RÉSUMÉ POUR L'UTILISATEUR (français simple)\nJ'ai relu tout le travail « rendu » de la ronde 2, sur une copie de Vidéo 1. Ta vraie vidéo n'a pas été touchée.\n- Ce qui est bien fait : « VIDÉO 1 » et le minuteur ont disparu ; la personne est bien détourée (nouveau moteur RVM) et fondue dans le studio ; les cartes sont grandes, nettes, animées, au-dessus de la tête et jamais sur le visage, en 9:16, 4:5 et 1:1 ; la caméra se rapproche sur l'accroche et sur la preuve ; les sous-titres sont en Manrope.\n- Ton style actuel (Tech application) donne exactement la même image qu'avant la ronde 2. Les autres styles aussi, sauf deux retouches voulues : Collage a une petite ombre de papier, et Éditorial n'affiche plus deux fois le même chiffre.\n- Ce que j'ai corrigé (6 défauts) :\n  1. Le « ×5 moins cher » était trop petit pour le moment fort de la pub. Il est maintenant environ 1,4 fois plus grand.\n  2. Un trait bleu clair, comme un collage, entre le bras et le corps a disparu.\n  3. En 16:9 et 1:1, les sous-titres tombaient sur la bouche ; ils passent maintenant juste dessous.\n  4. Les sous-titres ne sont plus jamais plus petits qu'environ 65 px, la taille lisible sur un téléphone.\n  5. Si le détourage est douteux, en 16:9 : plus de bandes noires sur les côtés ni de bande sombre en haut.\n  6. Le rendu ne plante plus si une plage de détourage douteux est mal écrite dans le cache.\n- Note honnête : environ 7,5/10 en 9:16 (avant ma relecture : environ 7). En 16:9, la mise en page reste simple : personne au centre, carte à côté.\n\nDÉTAILS TECHNIQUES\nDiff vs avant-ronde2 relu en entier : timeline.ts, Reel.tsx, design.tsx, graphics.tsx, choreo.tsx, types.ts. produit-3d.json : seuls les sous-titres changent (Manrope 800, taille 76, position 0,69, sans contour). collage.json et editorial-cinetique.json sont inchangés. Manrope.ttf est sous licence OFL, notée dans LICENCES.txt.\n\nRetouches du relecteur précédent dans choreo.tsx : vérifiées et correctes. placeOf('design') prend la place affichée par designScenes et le gabarit de studioCardSize ; le chiffre passe par studioGraphicSpot. test-choreo : 33/33.\n\nCode :\n- Ordre des hooks correct. SegmentVideo, ProductStage et le Chiffre font return null seulement après leurs hooks ; les 3 useFont restent constants.\n- timeline.ts n'importe que des types.\n- La mémoire FNV (empreinte du reel) est correcte.\n- Fins de ligne respectées. La convention réelle est mixte : timeline, Reel, choreo et types en LF ; design et graphics en CRLF. Je me suis trompé un temps (4 fichiers passés en CRLF), c'est corrigé ; types.ts est identique à l'octet près.\n\nImages REGARDÉES (toutes sous D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\relecture-rendu-r2-10012250\\images\\) :\n- Tech 3D 9:16 : planche-p3d.png, p3d\\p3d-remotion-{4.30,7.50,15.00,27.00,35.50,38.60,61.00}s.png\n- Gros plans : zoom-38.6-tete/gauche, zoom-61-droite/gauche, zoom-35.5-droite, zoom-27-droite, zoom-15-st, zoom-7.5-carte\n- Formats larges : planche-16x9.png, f169\\p3d-16x9-remotion-{4.30,38.60}s.png, planche-4x5.png, planche-1x1.png\n- Repli : planche-repli.png, planche-repli-autres.png\n- Ancien détourage et sans détourage : planche-ancien.png, planche-sans.png\n- Collage et Éditorial : planche-collage.png, planche-edito.png, diff-edito-38.png\n- Style actuel : planche-tech.png (après) et planche-tech-avant.png (avant), écart 0 sur 6 moments\n- Anglais : planche-en.png, planche-en-916.png (avant/après identiques)\n- Après correctifs : v2\\p3d\\p3d-remotion-38.60s.png, v2\\zoom-35.5-avant-apres.png, v2\\zoom-61-avant-apres.png, v2\\zoom-61-tete-avant-apres.png, v2\\planche-16x9.png, v2\\planche-x5-formats.png, v3/v4/v6\\planche-repli-16x9.png, v7\\planche-{16x9,916,1x1}-st.png\n- Comparaison générale : planche-avant-apres-relecture.png\n\nExports REGARDÉS (H.264 + AAC, planches de 5 images) :\n- exports\\ : A-accroche −14,2 LUFS / −2,7 dBFS ; C-preuve −14,7 / −1,0 ; D-cta −14,0 / −1,0 ; 16x9-C-preuve −14,7 / −1,0 ; Tech application (style actuel) T-notification −15,1 / −1,0 ; repli 9:16 (3,5 s) −12,8 / −1,0\n- exports-final\\ (code final) : p3d-C-preuve −14,7 / −1,0 ; p3d-16x9-A-accroche −14,2 / −2,7 ; p3d-repli-16x9-R-repli −12,8 / −1,0\n- Chaque export prend 18 à 34 s pour 5 s de vidéo.\n\nChasse aux plantages :\n- Les 20 styles appliqués à la copie, rendus avant et après : aucun échec. Écarts nuls (YAVG ≤ 2e-5) hors produit-3d, collage (0,3, ombre voulue) et éditorial (2,2, mot géant voulu).\n- chasse.mjs : 392 combinaisons sans erreur. Couvre tous les reels réels et ceux de la corbeille (lecture seule), 4 formats, style d'origine, studio forcé avec ou sans détourage, repli mal formé, anglais.\n- Ancien détourage MediaPipe, absence de détourage, plages de repli artificielles (c2 7,5–9,5 s et c3 9,6–12,4 s dans la prise), 16:9 + repli, reel anglais 16:9 : tout se rend.\n\nVérifications finales, sur le code final :\n- node app/build.mjs : Done\n- tsc : 0 erreur (contrôlé : une erreur volontaire est bien détectée)\n- node --check sur le serveur et le MCP : OK\n- test-timeline : 6 vérifications réussies\n- verification, galerie, creative (7 temps), sobriété, test_detourage_qualite : OK\n- test_controle : 53/53\n- test-v2 : 32/32 (résultats : runtime\\cache\\tmp\\dcv2-integration\\test-v2-MU2QQQ\\resultats-v2.json)\n- En plus : test-timeline-v2-copie 71 vérifications ; test-choreo 33/33.\n\nSécurité :\n- Un seul vrai server.mjs (pid 21328), file vide, busy false. Aucun serveur lancé sur le vrai dossier.\n- Mon petit serveur d'images écoute sur 127.0.0.1 et ne sert que le bac.\n- Vrai reel inchangé (SHA-1 08b767e3…). Rien sur C:, rien dans D:\\Y0U, aucun téléchargement.\n- server.mjs non modifié : pas de relance nécessaire. app/dist/app.js est reconstruit : l'aperçu prend le nouveau rendu au rechargement.\n\nBac : D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\relecture-rendu-r2-10012250\\bac. Il contient des JONCTIONS (voir LISEZMOI-JONCTIONS.txt) : ne jamais l'effacer récursivement.",
+          "remaining_risks": "- Désynchronisation du contrôle (autre groupe) : controle.py recopie la mise en page des sous-titres (_sous_titres) et le gabarit du chiffre (_gabarit_studio('chiffre'), texte 0,15u). Il signale donc encore « sous-titres 61 px » et, en 16:9, un faux BLOQUANT « visage couvert ».\n  Conséquence : « Je la prends » en 16:9 Tech 3D demanderait une confirmation à tort. Il doit lire T.studioCaptionLayout, T.studioMetricBox et studioCardSize('chiffre', ...T.studioChiffreText(g)) par le pont.\n  Note : un autre agent travaillait en parallèle sur les tests (fixtures de test-v2 à 22 h 56, test-v2.mjs à 23 h 25, test_controle passé à 53 tests). Ma suite finale est verte avec leur état.\n- Repli du détourage :\n  - le mur blanc derrière la tête reste lumineux dans l'ellipse nette (halo clair) ;\n  - vu seulement sur des plages artificielles : RVM n'a marqué aucune image douteuse sur Vidéo 1.\n- 16:9 Tech 3D : composition centrée ; ×5 à côté du visage à environ 76 % ; prise verticale agrandie ×1,78, donc moins nette.\n- Personne : lumière chaude de bureau contre studio froid (conseil du contrôle). Léger flou sur les mains en mouvement.\n- Plus grand ×5 : pendant la preuve, la caméra se rapproche un peu moins tant que le chiffre est affiché.\n- Sous-titres en 9:16 : avec le plancher de 64,8 px, 10 pages sur 76 passent sur 2 lignes équilibrées.\n- Hors de mes fichiers :\n  - la carte « Nouveau lead reçu » sur l'accroche (moteur sobriété/galerie) ;\n  - les curseurs du panneau de retouche montrent la place enregistrée, pas celle affichée dans le studio.\n- Proposition pour REPRISE.md : « Relecture rendu ronde 2 : ×5 dimensionné par studioMetricBox (0,21u si court) ; liseré coupé dans les creux (ouverture) ; sous-titres studio = studioCaptionLayout (min 0,06u, sous la bouche en 16:9/1:1) ; repli en recul = couches à la taille de la prise + remplissage flou ; plages de repli mal formées ignorées. »\n  Pièges à ajouter :\n  - un mask-image ou un filtre SVG posé sur un AbsoluteFill coupe tout ce qui dépasse du cadre AVANT la transformation : poser ces couches à la taille de la prise ;\n  - l'outil Edit garde les fins de ligne : timeline, Reel, choreo et types sont en LF, design et graphics en CRLF ;\n  - grep -c '\\r$' dans Git Bash n'est pas fiable pour compter les CRLF."
+        }
+      },
+      {
+        "group": "controle",
+        "review": {
+          "bugs_found": [
+            {
+              "file": "docs/direction-creative-v2/tests/** (+ docs/passation-2026-09-30/tests/verification.py, docs/cerveau-creatif-v2-2026-09-30/test-creative.py, docs/qualite-2026-09-30/tests/test_detourage_qualite.py)",
+              "problem": "Les tests lisaient les projets VIVANTS de l'utilisateur (projects/script1, projects/script2, projects/video1, glob projects/*/reels) : Vidéo 2 supprimée volontairement => test-v2 18/32 ; et test_9 surveillait tout projects/ (échouerait si l'utilisateur travaille pendant le test).",
+              "fixed": true,
+              "how": "Données figées créées dans docs/direction-creative-v2/tests/fixtures/projects/ (script1 = copie du reel actuel sha1 08b767e3… ; script2 = COPIE prise dans corbeille\\2026-10-01 02h24 …\\projects\\script2 ; video1 script/v1/v2, video2, scriptbingonightvideo1 v1 16:9 anglais) + fixtures/provenance.json (origine, sha1, modifications). Dans les 2 reels figés, sources[*].path -> média optimisé projects/_cache/optimises (même durée, AAC) : la voix des exports ne dépend plus des rushs bruts. 24 fichiers de test basculés par remplacements exacts vérifiés (fins de ligne d'origine gardées), helpers origine()/FIX. test-integration.py : test_6 (auto._finish) utilise les sources figées du reel (monkeypatch reelmod._sources) au lieu des rushs bruts ; test_7 lit les anciens reels figés (7) ; test_9 surveille les fixtures, plus projects/. Les 3 tests de la liste verte qui lisaient projects/ pointent aussi vers des copies figées. Résultat : test-v2 32/32 (deux fois)."
+            },
+            {
+              "file": "engine/editeur/auto.py",
+              "problem": "auto._finish écrivait le rapport complet du contrôle dans runtime/cache/controle/<NOM du dossier>-script/montage même pour une copie de test/bac : un bac nommé script1 (ou le test d'intégration sur « script2 », nom que reprendra la prochaine vidéo) écrasait le rapport affiché par la Révision/plugin pour la vraie vidéo.",
+              "fixed": true,
+              "how": "Rapport écrit seulement si Path(pdir).resolve().parent == ROOT/projects (vrai projet de ce dossier ; un bac avec EDITEUR_ROOT reste correct). Vérifié : après 2 suites test-v2 complètes, runtime/cache/controle n'existe toujours pas dans le vrai dossier."
+            },
+            {
+              "file": "app/ui/revision.tsx + app/ui/styles.css",
+              "problem": "Le cadre rouge d'un problème cliqué était placé en % de la boîte du lecteur, pas de l'image : en 16:9 (image avec bandes) décalé de 18,4 px à 1600x1000 ; en 9:16 dans une fenêtre de 700 px, ~93 px. Et en 16:9 le panneau passe SOUS le lecteur : cliquer « ▶ 0:37,9 » laissait le lecteur hors de l'écran. L'état « Contrôle en cours… »/erreur d'une relance restait affiché sur une autre vidéo.",
+              "fixed": true,
+              "how": "Cadre dans .rvc-cadre (container-type:size) > .rvc-image dimensionné min(100cqw,100cqh*ratio) = rectangle réel de l'image ; voir() fait lecteur.scrollIntoView({block:'nearest'}) ; setRelance(null) au changement de vidéo. Test headless (runtime/cache/tmp/relecture-controle-r2/test-ui-zone.mjs) : AVANT 5/6 (écart 18,4 px), APRÈS 6/6 en 16:9 1600x1000, 9:16 1600x1000 et 9:16 700x1000, écart 0,0 px, 0 erreur console."
+            },
+            {
+              "file": "engine/editeur/controle.py",
+              "problem": "Compteur qui défile (Retro VHS « REC · 00:12:05 ») : un constat « texte-interne » par valeur affichée — 709 conseils identiques sur Vidéo 1 en Retro VHS (rapport et panneau inondés).",
+              "fixed": true,
+              "how": "Clé de regroupement avec TIMECODE remplacé par mm:ss (comme hud:temps) ; message « début → fin ». Test ajouté (test_controle.py cas_relecture_r2) : 1 constat REC."
+            },
+            {
+              "file": "engine/editeur/controle.py",
+              "problem": "Aperçu partiel commençant à 0 s (job.json frameRange [0,149]) : faux IMPORTANT « Durée de la vidéo (5.0 s) différente du montage (70.9 s) » (vu sur tech-916-A, note 7,2 au lieu de 8,2).",
+              "fixed": true,
+              "how": "_duree_auto(video, reel, job) lit frameRange (job ou job.json voisin) ; controler(..., duree_attendue) -> passe_video(attendue) compare à l'extrait ; export complet inchangé. Re-contrôle : 8,2/10 sans le faux constat ; 3 tests ajoutés."
+            },
+            {
+              "file": "engine/editeur/controle.py",
+              "problem": "Carte « notification » du studio Tech 3D estimée à la taille réservée (.3 u) au lieu de sa hauteur de contenu (~.23 u) : faux « chevauchement » important avec la marque du haut à 0:06,3 (le rendu, regardé, montre la carte 20 px sous la marque).",
+              "fixed": true,
+              "how": "Hauteur = marges + ligne appli + titre x nb de lignes (StudioCard de design.tsx), centrée dans la place réservée. Le chevauchement restant à 0:26 (carte Lead/Appelé sur la marque) est VRAI : vérifié à l'image. Test ajouté (0,234 u)."
+            },
+            {
+              "file": "remotion/src (groupe rendu, NON modifié par moi)",
+              "problem": "Défauts de rendu vus à l'image et confirmés par le contrôle : (1) tech-application 16:9 : « ×5 MOINS CHER » sur les yeux (bloquant 43 %) ; (2) Tech 3D 16:9 : sous-titres sur la bouche pendant l'accroche (6,2 s, boîtes du contrôle superposées au rendu = exactes) ; (3) Tech 3D : carte « Lead / Appelé » couvre la marque du haut (sans logo) et la marque est coupée au milieu d'un mot (« …Longue Marq », coupe à 32 caractères) ; (4) Retro VHS : compteur « 00:70:24 » après 60 s (design.tsx) ; (5) tech-application 9:16 : « MOINS CHER » touche le haut des cheveux et le sous-titre « cinq fois moins cher » répète le ×5 ; (6) Tech 3D : carte « Nouveau lead reçu » pendant l'accroche (6,3–8,4 s).",
+              "fixed": false,
+              "how": "Hors de mes fichiers : à transmettre au groupe rendu / ronde 3. Images : runtime/cache/tmp/relecture-controle-r2/rendu/images/ (planche-tech-169-C.png, p3d-169-6.2s-boites.png, p3d-marque-haut-27.2s.png, comparaison-38.5s.png)."
+            },
+            {
+              "file": "editeur.ps1",
+              "problem": "Risque (non corrigé) : en relançant, le lanceur arrête le serveur mais pas ses enfants (python d'un montage automatique en cours) ; le nouveau serveur remet l'élément « travail » en attente et le remonte pendant que l'ancien python tourne encore = travail en double sur le même projet (pas un 2e serveur). Comportement d'avant la ronde 2.",
+              "fixed": false,
+              "how": "Pas changé : un arrêt de tout l'arbre fermerait aussi Resolve/Blender ouverts par le serveur. Piste : arrêter seulement les python/node/chrome-headless/ffmpeg enfants dont la ligne de commande est dans le dossier, ou ne relancer « travail » qu'après vérification qu'aucun python du projet ne tourne."
+            }
+          ],
+          "claims_checked": "RÉSUMÉ SIMPLE (pour l'utilisateur, en français)\n- Serveur en double : réglé et revérifié sur des copies : 30 vérifications sur 30 (dont l'ancien lanceur de l'incident, un « zombie » de l'ancien code, 3 lancements à 0,15 s d'écart, un serveur lancé à la main pendant une relance). Il reste toujours un seul serveur. Ton vrai éditeur n'a pas bougé : serveur 21328, lanceur 37860, file vide. Je n'ai pas modifié server.mjs, donc pas de redémarrage nécessaire.\n- Tests : ils n'utilisent plus jamais tes vraies vidéos. J'ai fait des copies figées (Vidéo 1 telle qu'elle est maintenant, Vidéo 2 copiée depuis la corbeille sans la restaurer). La suite V2 repasse à 32 sur 32.\n- Contrôle qualité : j'ai corrigé 3 fausses alertes ou erreurs de compte, et dans la Révision le cadre rouge qui se plaçait à côté en 16:9. Aucun plantage sur 130 cas : 20 styles, 4 formats, anciens montages, anglais, sans détourage, repli, marque sans logo, graphismes posés à la main.\n- J'ai regardé les images de Vidéo 1 (copie) en Tech 3D et dans ton style actuel. En vertical, c'est propre. En 16:9, deux vrais défauts, confirmés à l'image : le « ×5 » couvre les yeux (ton style actuel), et en Tech 3D les sous-titres couvrent la bouche pendant l'accroche. C'est à corriger côté rendu ; le contrôle les signale correctement.\n\nDÉTAILS TECHNIQUES (vrais résultats)\nDuplicate server (re-test on isolated copies, ports 18793/18794): docs/qualite-2026-09-30/tests/test-lanceur.ps1 (new, durable; old launcher in tests/cas/editeur-ancien.ps1) => « RESULTAT : tout reussi », 30 OK. Checks covered:\n- the incident reproduced;\n- duplicate server.mjs in the same folder and in another folder: exit 98 in 0.18 s, no inbox scan, reason logged;\n- zombie of the avant-ronde2 server code (stays alive without a port): killed by the new launcher;\n- old loop stopped BEFORE the server; lock held by the new launcher; 1 server, 1 launcher;\n- manual duplicate while the launcher runs: 98, the launcher's server keeps running;\n- 3 launches 0.15 s apart: the newest wins;\n- crash: respawn;\n- crash plus a manual/plugin server during the 2 s pause: the launcher exits with code 2 and stays single;\n- stub server that always exits 98: the launcher starts it only once, code 2;\n- the real 8790 server and launcher are untouched.\n(A first run showed empty counts. That was a harness bug: CimInstance .Count in PS 5.1. Fixed with @().)\nCode review: server.mjs tasks start only in the listen callback, and the 'error' handler exits 98 before any timer. The only other top-level side effects are mkdir, reading _revision.json without saving, and an unref'd job watchdog.\n\nQC wiring:\n- Isolated server + MCP copy (runtime/cache/tmp/relecture-controle-r2/serveur/test-serveur-controle.mjs, fixture-based, +5 refusal checks: negative/non-numeric debut, unknown format, project outside the folder, non-video file) => « 49/49 verifications reussies en 42 s ».\n- It covers: real 4.3 s export, automatic video pass (states running → done, I -14 LUFS, TP -2.5), « Contrôler l'export » using the export's reel, GET /controle.\n- MCP over stdio: controle dernier/montage/export refusals, refaire_passage, choregraphie, banque_catalogue read-only, versions « avant … » kept, no delete tool, stdout JSON-RPC only.\n- Real server, read-only through the MCP: etat, controle dernier (route active: « Aucun rapport »), banque_catalogue OK.\n- « Je la prends » confirmation code reviewed: it reads the bloquants of reel.controle. The prendre skill asks Claude to warn first.\n\nCrash hunt: runtime/cache/tmp/relecture-controle-r2/chasse_controle.py => « 130/130 cas sans plantage en 940 s ».\n- The 16:9/4:5/1:1 « visage-couvert » bloquants were checked against renders: true positives.\n\nExports (sandbox copies, 5 s, H.264 1080x1920 + AAC):\n- tech-application 9:16 A 0–5 / B 25.5–30.5 / C 36.5–41.5, and 16:9 C;\n- produit-3d (RVM copy of the render group's sandbox) 9:16 A 1–6 / B / C, 16:9 C, plus 1 s clips for the brand name and for 16:9 at 6.2 s.\n- Video-pass controls: tech 9:16 8.2/8.6/8.6; tech 16:9 4.8 (true bloquant ×5 on the face); p3d 9:16 6.5/6.2/6.5; p3d 16:9 4.7 (true bloquant: captions on the mouth).\n- Reports: runtime/cache/tmp/relecture-controle-r2/rendu/controles/*/controle.txt.\n\nFrames/sheets I LOOKED at (runtime/cache/tmp/relecture-controle-r2/):\n- rendu/images/planche-tech-916-A.png, planche-tech-916-B.png, planche-tech-916-C.png, planche-tech-169-C.png;\n- rendu/images/planche-p3d-916-A.png, planche-p3d-916-B.png, planche-p3d-916-C.png, planche-p3d-169-C.png;\n- rendu/images/comparaison-38.5s.png, p3d-169-6.2s-boites.png, p3d-marque-haut-7.2s.png, p3d-marque-haut-27.2s.png;\n- rendu/controles/p3d-916-B/preuves/detourage-restes-030.0s.png;\n- ui/zone-16x9-9z8cHE/interface/zone-16x9-1600x1000.png (before the fix) and ui/zone-16x9-lls4vO/interface/zone-16x9-1600x1000.png (after: frame exactly on « ×5 MOINS CHER »).\n\nFinal green checks:\n- node app/build.mjs Done (app.js 842.2 kb); tsc 0 errors; node --check server + MCP OK;\n- test-timeline.mjs « 6 vérifications temporelles réussies »;\n- test-v2.mjs « 32/32 etapes vertes », all 11 §9 tests OK (runtime/cache/tmp/dcv2-integration/test-v2-tn80ic/resultats-v2.json; also included: verification OK, galerie OK, creative OK, sobriete OK, timeline-v2 71);\n- test_controle.py « 53/53 tests réussis » (48 + 5 new);\n- test_detourage_qualite.py « 23/23 »;\n- GPU back to 1.1 GB, no leftover process.\n\nFiles changed by me:\n- engine/editeur/controle.py (CRLF kept), engine/editeur/auto.py (CRLF);\n- app/ui/revision.tsx, app/ui/styles.css (CRLF), app/dist/app.js (rebuilt);\n- docs/direction-creative-v2/tests/** (fixtures/ + 25 test files + test-v2.mjs header);\n- docs/passation-2026-09-30/tests/verification.py, docs/cerveau-creatif-v2-2026-09-30/test-creative.py;\n- docs/qualite-2026-09-30/tests/test_detourage_qualite.py, test_controle.py, test-lanceur.ps1 (new), cas/editeur-ancien.ps1 (new).\nserver.mjs, editeur.ps1 and the plugin are unchanged. The real projects/script1 reel is unchanged (sha1 08b767e3…). Nothing downloaded.\n\nText proposed for REPRISE.md §11: tests read only docs/direction-creative-v2/tests/fixtures (provenance.json), never projects/<video>; the controle report is written only for ROOT/projects/<nom>; the Révision zone frame is placed in the image rectangle (.rvc-image, cq units); test-lanceur.ps1 to replay before touching the launcher.",
+          "remaining_risks": "- The controller still copies the renderer layout (card sizes, text sizes), and the render reviewer was editing remotion/src while I worked (changes at 23:11–23:18). So some exports were flagged « rendu-ancien » by the mtime heuristic, and my frames may predate their last edit.\n- Render defects found but not mine to fix: 16:9 ×5 on the face (tech-application) and captions on the mouth (Tech 3D); dashboard card over the brand name; brand name cut mid-word; VHS counter « 00:70:24 »; ×5 duplicated by the subtitle; card during the Tech 3D hook.\n- The controller does not flag a « chiffre + sous-titre qui dit la même chose » duplicate (feature gap).\n- The Hormozi style gets a 9:16 bloquant visage-couvert by design. Any 16:9/4:5/1:1 montage of most styles gets bloquants that look real: the « Je la prends » confirmation will often appear for non-vertical reels.\n- Launcher risks:\n  - it kills any process listening on the port (pre-existing);\n  - it treats as an old launcher any older PowerShell whose command line contains editeur.ps1's full path;\n  - children of a killed server (python montage) survive, which can cause duplicate montage work after a restart;\n  - when a plugin-started server wins the port during a restart, the launcher window closes (code 2) and that server runs unsupervised. Still a single server.\n- Fixtures depend on projects/_cache/optimises proxies (shared cache) still existing; script2 media are kept there even though the video is in the corbeille.\n- Other non-green-list scripts still read projects/*. Some are meant to act on the real project, so I left them. List: docs/amelioration-premium-2026-09-30/*, cerveau-creatif appliquer-video1.py, galerie-styles prepare/render/serve-test, passation tests (decl, hl, musique, plugin-mcp, test-styles-ui), qualite tests rendu_detourage.mjs, test_detourage_revue.py, test_detourage_rvm.py, taches-fable tests.\n- Text widths are still estimated (no OCR), and choreography entrance offsets are not modelled."
+        }
+      }
+    ],
+    "loop": {
+      "built": "I worked through all 13 defects from judge n° 2 with general fixes, made 3 exports through the real queue, and judged each one myself.\n\n1. **Black band at the top** (14 s in the judged export). New `studioDecorScale` in timeline.ts: when the camera tilts, the décor is enlarged so it always covers the top of the frame. design.tsx uses it. I counted the band on every frame at 10 frames/s: 13.8 s before (judged 03h01 export), 0 s after (04h35 and final 04h52 exports). The controller now has a `bande_bord` check (`bord-non-couvert`).\n2. **\"Pasted-on\" look of the person.**\n   - Edge decontamination over 5 px: the white office wall that bled into the hair edge is replaced by the person's own colour (normalized blur).\n   - Rim light is now thin and on one side only.\n   - A tone curve `STUDIO_CURVE` softens skin highlights (about −0.2 to −0.25 EV) and tints the blacks blue.\n   - The warm studio light now also lights the wall just behind her, on the window side.\n   - Grain in produit-3d.json: 0.04 → 0.1.\n   - The bottom of the frame is less black.\n3. **\"de la publicités\".** New determiner + noun agreement rule `_accord_determinant` in orthographe.py. It never touches a pronoun (\"tu la prends\"), an invariable word or a number. `verifier()`, used by the controller, applies it too.\n4. **Same-framing cut at 1:07.7.** A cut whose framing would barely change gets `StudioPunch.boost` (up to ×1.15, at most `PUNCH_CUT_MAX` 1.4, only if achievable at the cut). `onScreen` now models the tight shot anchored under an interface. Measured at that cut: ×1.15, head stays under the offer.\n5. **Camera pulling back before every card.**\n   - The real head top (and face width) is now measured in the cutout alpha: `detourage.tete`, `SCENE_VERSION` 6, `cutouts[].head`. Before, it was estimated up to 5 % too high.\n   - In vertical formats, during an interface the camera keeps its base shot and tilts down instead of pulling back (`StudioBusy.need/head`, `DY_ROOM`).\n   - Framing changes happen at once, on a cut within 1.5 s or else on a phrase start (`tin`/`tout`), never as a glide.\n   - New controller check `recul-camera`.\n6. **Opening.** The first frame is a tight shot with the first caption already on screen, then a visible pull-back in 0.9 s. The highlighted word pops when spoken.\n7. **Forearm cut into a point at 0:41.67.** `coupes_droites` + `occultant_confirme`: the table seen in another take is reused when this take shows straight cuts of the person on the same line. `occluderTrack` / `occluderAt` follow the phone camera's drift frame by frame.\n8. **Badly cut caption pages.** pages() now picks the best split per sentence by dynamic programming: break after a comma, fixed expressions kept whole, never end on a small word, no flash pages. The comma stays visible inside a page. `segments.mjs` exposes these pages and choregraphie.py / passage.py read them directly, so there is no second copy of the rule. `saysSame` also hides a page whose every content word is on screen.\n9. **\"trois heures\" low contrast.** Tight dark halo around highlighted words.\n10. **10 s without a card.** `galerie._claim_scenes` adds a spoken-proof badge, here \"✓ Formé par nos soins\" at 45.85–48.45 s.\n11. **\"Salaire\" alone in a corner.** List rows re-centre as pills arrive (`studioListLayout.widths`). A single badge uses a bigger font.\n12. **Dry ending.** `reel.fin_tenue` keeps 0.8 s of the last take after the last word when nobody speaks (cached transcript only). Applied to this version: c5 out 17.32 → 17.92, c5 cutout recomputed.\n13. **Controller false positive.** A face \"detected\" on the sweater, far from the expected face, no longer counts as a covered face.\n\n**Steps on the real server**:\n- Version saved first: \"avant corrections du juge 2 (2 oct.)\".\n- PUT clips (spelling + held ending).\n- POST /template produit-3d, twice.\n- Previous FINAL renamed \"(ancien 2026-10-02 03h01)\" before exporting; my two trial exports kept as (… 04h35) and (… 04h44).\n- Final export at 04:52.\n\nNo server restart: server.mjs is unchanged and there is still one server.mjs process (pid 21328). The user's script.json is unchanged (sha1 08b767e3…).",
+      "files_changed": [
+        "D:\\Tools\\editeur_sami\\remotion\\src\\timeline.ts",
+        "D:\\Tools\\editeur_sami\\remotion\\src\\design.tsx",
+        "D:\\Tools\\editeur_sami\\remotion\\src\\Reel.tsx",
+        "D:\\Tools\\editeur_sami\\remotion\\src\\types.ts",
+        "D:\\Tools\\editeur_sami\\remotion\\segments.mjs",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\orthographe.py",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\reel.py",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\detourage.py",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\galerie.py",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\controle.py",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\choregraphie.py",
+        "D:\\Tools\\editeur_sami\\engine\\editeur\\passage.py",
+        "D:\\Tools\\editeur_sami\\styles\\montage\\produit-3d.json",
+        "D:\\Tools\\editeur_sami\\app\\dist\\app.js (rebuilt)",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\test-juge2.mjs (new)",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\test_juge2.py (new)",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\cas\\juge2-p3d.json (new frozen fixture)",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\tests\\test-juge1.mjs (2 dated test updates)",
+        "D:\\Tools\\editeur_sami\\docs\\direction-creative-v2\\tests\\test-timeline-v2.mjs (dated update: pages/srt compared one word per page)",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\COMPTE-RENDU.md",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\FILE-ATTENTE.md",
+        "D:\\Tools\\editeur_sami\\REPRISE.md (header + section 26)",
+        "D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\avant-juge2\\ (snapshot of the code before this cycle)",
+        "D:\\Tools\\editeur_sami\\projects\\script1\\reels\\script-qualite.json (through the real server; versions kept)",
+        "D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo 1 - qualité - FINAL.mp4 (new; previous ones renamed '(ancien 2026-10-02 03h01/04h35/04h44)')",
+        "D:\\Tools\\editeur_sami\\assets\\detourage\\90f36b898e9f70c1b567\\ (new c5 cutout; old one kept)"
+      ],
+      "tests": "All green on the final code (log D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\cycle3-10020500\\tests-final.log):\n\n| Check | Result |\n| --- | --- |\n| node app/build.mjs | Done |\n| tsc -p tsconfig.verif.json | 0 errors |\n| node --check server + MCP | OK |\n| test-timeline | 6 vérifications temporelles réussies |\n| test-ronde3.mjs | 14/14 |\n| test-juge1.mjs | 19/19 |\n| test-juge2.mjs (new) | 18/18 |\n| verification.py | 8 tests OK |\n| test-galerie.py | 6 tests OK |\n| test-creative.py | CERVEAU CREATIF V2: OK |\n| test-sobriete.py | 18 tests OK |\n| test_controle.py | 54/54 |\n| test_detourage_qualite.py | 23/23 |\n| test_ronde3.py | 27/27 |\n| test_juge1.py | 20/20 |\n| test_juge2.py (new) | 18/18 |\n| test-v2.mjs | 32/32 étapes vertes, all 11 §9 tests OK (resultats in runtime\\cache\\tmp\\dcv2-integration\\test-v2-i0o3lq\\resultats-v2.json) |\n\nAlso passing: test-timeline-v2 (71 checks), test-choreo (33/33), test-choregraphie.py (11 OK), test-passage.py (16 OK).\n\nAlong the way, an intermediate run gave test-v2 27/32. The pagination change broke 5 steps, and two test files were updated with dated comments:\n- test-juge1.mjs: the test now expects the new tight-then-pull-back opening and the new page split (\"ça veut dire\").\n- test-timeline-v2.mjs: pages and srt are now compared one word per page, outside the studio, for both old and new code.\n\nThe other failures were fixed in the code, not the tests:\n- the Python choregraphie and passage now read the timeline.ts pages instead of keeping their own copy;\n- 5-word pages are allowed only in the studio, after test_controle's \"propre\" case caught a safe-zone regression.",
+      "evidence": "**Final video**: D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo 1 - qualité - FINAL.mp4\n- 71.47 s, 1080x1920, 30 fps, H.264 + AAC.\n- Measured: −14.0 LUFS, true peak −1.0 dBTP, LRA 3.1.\n- Edge band over all 715 frames: 0 s. Same measure on the judged 03h01 export: 13.8 s, up to 28 px.\n- End tail: −28.9 dB at 70.7 s, music fading to −39.9 dB at 71.1 s.\n- Automatic controller: 10.0/10, 0 findings. Report: runtime\\cache\\controle\\script1-script-qualite\\export-9x16\\controle.txt, copy in runtime\\cache\\tmp\\cycle3-10020500\\final3\\controle.txt.\n\n**Measured by computation on the reel** (not checked against the video): on-screen size change at each cut: 1.22, 1.28, 0.83, 1.19, 1.13, 0.85, 1.19, 1.15.\n\n**My critique**: about 7.9/10, kept cautious because my earlier self-scores were too generous.\n- Integration ≈ 7.\n- Cards ≈ 8.3, captions ≈ 8.5, editing and rhythm ≈ 7.8, sound ≈ 8.2, message and ending ≈ 8.\n\n**Images I looked at** (all in D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\cycle3-10020500\\):\n- Final export, 1 frame/s: final3\\planche-00.png, planche-01.png, planche-02.png.\n- Final export, key frames in full resolution: final3\\hd-grille.png (0.0, 0.4, 16.1, 17.3, 38.0, 38.3, 46.6, 59.0, 67.70, 67.80, 68.9, 71.4 s).\n- First export: final\\planche-00/01/02.png, final\\bords-hd.png, final\\avant-apres-bords.png (judged export vs new), final\\details.png (forearm at 41.70/41.77 and \"trois heures\"); controller proof image runtime\\cache\\controle\\...\\preuves\\visage-sous-titres-057.5s.png (false face detection, then fixed).\n- Second export: final2\\planche-00.png, planche-02.png.\n- Short 5 fps previews: apercu\\A-ouverture-planche.png, B-liste-planche.png, C-fin-planche.png.\n- Stills from the iterations: s1\\grille.png, s1\\bords.png, s2\\bords.png, s3\\grille.png, s4\\grille.png, s5\\bande5.png, s5\\oreille.png (ear ×3), s6\\grille.png, s7\\mur.png, s7\\grain.png.\n- Investigation: c4-alpha.png (table of take c4), c5-fin.png (tail of the take).\n- Judge's images: bande-haut.png, zoom3-1270.png, pl-final-02.png, c41-sheet.png, ouverture.png; and ronde4q\\presence\\occultants.png.\n- Other styles: generalite\\grille.png.\n\n**Generality** (frozen copy, JSON pass, code before this cycle from bac runtime\\cache\\tmp\\cycle3-10020500\\avant, which contains junctions):\n- Tech application 8.1 = 8.1.\n- Éditorial 6.4 = 6.4.\n- Hormozi 4.9 = 4.9; face covered by captions went from 8.9 s to 5.1 s.\n\n**State**: one server.mjs (21328), busy false, queue empty, GPU back to about 1.8 GB. User reel script.json sha1 08b767e3… unchanged. Nothing downloaded, nothing on C:, nothing in D:\\Y0U, nothing deleted.",
+      "limitations": "- **Integration is still visible on close inspection.** The ear and earring outline is jagged (matte limit) and the skin is lit by a window against a dark studio. The real fix is filming against a dark or neutral background.\n- **Ghost fingers** on fast gestures are not addressed (motion blur in the take).\n- **Start of the offer (1:04.45–1:07.73)** is a medium shot (scale ≈1.09, head at 0.33 H). The space for the button that arrives later is reserved above the head. It turns tight from 1:07.73 to the end.\n- **The 0:41.67 cut (take c3 → c4)** changes size by only ×1.13: the head is already at the top edge, so it cannot go tighter.\n- **The judge may score differently.** My ≈7.9 is self-assessed, and the automatic 10/10 does not judge integration. The FILE-ATTENTE now asks for an independent judge n° 3.\n- **The new pagination and agreement rule affect all styles.** The user's Tech application reel display gets better pages without its file changing. Its stored words are not re-spell-checked.\n- **The `avant` bac contains NTFS junctions** (assets, tools, projects/_cache). Never delete it recursively; there is a LISEZMOI-JONCTIONS.txt inside.\n- I could not listen to the audio: sound is judged on measurements only.",
+      "requests_for_lead": "- Please run an independent judge (n° 3) on D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo 1 - qualité - FINAL.mp4, compared with \"(ancien 2026-10-02 03h01).mp4\" (judged 7.3).\n- Optional next step for integration: a time-wise alpha max or a finer matte for hands, ears and earrings. Possible later improvement for the offer: a two-phase camera (badge only, then badge + button).",
+      "user_summary": "J'ai corrigé les défauts relevés par le second juge (7,3/10) et refait l'export trois fois. **La vidéo finale est `livraisons\\Lot 2026-09-30 10h51\\Vidéo 1 - qualité - FINAL.mp4`.** Je la note **environ 7,9/10** (je reste prudent : mes notes d'avant étaient trop généreuses), et elle n'a pas encore été rejugée. Le contrôle automatique lui donne 10/10, mais il ne juge pas le « collage » de la personne sur le décor. Ta vidéo à toi (Tech application) n'a pas été touchée.\n\n**Ce qui est corrigé** (règles générales, valables pour tes autres vidéos) :\n- **Bande noire en haut** : supprimée. Mesurée sur toutes les images : 0 s, contre 13,8 s dans la version jugée. Le contrôle sait maintenant la repérer.\n- **Effet « autocollant »** :\n  - le contour clair est fin et d'un seul côté ;\n  - le bord des cheveux ne garde plus la couleur du mur blanc du bureau ;\n  - la peau trop claire est adoucie ;\n  - le mur derrière elle est éclairé du côté de la fenêtre ;\n  - un grain léger unifie la personne et le décor.\n- **« de la publicités »** : la faute est corrigée par une nouvelle règle d'accord. Elle ne touche jamais « tu la prends », « le temps » ni un nombre.\n- **Coupe à 1:07,7** : le plan change maintenant nettement (taille × 1,15), et la tête reste sous l'offre.\n- **Caméra** :\n  - elle ne recule plus en glissant avant chaque carte : elle change de plan d'un coup, sur une coupe ou un début de phrase ;\n  - pendant une carte, elle garde le plan et fait descendre la personne juste sous la carte ;\n  - le haut de la tête est maintenant mesuré : pendant l'appel final, elle est plus grande et plus proche.\n- **Ouverture** : la première image est serrée sur le visage, avec déjà le premier sous-titre. La caméra recule ensuite, et le mot fort « frappe » quand il est dit.\n- **Avant-bras coupé à 0:41,7** : le bureau de verre est maintenant posé sur la table, même si la caméra du téléphone a bougé.\n- **Sous-titres** :\n  - coupés après la virgule (« pour régler ça, | ça veut dire ») ;\n  - expressions gardées entières (« quoi que ce soit ») ;\n  - jamais une page qui finit sur « de » ou « à » ;\n  - un halo sombre rend « trois heures » lisible.\n- **Plus de 10 s sans carte** : un badge « ✓ Formé par nos soins » apparaît quand elle le dit.\n- **Liste** : les pilules se recentrent à mesure qu'elles arrivent.\n- **Fin** : la vidéo continue 0,8 s après le dernier mot ; elle sourit, le bouton et la musique tiennent.\n\n**Vérifications** :\n- Sur d'autres styles, les notes du contrôle sont inchangées : Tech application 8,1, Éditorial 6,4, Hormozi 4,9.\n- Tous les tests obligatoires passent. Le serveur n'a pas été relancé et il n'y en a qu'un.\n- Les anciens exports sont gardés avec la date dans le nom ; celui jugé 7,3 est `(ancien 2026-10-02 03h01)`.\n\n**Ce qui reste** :\n- Le bord de l'oreille et des boucles d'oreilles est un peu irrégulier.\n- La peau reste éclairée par une fenêtre ; filmer devant un fond sombre réglerait l'essentiel.\n- Les doigts sont flous sur les gestes très rapides.\n- Le début de l'offre (1:04,5 à 1:07,7) est en plan moyen.\n- La coupe de 0:41,7 ne change la taille que de × 1,13 : la tête touche déjà le haut, impossible de serrer plus.\n- Il n'y a aucun plan de coupe.\n\nJe conseille de faire rejuger cette version par un juge indépendant. Le détail est dans `docs\\qualite-2026-09-30\\COMPTE-RENDU.md`."
+    },
+    "judge": {
+      "score": 7.6,
+      "video_judged": "D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo 1 - qualité - FINAL.mp4 (export 04h52, 71,47 s, 1080x1920, 30 i/s, H.264+AAC, sha1 73114a05…). Comparée à « (ancien 2026-10-02 03h01).mp4 » (note 7,3 du juge n° 2), à docs\\references\\reference-montage-spectaculaire.mp4 et à la version actuelle de l'utilisateur (script.json, Tech application, 8 images fixes rendues en lecture seule ; sha1 08b767e3… inchangé).",
+      "strengths": [
+        "Plus aucune bande au bord : 0 image touchée sur 2144, mesuré sur les 4 bords (bande >= 2 px). Le rapport entre la ligne du bord et la ligne à 35 px ne descend jamais sous 0,88.",
+        "« avec de la publicité, » est bien écrit (0:06,44). Les cartes disent ce que dit la voix, sans aucune faute : Réponse envoyée au lead, Lead en attente depuis 3 h, Répondre → Qualifier, 5× MOINS CHER, Formé par nos soins, Qualifier → Transférer, 1 SEMAINE GRATUITE, En savoir plus →.",
+        "Pages de sous-titres mieux coupées : « pour régler ça, » | « ça veut dire », « quoi que ce soit » entier. « trois heures » est lisible grâce au halo sombre.",
+        "Ouverture plus forte : la 1re image est serrée avec « Plus vous prenez » déjà affiché. La caméra recule (×0,83 en 0,4 s, mesuré), puis relance (×1,20) sur « concurrent » à 0:02,90.",
+        "La coupe de 1:07,73 change nettement de plan. Pendant l'offre, la tête est plus haute (≈0,33 H) et le plan est serré jusqu'à la fin.",
+        "L'avant-bras passe derrière le bureau de verre dès la 1re image après la coupe de 0:41,67.",
+        "Le badge « Formé par nos soins » arrive sur « formé » (0:45,85), avec une coche qui se pose, et le sous-titre redit s'efface. La liste se recentre en glissant.",
+        "Fin tenue 0,8 s après le dernier mot (1:10,67 → 1:11,47) : sourire, bouche fermée, bouton et offre jusqu'à la dernière image, musique en fondu jusqu'à −45 dB.",
+        "Son conforme et identique à 03h01 : −14,0 LUFS, crête vraie −1,0 dBFS, LRA 3,1. L'écart entre les mixages est à −51 dB ; seuls ajouts, le whoosh du badge et la fin. Aucun clic aux coupes.",
+        "Le halo blanc autour des cheveux a presque disparu, la peau est moins brûlée et le grain unifie la texture. À taille de téléphone, la plupart des plans passent pour un studio virtuel soigné."
+      ],
+      "defects": [
+        {
+          "time": "1:04,45–1:07,73 (net à 1:04,5 / 1:04,9 / 1:05,3 / 1:05,7) ; contour bosselé 1:06,7–1:07,7 ; plus léger à 0:12,7 et 0:42,5",
+          "severity": "Important (plafonne la note)",
+          "problem": "Une bande blanche longe la joue gauche, de la tempe à la mâchoire, avec une ligne claire sous le menton, pendant l'offre. Les oreilles et les boucles d'oreilles sont fondues en taches beiges, et le bord de la joue fait des bosses. Elle est absente de la prise d'origine : vérifié sur la version utilisateur au même instant (user-visage-6500.png), l'anneau doré y est net. C'est le mur blanc du bureau, visible sous le lobe, qui reste dans le détourage.",
+          "fix_hint": "Retirer le débordement du mur sur 10 à 15 px (pas 5) quand le fond de la prise est clair : remplacer les pixels proches de la couleur du mur et plus clairs que la peau voisine, ou réduire l'alpha de 2 à 3 px de ce côté. Prendre la médiane temporelle de l'alpha (±2 images) sur les oreilles. Ajouter au contrôle un repère « bord clair » (pixels presque blancs dans les 15 px intérieurs du bord de l'alpha)."
+        },
+        {
+          "time": "0:25,63 ; 0:36,60 ; 0:40,43 ; 1:03,73",
+          "severity": "Moyen (défaut nouveau)",
+          "problem": "Sauts d'image sans coupe ni changement de taille. La personne descend d'un coup de 57 px (×1,00), 54 px (×1,00) ou 52 px (×0,99), ou remonte de 151 px (×1,04, en milieu de phrase sur « avoir »). Mesuré par recalage SIFT. Dans l'export 03h01, ces mêmes images bougeaient de 13 px au plus (glissement). La bascule DY_ROOM est maintenant appliquée d'un coup et se lit comme une image qui saute.",
+          "fix_hint": "Un recadrage instantané doit changer la taille d'au moins ×1,15. Sinon : garder la bascule depuis la coupe précédente, ou la faire en glissement adouci lent (≥0,8 s, ≤3 % de la hauteur), ou la combiner à un vrai punch. Ajouter au contrôle : saut sans coupe, taille entre ×0,93 et ×1,07, décalage >1,5 % de la hauteur en une image."
+        },
+        {
+          "time": "0:02,90–0:02,93 (puis espace trop large 0:03,00–0:03,17) ; 0:44,50–0:44,57 ; 1:04,47–1:04,50 ; tous les mots en couleur",
+          "severity": "Mineur à moyen (défaut nouveau)",
+          "problem": "Le mot en couleur qui « frappe » touche son voisin pendant 2 à 3 images : « concurrentle close », « autéléphone », « gratuitementdans ». Ensuite, le ressort repasse sous ×1 et l'espace devient trop large : la ligne tremble. Cause : Reel.tsx, lignes 283–284. Un mot inline-block avec une marge de 0,1 em est agrandi ×1,2 ou ×1,1 sans que sa place grandisse, avec un ressort peu amorti (damping 11).",
+          "fix_hint": "Réserver la largeur du mot : agrandir un span intérieur, ou augmenter la marge au même rythme. Ou n'animer que la lueur, la luminosité et un léger translateY. Sinon, plafonner à ×1,06 avec damping ≥18, sans rebond."
+        },
+        {
+          "time": "0:59,83–1:08,80 (vide en haut 1:02,87–1:04,45)",
+          "severity": "Mineur",
+          "problem": "Le bouton « En savoir plus → » apparaît à 0:59,83, sort à 1:02,83, puis revient à 1:08,80. Pendant 1,6 s, le haut de l'image est vide et la personne est en plan moyen ; le saut de 1:03,73 tombe dans ce passage. L'offre reste ensuite seule en plan moyen jusqu'à 1:07,73.",
+          "fix_hint": "Un seul bloc final : garder le bouton de 0:59,83 jusqu'à la fin et poser « 1 SEMAINE GRATUITE » au-dessus à 1:04,45. Cela supprime aussi le vide, le saut et le plan moyen."
+        },
+        {
+          "time": "0:34,50–0:34,67",
+          "severity": "Mineur (ancien, non relevé)",
+          "problem": "Sous-titre éclair : « pour répondre et qualifier » reste 6 images (0,2 s), puis disparaît d'un coup parce que la carte le redit, avant même que la carte apparaisse (0:34,77). C'était déjà le cas dans l'export 03h01.",
+          "fix_hint": "Si une page doit être masquée comme « redite » moins de 0,5 s après son début, la masquer dès le début, ou faire entrer la carte au début de la page. Toujours un fondu. Ajouter au contrôle : page visible moins de 0,3 s."
+        },
+        {
+          "time": "0:16,03 → 0:16,95 ; 0:58,87 → 0:59,83",
+          "severity": "Mineur",
+          "problem": "« Elle rapetisse, puis une carte arrive » : le plan s'élargit franchement (×0,83) environ 0,95 s avant la liste et avant le bouton. Pendant presque 1 s, le haut de l'image est vide sans raison. C'est bien mieux que le glissement d'avant, mais le geste reste mécanique.",
+          "fix_hint": "Faire l'élargissement sur l'image où la carte entre, avec son whoosh, pour que la carte « pousse » la personne vers le bas."
+        },
+        {
+          "time": "0:38,30 (main à 5 doigts du 5×) ; 0:41,80–0:41,87 ; 0:29,5 ; 0:32",
+          "severity": "Mineur (connu)",
+          "problem": "Main et doigts semi-transparents sur les gestes rapides : la grille du décor se voit à travers les doigts. Cela tombe aussi sur le geste clé du 5×.",
+          "fix_hint": "Prendre le maximum temporel de l'alpha (±1 à 2 images) sur les mains en mouvement rapide (zone sous les épaules, fort flux optique)."
+        },
+        {
+          "time": "0:12,75–0:15,07 ; 0:25,63 ; 0:38,92 ; 0:43,05 ; 1:01,81",
+          "severity": "Mineur",
+          "problem": "Apostrophes mélangées : courbes dans « c’est », « qu’embaucher », « qu’un », « l’expérimenter » ; droites dans « quelqu'un », « qu'on », « qu'un employé ». On le voit sur deux pages qui se suivent (0:12,75 puis 0:14,23).",
+          "fix_hint": "Normaliser ' en ’ dans displayWord (timeline.ts) et dans les textes de cartes."
+        },
+        {
+          "time": "0:41,79 ; 0:50,15–0:51,69 ; 0:11,70 et 0:14,23",
+          "severity": "Mineur",
+          "problem": "Quelques coupures encore faibles : « Puis là c’est » | « pas juste des gens » ; « on a un vrai » | « intérêt à bien » | « qualifier ». Dans une page de 2 lignes, la 1re ligne finit sur « à » (« quelqu'un à / temps plein »).",
+          "fix_hint": "Interdire aussi la fin de page sur « c’est », sur un adjectif placé avant son nom (« un vrai ») et sur « bien » suivi d'un infinitif. Couper les lignes avant les petits mots (à, de) au lieu de laisser text-wrap: balance décider."
+        }
+      ],
+      "verdict": "J'ai écrit le jugement : D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\JUGEMENT-3.md (en français). Je n'ai modifié aucun autre fichier du projet, n'ai pas utilisé le vrai serveur et n'ai rien téléchargé. Mes fichiers de travail sont dans D:\\Tools\\editeur_sami\\runtime\\cache\\tmp\\juge3-10020510\\.\n\nNOTE : 7,6/10. Juge n° 2 : 7,3. Le monteur s'était donné ≈7,9. Le contrôle automatique dit 10/10, c'est trop haut.\n\nPresque tous les défauts du juge n° 2 sont corrigés : bande noire (0 image sur 2144, 4 bords), « publicités », coupe de 1:07,7, ouverture, avant-bras de 0:41,7, pages de sous-titres, « trois heures », badge « Formé par nos soins », liste recentrée et fin tenue 0,8 s. Le son est conforme et inchangé (−14,0 LUFS, crête vraie −1,0, LRA 3,1).\n\nCe qui empêche le 8 :\n1. Incrustation encore visible pendant l'offre (1:04,5–1:07,7) : une bande blanche longe la joue gauche, les oreilles et les boucles d'oreilles sont fondues. Elle est absente de la prise d'origine (vérifié sur la version utilisateur) : c'est le mur blanc du bureau qui reste dans le détourage.\n2. Défaut nouveau : 4 sauts d'image sans coupe ni changement de taille (0:25,63 +57 px, 0:36,60 +54 px, 0:40,43 −151 px ×1,04, 1:03,73 +52 px). Mesuré par recalage SIFT ; dans l'export 03h01, les mêmes images bougeaient de 13 px au plus.\n3. Défaut nouveau : les mots en couleur qui « frappent » touchent leur voisin pendant 2 à 3 images (« concurrentle », « autéléphone », « gratuitementdans »). La cause est Reel.tsx, lignes 283–284.\n\nFinitions :\n- sous-titre éclair de 0,2 s à 0:34,50 (déjà présent en 03h01) ;\n- bouton qui sort à 1:02,83 puis revient à 1:08,80 ;\n- apostrophes ’ et ' mélangées ;\n- main transparente sur les gestes rapides ;\n- quelques coupures de page faibles.\n\nComparaison :\n- La version qualité est nettement meilleure que la version actuelle de l'utilisateur (≈6). Celle-ci garde « avec de la publicités » et « qualifier et éduqué », un bureau surexposé, un « 5× » sur les cheveux et pas de bouton. Je conseille de prendre la version qualité.\n- Elle est d'un autre genre que la référence (motion design pur), mais en reprend bien la matière.\n- Estimation : ≈7,9 après les points 2 et 3 et les finitions, ≈8,2 avec la correction de la joue.\n\nLe contrôle à 10/10 manque les sauts dans une même prise, les mots qui se touchent, la page éclair, la bande blanche, le bouton qui s'en va et les apostrophes. Je propose 3 vérifications à lui ajouter : saut sans coupe, page de moins de 0,3 s, bord clair.\n\nIMAGES REGARDÉES (toutes dans runtime\\cache\\tmp\\juge3-10020510\\) :\n- 1 image/s, export jugé : pl-final-00/01/02.png ;\n- 1 image/s, ancien export : pl-old-00.png, pl-old-02.png ;\n- sauts et coupes : sauts-a.png, sauts-b.png, micro-sauts.png, flash-ancien.png ;\n- ouverture et moments clés : ouverture.png, hd-cles.png ;\n- mots qui frappent : pop-concurrent.png, pop-autres.png ;\n- bords du détourage : bords-tete.png, avant-apres-1270.png, avant-apres-6500.png, oreilles-6500.png, joue-gauche-x15.png, joue-offre.png, joues.png, user-visage-6500.png ;\n- table et mains : zoom-table-main.png, c41-sheet.png ;\n- cartes : liste-sheet.png, cartes-sheet.png ;\n- sous-titres : flash-3448.png, apostrophes.png, trois-heures.png ;\n- fin : fin-sheet.png ;\n- version utilisateur : planche-user.png ;\n- référence : pl-ref-00.png.\n\nMESURES :\n- mesure.py → mesure-final.json : différences entre images voisines et bandes aux 4 bords, sur 2144 images ;\n- echelle.py : facteur de taille et décalage à chaque saut ;\n- son : ebur128, RMS par 50 ms, écart entre les mixages, enveloppe à 5 ms aux coupes ;\n- temps des mots et des pages masquées : infos.mjs, mots.mjs, captionHiddenWhy (lecture seule).\n\nTESTS : non relancés. Je n'ai modifié aucun code, je n'ai fait que juger. Les 8 images de la version utilisateur ont été rendues par stills.mjs (copie de l'outil du juge n° 2), qui sert projects/ et assets/ en lecture seule sur 127.0.0.1, sur un port au hasard ; le processus est terminé."
+    },
+    "cycles": 3
+  },
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Revue 2"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 2,
+      "title": "Ronde 3"
+    },
+    {
+      "type": "workflow_phase",
+      "index": 3,
+      "title": "Jugement"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "revue2:rendu",
+      "phaseIndex": 1,
+      "phaseTitle": "Revue 2",
+      "agentId": "a7e7ac56d276c44b5",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790909236573,
+      "queuedAt": 1790909236547,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "RÉSUMÉ POUR L'UTILISATEUR (français simple) J'ai relu tout …",
+      "promptPreview": "Adversarial senior reviewer (pro editor/compositor + senior engineer) for round-2 group \"rendu\" of \"Editeur Sami\". Files: remotion/src/design.tsx, Reel.tsx, timeline.ts, types.ts, choreo.tsx, graphics.tsx, styles/montage/produit-3d.json, collage.json, editorial-cinetique.json, assets/fonts. Read the implementer report for your group in D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\rapports-ronde2.…",
+      "promptFramed": true,
+      "lastProgressAt": 1790913290155,
+      "tokens": 481449,
+      "toolCalls": 218,
+      "durationMs": 4053580,
+      "resultPreview": "{\"bugs_found\":[{\"file\":\"remotion/src/design.tsx\",\"problem\":\"Foreground filter of the Tech 3D studio: the thin rim light (contour1, cyan key light from top-left) was also drawn inside narrow hollows, for example the gap between the arm and the torso. On real frames this gave a bright cyan cut-out line, the 'pasted' look (frames 35.5 s and 61 s, right arm).\",\"fixed\":true,\"how\":\"Added an 'openness' g…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "revue2:controle",
+      "phaseIndex": 1,
+      "phaseTitle": "Revue 2",
+      "agentId": "ac549319f251c8064",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790909236574,
+      "queuedAt": 1790909236547,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "RÉSUMÉ SIMPLE (pour l'utilisateur, en français) - Serveur e…",
+      "promptPreview": "Adversarial senior reviewer (pro editor/compositor + senior engineer) for round-2 group \"controle\" of \"Editeur Sami\". Files: app/server.mjs, editeur.ps1, Editeur Sami.cmd, engine/editeur/controle.py, auto.py, __main__.py, app/ui/revision.tsx, app/ui/styles.css, plugins/editeur-sami/**, docs/direction-creative-v2/tests/**. Read the implementer report for your group in D:\\Tools\\editeur_sami\\docs\\qua…",
+      "promptFramed": true,
+      "lastProgressAt": 1790912428576,
+      "tokens": 544164,
+      "toolCalls": 257,
+      "durationMs": 3189817,
+      "resultPreview": "{\"bugs_found\":[{\"file\":\"docs/direction-creative-v2/tests/** (+ docs/passation-2026-09-30/tests/verification.py, docs/cerveau-creatif-v2-2026-09-30/test-creative.py, docs/qualite-2026-09-30/tests/test_detourage_qualite.py)\",\"problem\":\"Les tests lisaient les projets VIVANTS de l'utilisateur (projects/script1, projects/script2, projects/video1, glob projects/*/reels) : Vidéo 2 supprimée volontairemen…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "ronde3:boucle",
+      "phaseIndex": 2,
+      "phaseTitle": "Ronde 3",
+      "agentId": "a42da4c745f98b55c",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790913292497,
+      "queuedAt": 1790913292472,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "RÉSUMÉ POUR L'UTILISATEUR (français simple) - Ta vidéo à to…",
+      "promptPreview": "RONDE 3 — SELF-EVALUATION LOOP. You now own ALL files (nobody else edits). Round-2 reviews:\n[\n {\n  \"group\": \"rendu\",\n  \"review\": {\n   \"bugs_found\": [\n    {\n     \"file\": \"remotion/src/design.tsx\",\n     \"problem\": \"Foreground filter of the Tech 3D studio: the thin rim light (contour1, cyan key light from top-left) was also drawn inside narrow hollows, for example the gap between the arm and the tors…",
+      "promptFramed": true,
+      "lastProgressAt": 1790917842955,
+      "tokens": 559932,
+      "toolCalls": 237,
+      "durationMs": 4550458,
+      "resultPreview": "{\"built\":\"RÉSUMÉ POUR L'UTILISATEUR (français simple)\\n- Ta vidéo à toi n'a pas été touchée : elle reste en « Tech application » (empreinte inchangée 08b767e3…).\\n- J'ai créé une nouvelle version, « Vidéo 1 - script › qualité », visible dans l'éditeur. Elle est en style Tech 3D cinématique, avec le détourage refait par le nouveau moteur RVM. Une copie est gardée avant chaque changement.\\n- Pourquo…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "jugement:1",
+      "phaseIndex": 3,
+      "phaseTitle": "Jugement",
+      "agentId": "ae7956e0b792cf7c0",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790917846399,
+      "queuedAt": 1790917846377,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo…",
+      "promptPreview": "You are an INDEPENDENT senior commercial/ads video editor and judge (you did not build anything). Judge the latest FULL export of Vidéo 1 \"qualité\" produced by the tool (newest FINAL in livraisons\\Lot 2026-09-30 10h51\\ — see D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\COMPTE-RENDU.md). Previous work report:\n{\n \"built\": \"RÉSUMÉ POUR L'UTILISATEUR (français simple)\\n- Ta vidéo à toi n'a pas été to…",
+      "promptFramed": true,
+      "lastProgressAt": 1790918944537,
+      "tokens": 244306,
+      "toolCalls": 96,
+      "durationMs": 1098138,
+      "resultPreview": "{\"score\":6.5,\"video_judged\":\"D:\\\\Tools\\\\editeur_sami\\\\livraisons\\\\Lot 2026-09-30 10h51\\\\Vidéo 1 - qualité - FINAL.mp4 (export of 2026-10-02 00:56; 70.87 s, 1080x1920, 30 fps, H.264/AAC). I compared it with docs\\\\references\\\\reference-montage-spectaculaire.mp4, with the earlier export '… - FINAL (ancien 2026-10-02 00h06).mp4', and with the user's current reel script.json (Tech application). For the…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "ronde3:correction-1",
+      "phaseIndex": 2,
+      "phaseTitle": "Ronde 3",
+      "agentId": "a6d32cc39da556c31",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790918947051,
+      "queuedAt": 1790918947046,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "Cycle 2 of round 3, after the independent judge (6.5/10). E…",
+      "promptPreview": "RONDE 3 — SELF-EVALUATION LOOP. You now own ALL files (nobody else edits). Round-2 reviews:\n[\n {\n  \"group\": \"rendu\",\n  \"review\": {\n   \"bugs_found\": [\n    {\n     \"file\": \"remotion/src/design.tsx\",\n     \"problem\": \"Foreground filter of the Tech 3D studio: the thin rim light (contour1, cyan key light from top-left) was also drawn inside narrow hollows, for example the gap between the arm and the tors…",
+      "promptFramed": true,
+      "lastProgressAt": 1790924805653,
+      "tokens": 699792,
+      "toolCalls": 253,
+      "durationMs": 5858602,
+      "resultPreview": "{\"built\":\"Cycle 2 of round 3, after the independent judge (6.5/10). Every fix is a general rule that applies to all videos, not a manual edit of Vidéo 1.\\n\\nRENDERER (remotion/src)\\n- Captions during cards. New functions in timeline.ts: overlayAt, captionHidden, captionHiddenWhy, pageAt, sayTokens. Reel.tsx uses them instead of the old designed/saysWords logic. A caption page stays on screen durin…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "jugement:2",
+      "phaseIndex": 3,
+      "phaseTitle": "Jugement",
+      "agentId": "a460ac55ab47d7870",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790924809714,
+      "queuedAt": 1790924809709,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo…",
+      "promptPreview": "You are an INDEPENDENT senior commercial/ads video editor and judge (you did not build anything). Judge the latest FULL export of Vidéo 1 \"qualité\" produced by the tool (newest FINAL in livraisons\\Lot 2026-09-30 10h51\\ — see D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\COMPTE-RENDU.md). Previous work report:\n{\n \"built\": \"Cycle 2 of round 3, after the independent judge (6.5/10). Every fix is a gen…",
+      "promptFramed": true,
+      "lastProgressAt": 1790925997054,
+      "tokens": 247081,
+      "toolCalls": 87,
+      "durationMs": 1187340,
+      "resultPreview": "{\"score\":7.3,\"video_judged\":\"D:\\\\Tools\\\\editeur_sami\\\\livraisons\\\\Lot 2026-09-30 10h51\\\\Vidéo 1 - qualité - FINAL.mp4 (export de 3 h 01 : 70,87 s, 1080x1920, 30 i/s, H.264 + AAC). Comparée à l'export 00h56 (noté 6,5 par le juge n° 1), à l'export 02h42 (pour retrouver d'où vient un défaut nouveau), à la référence et à la version Tech application de l'utilisateur (11 images rendues en lecture seule,…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 7,
+      "label": "ronde3:correction-2",
+      "phaseIndex": 2,
+      "phaseTitle": "Ronde 3",
+      "agentId": "a30cf5ffb4e3423c7",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790926000479,
+      "queuedAt": 1790926000474,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "I worked through all 13 defects from judge n° 2 with genera…",
+      "promptPreview": "RONDE 3 — SELF-EVALUATION LOOP. You now own ALL files (nobody else edits). Round-2 reviews:\n[\n {\n  \"group\": \"rendu\",\n  \"review\": {\n   \"bugs_found\": [\n    {\n     \"file\": \"remotion/src/design.tsx\",\n     \"problem\": \"Foreground filter of the Tech 3D studio: the thin rim light (contour1, cyan key light from top-left) was also drawn inside narrow hollows, for example the gap between the arm and the tors…",
+      "promptFramed": true,
+      "lastProgressAt": 1790932115815,
+      "tokens": 734163,
+      "toolCalls": 340,
+      "durationMs": 6115336,
+      "resultPreview": "{\"built\":\"I worked through all 13 defects from judge n° 2 with general fixes, made 3 exports through the real queue, and judged each one myself.\\n\\n1. **Black band at the top** (14 s in the judged export). New `studioDecorScale` in timeline.ts: when the camera tilts, the décor is enlarged so it always covers the top of the frame. design.tsx uses it. I counted the band on every frame at 10 frames/s…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 8,
+      "label": "jugement:3",
+      "phaseIndex": 3,
+      "phaseTitle": "Jugement",
+      "agentId": "a1d9e88c62ae5b67b",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1790932119872,
+      "queuedAt": 1790932119868,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "D:\\Tools\\editeur_sami\\livraisons\\Lot 2026-09-30 10h51\\Vidéo…",
+      "promptPreview": "You are an INDEPENDENT senior commercial/ads video editor and judge (you did not build anything). Judge the latest FULL export of Vidéo 1 \"qualité\" produced by the tool (newest FINAL in livraisons\\Lot 2026-09-30 10h51\\ — see D:\\Tools\\editeur_sami\\docs\\qualite-2026-09-30\\COMPTE-RENDU.md). Previous work report:\n{\n \"built\": \"I worked through all 13 defects from judge n° 2 with general fixes, made 3 e…",
+      "promptFramed": true,
+      "lastProgressAt": 1790933368184,
+      "tokens": 260194,
+      "toolCalls": 100,
+      "durationMs": 1248311,
+      "resultPreview": "{\"score\":7.6,\"video_judged\":\"D:\\\\Tools\\\\editeur_sami\\\\livraisons\\\\Lot 2026-09-30 10h51\\\\Vidéo 1 - qualité - FINAL.mp4 (export 04h52, 71,47 s, 1080x1920, 30 i/s, H.264+AAC, sha1 73114a05…). Comparée à « (ancien 2026-10-02 03h01).mp4 » (note 7,3 du juge n° 2), à docs\\\\references\\\\reference-montage-spectaculaire.mp4 et à la version actuelle de l'utilisateur (script.json, Tech application, 8 images fi…"
+    }
+  ],
+  "totalTokens": 3771081,
+  "totalToolCalls": 1588
+}

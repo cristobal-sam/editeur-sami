@@ -1,0 +1,62 @@
+{
+  "id": "luxe-minimal",
+  "name": "Luxe / minimal",
+  "description": "Typographie à empattements, or discret et fondus doux.",
+  "category": "Pub",
+  "preview": "galerie-styles/07-luxe-minimal.png",
+  "captions": "elegant",
+  "style": {
+    "font": "Playfair Display",
+    "size": 64,
+    "maxWords": 5,
+    "highlight": "#D8BC79",
+    "position": 0.72,
+    "pop": false,
+    "uppercase": false,
+    "strokeWidth": 0
+  },
+  "design": {
+    "mode": "luxe",
+    "enabled": true,
+    "accent": "#D8BC79",
+    "secondary": "#FFFFFF",
+    "density": 4
+  },
+  "zoom": {
+    "auto": false,
+    "strength": 1.14,
+    "push": 0
+  },
+  "banner": {
+    "enabled": false
+  },
+  "flash": {
+    "enabled": false,
+    "kind": "blanc"
+  },
+  "effects": {
+    "grain": 0,
+    "vignette": 0,
+    "grade": "aucun"
+  },
+  "emoji": false,
+  "progress": false,
+  "music": {
+    "mood": "luxe",
+    "volume": 0.13
+  },
+  "sfx": {
+    "enabled": false,
+    "transition": null,
+    "highlight": null,
+    "highlightGap": 5,
+    "cta": null,
+    "start": null,
+    "volume": 0.2
+  },
+  "ia": "auto",
+  "graphismes": "suggestion",
+  "broll": {
+    "auto": false
+  }
+}

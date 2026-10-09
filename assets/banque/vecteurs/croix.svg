@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" data-vecteur="croix">
+  <title>Croix</title>
+  <circle cx="110" cy="110" r="96" style="fill:var(--v-principale,#EF4444);stroke:var(--v-contour,#111111);stroke-width:8"/>
+  <path class="v-trait" pathLength="1" data-etape="1" d="M70 70 L150 150" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:24;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" data-etape="2" d="M150 70 L70 150" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:24;stroke-linecap:round"/>
+</svg>

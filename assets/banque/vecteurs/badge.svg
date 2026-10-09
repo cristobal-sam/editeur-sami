@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260" data-vecteur="badge" data-boucle="rotation-lente">
+  <title>Badge sceau</title>
+  <polygon points="130,10 146.6,25.3 167.1,15.9 178.1,35.6 200.5,32.9 205,55 227.1,59.5 224.4,81.9 244.1,92.9 234.7,113.4 250,130 234.7,146.6 244.1,167.1 224.4,178.1 227.1,200.5 205,205 200.5,227.1 178.1,224.4 167.1,244.1 146.6,234.7 130,250 113.4,234.7 92.9,244.1 81.9,224.4 59.5,227.1 55,205 32.9,200.5 35.6,178.1 15.9,167.1 25.3,146.6 10,130 25.3,113.4 15.9,92.9 35.6,81.9 32.9,59.5 55,55 59.5,32.9 81.9,35.6 92.9,15.9 113.4,25.3" style="fill:var(--v-principale,#FFD400);stroke:var(--v-contour,#111111);stroke-width:7;stroke-linejoin:round"/>
+  <circle cx="130" cy="130" r="84" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:6;stroke-dasharray:3 11;stroke-linecap:round"/>
+  <polygon points="130,86 141.8,115.8 173.7,117.8 149,138.2 157,169.2 130,152 103,169.2 111,138.2 86.3,117.8 118.2,115.8" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:5;stroke-linejoin:round"/>
+</svg>

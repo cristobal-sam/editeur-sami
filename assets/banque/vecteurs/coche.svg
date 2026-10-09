@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" data-vecteur="coche">
+  <title>Case cochée</title>
+  <rect x="14" y="14" width="192" height="192" rx="44" style="fill:var(--v-principale,#22C55E);stroke:var(--v-contour,#111111);stroke-width:8"/>
+  <path class="v-trait" pathLength="1" d="M58 114 L94 150 L164 72" style="fill:none;stroke:var(--v-secondaire,#FFFFFF);stroke-width:24;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>

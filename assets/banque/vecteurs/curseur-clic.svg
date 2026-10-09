@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" width="220" height="240" data-vecteur="curseur-clic">
+  <title>Curseur qui clique</title>
+  <path class="v-trait" pathLength="1" d="M56 42 L42 18" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:18;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" d="M46 60 L20 54" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:18;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" d="M78 38 L84 12" style="fill:none;stroke:var(--v-contour,#111111);stroke-width:18;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" d="M56 42 L42 18" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:9;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" d="M46 60 L20 54" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:9;stroke-linecap:round"/>
+  <path class="v-trait" pathLength="1" d="M78 38 L84 12" style="fill:none;stroke:var(--v-principale,#FFD400);stroke-width:9;stroke-linecap:round"/>
+  <path d="M70 62 L70 214 L108 178 L132 230 L158 218 L134 168 L186 166 Z" style="fill:var(--v-secondaire,#FFFFFF);stroke:var(--v-contour,#111111);stroke-width:9;stroke-linejoin:round"/>
+</svg>

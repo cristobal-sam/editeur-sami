@@ -1,0 +1,110 @@
+{
+ "projects/video1/reels/v1.json": {
+  "regles": {
+   "v1c1": [
+    "temps",
+    "entreprise",
+    "formulaire?",
+    "réponse",
+    "coûte",
+    "clients"
+   ],
+   "c2": [
+    "problème,",
+    "temps",
+    "plein",
+    "salaire",
+    "vacances",
+    "payer,",
+    "NON,",
+    "deux",
+    "tâches,",
+    "trois",
+    "heures",
+    "concurrent."
+   ],
+   "c3": [
+    "RyuCalls,",
+    "qualifié",
+    "rapidement.",
+    "garantis",
+    "cinq",
+    "fois",
+    "moins",
+    "cher"
+   ],
+   "c4": [
+    "téléphone.",
+    "pourcentage",
+    "transférer."
+   ],
+   "c5": [
+    "appuyez",
+    "En",
+    "savoir",
+    "plus",
+    "sans",
+    "risque,",
+    "gratuitement",
+    "semaine",
+    "Appuyez",
+    "En",
+    "savoir",
+    "plus"
+   ]
+  },
+  "ia": {
+   "v1c1": [
+    "temps",
+    "entreprise",
+    "lead",
+    "coûte",
+    "clients"
+   ],
+   "c2": [
+    "problème,",
+    "temps",
+    "plein",
+    "salaire",
+    "maladie",
+    "NON,",
+    "deux",
+    "tâches,",
+    "trois",
+    "heures",
+    "concurrent."
+   ],
+   "c3": [
+    "setter",
+    "formé",
+    "rapidement.",
+    "garantis",
+    "cinq",
+    "fois",
+    "moins",
+    "cher"
+   ],
+   "c4": [
+    "setter",
+    "intérêt",
+    "qualifier",
+    "transférer."
+   ],
+   "c5": [
+    "déléguer",
+    "appuyez",
+    "En",
+    "savoir",
+    "plus",
+    "sans",
+    "risque,",
+    "gratuitement",
+    "semaine",
+    "Appuyez",
+    "En",
+    "savoir",
+    "plus"
+   ]
+  }
+ }
+}

@@ -1,0 +1,1 @@
+Sons synthetises localement pour la banque de l'editeur (engine/editeur/banque.py, briques de engine/editeur/sfxgen.py). Creations originales, libres de tout droit tiers.
